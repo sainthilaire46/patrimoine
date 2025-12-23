@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Hilaire | Mémoires de Bernadette Benne</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            900: '#022c22',
+                            950: '#011c16',
+                        },
+                        alabaster: {
+                            50: '#fbf9f6',
+                            100: '#f3f1ed',
+                            200: '#e6e2db',
+                        },
+                        bronze: {
+                            400: '#e2be5a',
+                            500: '#cca43b',
+                            600: '#b08d33',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'slow-zoom': 'slowZoom 20s linear infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slowZoom: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .hover-zoom-img {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .group:hover .hover-zoom-img {
+            transform: scale(1.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-alabaster-50 text-emerald-900 font-sans font-light antialiased selection:bg-bronze-500/20 selection:text-emerald-950 tracking-wide leading-relaxed">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center group gap-4">
+                    <div class="flex flex-col">
+                        <span
+                            class="font-serif text-lg text-emerald-950 tracking-tight leading-none group-hover:text-bronze-600 transition-colors duration-300">Saint
+                            Hilaire</span>
+                        <span
+                            class="text-[0.6rem] uppercase tracking-[0.2em] text-emerald-800/60 leading-none mt-1 group-hover:text-emerald-800 transition-colors">Mémoire
+                            & Patrimoine</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul
+                    class="hidden lg:flex space-x-12 items-center font-light text-sm tracking-[0.1em] text-emerald-900/80">
+                    <li><a href="index.html"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 mb-2">RETOUR
+                            ACCUEIL</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <div id="main-content" class="pt-20">
+
+        <!-- Header Hero -->
+        <header class="h-[60vh] relative flex items-center justify-center bg-emerald-950 overflow-hidden">
+            <!-- Background Image -->
+            <img src="images/bernadette_20ans.jpg"
+                class="absolute inset-0 w-full h-full object-cover opacity-40 animate-slow-zoom grayscale mix-blend-luminosity"
+                alt="Bernadette Benne"
+                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'absolute inset-0 bg-stone-100 flex items-center justify-center italic text-stone-400 text-xl border-2 border-dashed border-stone-200\'>[Image: bernadette_20ans.jpg]</div>'">
+
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-alabaster-50"></div>
+
+            <div class="relative z-10 text-center text-white px-4 animate-fade-in-up mt-10">
+                <span
+                    class="text-bronze-400 font-bold tracking-[0.3em] text-xs uppercase mb-6 block border-b border-bronze-400/30 pb-4 inline-block">Mémoire
+                    Vivante</span>
+                <h1 class="font-serif text-5xl md:text-7xl italic mb-6 font-medium text-emerald-950">Bernadette Benne
+                </h1>
+                <p class="text-xl font-light text-emerald-800 max-w-2xl mx-auto tracking-wide leading-loose">
+                    Récit d'un siècle à Saint-Hilaire-les-Bessonies</p>
+                <div class="mt-8 flex justify-center gap-6 text-xs uppercase tracking-widest text-emerald-900/60">
+                    <span>Née le 20 mai 1920</span>
+                    <span class="w-px h-4 bg-emerald-900/20"></span>
+                    <span>Centenaire en 2020</span>
+                </div>
+                <p class="mt-6 text-xs text-emerald-950 font-medium italic max-w-lg mx-auto leading-relaxed">
+                    Recueil offert par la municipalité de Saint-Hilaire à tous les habitants de la commune.<br>
+                    Ne peut être vendu. Tous droits de reproduction réservés
+                </p>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto px-6 py-20">
+
+            <!-- Front Matter -->
+            <div class="glass-card p-10 md:p-14 rounded-sm border-l-4 border-bronze-500 mb-20 reveal relative">
+                <i class="fas fa-info-circle text-4xl text-bronze-500/20 absolute top-6 right-6"></i>
+                <p class="font-bold mb-4 uppercase text-xs tracking-[0.2em] text-bronze-600">Note de l'association</p>
+                <p class="mb-6 italic font-serif text-xl text-emerald-950">Seule carte connue de
+                    ST-HILAIRE-LES-BESSONIES
+                    éditée avant 1947, date à laquelle la commune des BESSONIES a été créée.</p>
+
+                <div class="my-8 overflow-hidden rounded-sm shadow-lg group">
+                    <img src="images/carte_ancienne.jpg" alt="Carte ancienne"
+                        class="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 transform group-hover:scale-105"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: carte_ancienne.jpg]</div>'">
+                </div>
+
+                <p class="text-sm text-emerald-900/60 mt-4 border-t border-emerald-900/10 pt-4">
+                    Association ST-HILAIRE Mémoire et Patrimoine. Recueil offert par la municipalité de Saint-Hilaire à
+                    tous les habitants de la commune. Ne peut être vendu. Tous droits de reproduction réservés.
+                </p>
+            </div>
+
+            <!-- Photos Comparison -->
+            <div class="flex flex-col md:flex-row gap-8 mb-24 items-center reveal">
+                <div class="w-full md:w-1/2 group">
+                    <div class="aspect-[3/4] overflow-hidden rounded-sm shadow-xl relative">
+                        <img src="images/bernadette_20ans.jpg" alt="Bernadette à 20 ans"
+                            class="w-full h-full object-cover grayscale hover-zoom-img"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 h-96 flex items-center justify-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: bernadette_20ans.jpg]</div>'">
+                    </div>
+                    <p class="text-center text-xs text-emerald-900/50 mt-4 tracking-widest uppercase">Bernadette, 20 ans
+                    </p>
+                </div>
+                <div class="w-full md:w-1/2 group">
+                    <div class="aspect-[3/4] overflow-hidden rounded-sm shadow-xl relative">
+                        <img src="images/bernadette_100ans.jpg" alt="Bernadette à 100 ans"
+                            class="w-full h-full object-cover grayscale hover-zoom-img group-hover:grayscale-0 transition-all duration-1000"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 h-96 flex items-center justify-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: bernadette_100ans.jpg]</div>'">
+                    </div>
+                    <p class="text-center text-xs text-emerald-900/50 mt-4 tracking-widest uppercase">Bernadette, 100
+                        ans</p>
+                </div>
+            </div>
+
+            <!-- Section I -->
+            <section class="mb-24 reveal">
+                <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                    <span class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">I</span>
+                    <h2 class="text-4xl font-serif text-emerald-950 italic">Ma jeunesse</h2>
+                </div>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Je suis née aux Rousties commune de ST–HILAIRE le 20 Mai 1920. Quelques images me reviennent de
+                        mon enfance. Aux Rousties je me rappelle que le bélier me faisait tomber et une fois par terre,
+                        il me laissait tranquille !</p>
+                    <p>Je descendais à pieds pour aller des Rousties à l’école située dans le bourg, il faisait nuit les
+                        matins d’hiver quand je partais et noir les soirs en rentrant cela faisait 7 kms aller et
+                        retour. Je me souviens que nous faisions le chemin avec Marcelle VERMANDE et Louis CANET.</p>
+                </div>
+
+                <figure class="my-16 max-w-3xl mx-auto group">
+                    <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                        <img src="images/chemin_ecole.jpg" alt="Chemin de l'école"
+                            class="w-full hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: chemin_ecole.jpg]</div>'">
+                    </div>
+                    <figcaption class="text-center text-xs text-emerald-900/50 mt-4 italic tracking-wide">Sur le chemin
+                        de l'école, chaussés de sabots.</figcaption>
+                </figure>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Tous les trois nous portions des sabots fourrés avec du foin, d’autres de familles plus aisées,
+                        portaient des galoches qui avaient des semelles en bois et des dessus en cuir le tout relié par
+                        des lanières.</p>
+                    <p>A l’école, notre repas du midi consistait en une soupe et une tartine de confiture. Notre
+                        Institutrice était Mlle CRILLE. J’ai eu mon certificat d’études en 1932 avec la mention « Bien
+                        ».</p>
+                </div>
+
+                <figure class="my-16 max-w-3xl mx-auto group">
+                    <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                        <img src="images/certificat.jpg" alt="Certificat d'études"
+                            class="w-full hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: certificat.jpg]</div>'">
+                    </div>
+                    <figcaption class="text-center text-xs text-emerald-900/50 mt-4 italic tracking-wide">Certificat
+                        d'études, 1932.</figcaption>
+                </figure>
+            </section>
+
+            <!-- Section II -->
+            <section class="mb-24 reveal">
+                <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                    <span class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">II</span>
+                    <h2 class="text-4xl font-serif text-emerald-950 italic">Battages</h2>
+                </div>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Après le certificat d’études, j’ai été au Collège à MAURS, j’y apprenais la couture, la cuisine,
+                        pendant un an. Je suis ensuite retournée aux Rousties où l’on avait besoin de nous. Il y avait
+                        aussi ma Sœur CLEMENCE et mon Frère MARIUS.</p>
+                    <p>CLEMENCE ma Sœur épousera AMEDEE le Frère de Germain mon futur Epoux, les deux Sœurs nous avons
+                        donc épousé les deux Frères !</p>
+                </div>
+
+
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Je me rappelle des battages de blé à cette époque, iI y avait comme Entrepreneur qui venait chez
+                        nous, Monsieur MONCANY de Maldès de LAURESSES qui ensuite a été remplacé par Roger BONIS de
+                        Liffernet. Ces battages mobilisables du monde.</p>
+                </div>
+
+                <figure class="my-16 max-w-3xl mx-auto group">
+                    <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                        <img src="images/battages.jpg" alt="Les battages"
+                            class="w-full hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: battages.jpg]</div>'">
+                    </div>
+                    <figcaption class="text-center text-xs text-emerald-900/50 mt-4 italic tracking-wide">Les grandes
+                        journées de battage.</figcaption>
+                </figure>
+            </section>
+
+            <!-- Section III -->
+            <section class="mb-24 reveal">
+                <div class="flex items-end gap-6 mb-12 border-b border-rose-900/10 pb-6">
+                    <span class="text-6xl font-serif text-rose-200/50 -mb-4 -ml-2 font-bold select-none">III</span>
+                    <h2 class="text-4xl font-serif text-emerald-950 italic">La guerre</h2>
+                </div>
+
+                <div
+                    class="group relative float-right md:w-1/2 md:ml-12 mb-8 mt-2 overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10 rotate-2 hover:rotate-0 transition-all duration-500">
+                    <img src="images/labourage.jpg" alt="Bernadette Labourant"
+                        class="w-full hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: labourage.jpg]</div>'">
+                </div>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Pendant la guerre, les Femmes remplaçaient les Hommes mobilisés ce qui était le cas de mon Frère
+                        MARIUS. Aussi, j’aidais ma Mère JULIE à labourer comme vous pourrez le constater sur cette photo
+                        que je conserve précieusement.</p>
+                    <p>Pendant la guerre aux ROUSTIES, on fauchait à la main et nous avions dû faire appel à deux
+                        journaliers Monsieur CAMBON et Monsieur LOUDES du PUECHBERTAL de LAURESSES.</p>
+
+
+                    <p>Il est à noter que Mon Frère MARIUS que ce soit avant la guerre, comme après, allait se louer en
+                        AUVERGNE pour la période des foins, de nombreuses personnes du SEGALA agissaient ainsi, les
+                        faucheurs de cette région étaient réputés, bien rétribués, ce qui arrangeait tout le monde en
+                        cette période particulièrement difficile.</p>
+
+
+                    <p>A son retour de captivité mon Frère Marius me raconta un fait émouvant. Il avait été libéré par
+                        les Russes et les prisonniers libérés embarquaient au bord de la Mer Noire en RUSSIE au port
+                        d’ODESSA. Il était de tradition que les prisonniers libérés gravent leurs noms sur des poutres
+                        en bois le long du port. Quelle ne fut pas sa stupéfaction lorsque MARIUS mon Frère vit graver
+                        sur un poteau le nom de Armand LAVERGNE de BALAYSSAC qui lui aussi avait embarqué là !</p>
+                    <p>D’ailleurs AMEDEE mon Beau-Frère nous a raconté un triste épisode de cette période qui aurait pu
+                        tourner au drame. AMEDEE était Facteur à FIGEAC lorsqu’en rentrant de tournée il avait essuyé
+                        des coups de feu tirés par les Allemands, il s’en est sorti par miracle en se jetant dans un
+                        fourré à proximité.</p>
+                    <p>J’ai un terrible souvenir de cette période : pendant les travaux aux champs, j’ai vu le village
+                        de GROSCASSAN se consumer, les Allemands y avaient mis le feu, furieux de ne pas avoir retrouvé
+                        une cache d’armes ni le moindre Maquisard ainsi que presque tous les habitants de GROSCASSAN
+                        prévenus par les Résistants, ces habitants s’étant enfuis dans les bois.</p>
+                    <p>Je dis presque tous les habitants car dans le hameau étaient restées deux personnes la LEONIE
+                        FERRIERE et M. PEZET qui sera arrêté puis relâché. Hélas ces deux personnes décèderont quelques
+                        temps après n’ayant sans doute pas supporté ces terribles épreuves, provoquées par la tristement
+                        célèbre division Dass Reich qui la veille s’était rendue coupable d’une rafle à LATRONQUIERE
+                        dont des Déportés ne revinrent jamais des camps de concentrations.</p>
+                </div>
+
+                <div class="my-16 flex flex-col items-center">
+                    <div class="max-w-2xl overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10 group">
+                        <img src="images/groupe_jeunes.jpg" alt="Groupe de jeunes"
+                            class="w-full grayscale hover-zoom-img transition-all duration-1000"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200 w-[600px]\'>[Image: groupe_jeunes.jpg]</div>'">
+                    </div>
+                    <blockquote class="mt-8 text-xl font-serif italic text-emerald-950/80 text-center max-w-2xl">
+                        "En 1940 j’avais 20 ans, avoir 20 ans en période de guerre cela marque toute une vie."
+                    </blockquote>
+                </div>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Je me suis mariée avec Germain COURCHINOUX en 1947 et mon Epoux m’a raconté par la suite ce qui
+                        c’était passé ce même jour de l’incendie du village de Groscassan. Les Allemands ont rassemblé
+                        les habitants du bourg de ST-HILAIRE devant la grange du COULON, tout le monde s’attendait au
+                        pire….</p>
+                    <p>Parmi ces habitants, il y avait le Grand - Père COURCHINOUX, un Allemand voulut lui dérober sa
+                        bourse, il résista et dit qu’il avait fait la guerre de 14 et même y avait été gazé. Était-ce
+                        pour cela ? En tout cas le Grand-Père conserva sa bourse et ce qui est plus important c’est que
+                        tout le monde fut libéré, un autre miracle ! Mon Epoux GERMAIN avait quant à lui été prisonnier
+                        dans une ferme en Autriche, je vous en reparlerai plus loin.</p>
+                    <p class="font-medium text-emerald-800">Ma génération a été meurtrie par ce drame que je ne souhaite
+                        pas ni
+                        pour mes petits-enfants ou même arrière-petits enfants ainsi que pour les générations à venir.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section IV -->
+            <section class="mb-24 reveal">
+                <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                    <span class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">IV</span>
+                    <h2 class="text-4xl font-serif text-emerald-950 italic">Le Coulon</h2>
+                </div>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>En 1947 je suis donc arrivée au Coulon après mon mariage avec Germain COURCHINOUX. Il fallait
+                        essayer de se remettre de cette guerre, la seule solution était de travailler dur pour espérer
+                        s’en sortir. Au Coulon il y avait le Grand-Père COURCHINOUX dont je vous ai parlé pendant la
+                        guerre, il gardait les moutons que nous avions soit une vingtaine de bêtes à peu près.</p>
+                    <p>7 vaches composaient notre troupeau de gros bovins, nous élevions des veaux sous la mère que nous
+                        vendions au bout de 3 à 4 mois, au cours des foires du coin très nombreuses à savoir
+                        LATRONQUIERE
+                        GORSES MAURS. On élevait aussi des poules que l’on vendait à MAURS. On prenait le car au
+                        lieu-dit LAVITARELLE pour y aller. Je me rappelle qu’il y avait une personne handicapée qui
+                        portait ses paniers d’œufs sur la tête.</p>
+                    <p>On tirait l’eau des puits qu’il y avait dans chaque village, aussi bien aux ROUSTIES, qu’au
+                        COULON. L’eau était un bien précieux et l’on cherchait à l’économiser ! Le linge était lavé dans
+                        les marres des prés ou aux ruisseaux. Des habitants de certains hameaux avaient construits des
+                        lavoirs communs.</p>
+                </div>
+
+                <div class="my-16 grid md:grid-cols-2 gap-12 items-center">
+                    <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10 group">
+                        <img src="images/four_pain.jpg" alt="Four à pain"
+                            class="w-full hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: four_pain.jpg]</div>'">
+                    </div>
+                    <div class="bg-white p-8 border border-stone-100 shadow-lg relative">
+                        <i class="fas fa-quote-left text-3xl text-bronze-500/20 absolute top-4 left-4"></i>
+                        <p class="font-serif italic text-emerald-900 leading-relaxed pt-4">
+                            "Notre four est muni d’un étage où l’on pouvait faire sécher les châtaignes et au-devant du
+                            four côte droit, il y a l'emplacement où l'on faisait cuire la nourriture des porcs."
+                        </p>
+                        <div class="h-1 w-12 bg-bronze-400 mt-6"></div>
+                    </div>
+                </div>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>On se rendait au MOULIN DE LIFFERNET pour moudre le grain et faire la farine pour le pain, ou
+                        bien pour moudre et faire de l’aliment pour le bétail. C’était le couple VERMANDE qui tenait ce
+                        moulin. Il est à noter que la Commune de ST-HILAIRE-LES-BESSONIES comptait au début du 20ème
+                        Siècle 5 moulins !</p>
+                    <p>Une activité importante dont je me rappelle était la cuisson du pain. Germain mon Mari faisait le
+                        pain tous les quinze jours, j’en profitais pour faire un far (à base de farine de blé noir,
+                        certaines personnes y ajoutaient des pruneaux. Gilbert notre Fils disposait d’un pain pour lui,
+                        il était privilégié !</p>
+                    <p>Lorsqu’on tuait le cochon, c’était un moment important pour nous. Dans le cochon rien ne se
+                        perdait ! Marinette LANCELOT du BASTIT venait nous aider, Paulette MONTEIL gardait nos quatre
+                        enfants, Ginette, Michèle, Guy et Gilbert. Il y avait au moins trois jours de travail et
+                        d’attente car la viande devait se cailler, il fallait laver les boyaux du cochon pour faire les
+                        boudins et les saucissons et la saucisse. II est à noter que notre tueur de cochon était
+                        Monsieur VERMANDE des ROUSTIES.</p>
+                </div>
+
+                <!-- Callout Box -->
+                <div
+                    class="mt-16 bg-emerald-900 text-alabaster-50 p-10 md:p-14 rounded-sm shadow-2xl relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif italic mb-8 flex items-center gap-4">
+                            <span class="w-12 h-[1px] bg-bronze-400"></span>
+                            Mandats et Vie Publique
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-12 text-emerald-100/80 font-light leading-loose">
+                            <div>
+                                <p class="mb-6"><strong class="text-white font-medium">Germain mon Mari a été Maire de
+                                        1956 à 1977.</strong> Il y a eu l’inauguration du relais TDF par Georges
+                                    pompidou, l’eau à l’école, la première cabine téléphonique, les premiers
+                                    goudronnages.</p>
+                                <p>Pour ma part, j’ai été Secrétaire de Mairie de 1968 à 1983. C’était une tâche
+                                    contraignante mais passionnante. Nous participions tous au formidable effort qu’il a
+                                    fallu faire après-guerre pour redresser le pays.</p>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded border border-white/10 italic">
+                                <p class="mb-4">"Monseigneur CHEVRIER Evêque du Diocèse était venu à notre Eglise...
+                                    Germain mon Epoux entreprit de déboucher les bouteilles de champagne, lorsque en
+                                    débouchant l’une d’elle, le liquide déborda et arrosa copieusement Monseigneur
+                                    l’Evêque !</p>
+                                <p class="text-right text-sm text-bronze-400">— Une anecdote inoubliable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section V & Fin -->
+            <section class="mb-24 reveal">
+                <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                    <span class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">V</span>
+                    <h2 class="text-4xl font-serif text-emerald-950 italic">Réconciliation & Avenir</h2>
+                </div>
+
+                <div class="bg-white p-10 shadow-xl shadow-emerald-900/5 border-t-4 border-emerald-500 mb-12">
+                    <p class="text-emerald-900/70 font-light leading-loose italic mb-6">
+                        "Dans les années 90, soit 45 ans environ après la fin de la guerre, nous eûmes une visite très
+                        émouvante au COULON. Le Fils et la Fille de l’ancienne gardienne de GERMAIN vinrent lui rendre
+                        visite... Ainsi prenait fin 45 ans de brouille."
+                    </p>
+                    <p class="text-sm font-bold text-emerald-900 uppercase tracking-widest">Une leçon d'humanité</p>
+                </div>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Je souhaite donc à ma petite-fille <strong>STEPHANIE</strong>, mes quatre petits-fils,
+                        <strong>SEBASTIEN, GILLES, SYLVAIN, AURELIEN</strong> de ne jamais connaitre de guerre ni non
+                        plus à mes 9 arrières petits-enfants, <strong>ALEXANDRE, CAMILLE, GERMAIN, RAPHAEL et MATHIEU,
+                            JULIE et EMELINE, LUNA et THAO</strong> de ne pas connaitre non plus un pareil drame dans
+                        leurs vies.
+                    </p>
+                </div>
+
+                <div class="my-12 overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10 group max-w-4xl mx-auto">
+                    <img src="images/famille_bernadette.jpg" alt="Famille Bernadette"
+                        class="w-full hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: famille_bernadette.jpg]</div>'">
+                </div>
+
+                <p class="text-center font-serif text-2xl italic text-emerald-950">
+                    "Et j’espère pour eux... une aussi longue vie que la mienne en bonne santé."
+                </p>
+            </section>
+
+            <!-- Section VI Album -->
+            <section class="mb-24 reveal">
+                <div class="flex items-center justify-between mb-12 border-b border-emerald-900/10 pb-6">
+                    <h2 class="text-3xl font-serif text-emerald-950 italic">Album du Passé</h2>
+                    <span class="text-xs uppercase tracking-widest text-emerald-900/40">Canton de Latronquière</span>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Gallery Items with Hover Effect -->
+                    <div class="aspect-square overflow-hidden bg-stone-200 relative group cursor-pointer">
+                        <img src="images/archive1.jpg"
+                            class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 hover-zoom-img"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-stone-100 text-xs italic text-stone-400\'>[archive1.jpg]</div>'">
+                    </div>
+                    <div class="aspect-square overflow-hidden bg-stone-200 relative group cursor-pointer">
+                        <img src="images/archive2.jpg"
+                            class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 hover-zoom-img"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-stone-100 text-xs italic text-stone-400\'>[archive2.jpg]</div>'">
+                    </div>
+                    <div class="aspect-square overflow-hidden bg-stone-200 relative group cursor-pointer">
+                        <img src="images/archive3.jpg"
+                            class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 hover-zoom-img"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-stone-100 text-xs italic text-stone-400\'>[archive3.jpg]</div>'">
+                    </div>
+                    <div class="aspect-square overflow-hidden bg-stone-200 relative group cursor-pointer">
+                        <img src="images/archive4.jpg"
+                            class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 hover-zoom-img"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-stone-100 text-xs italic text-stone-400\'>[archive4.jpg]</div>'">
+                    </div>
+                    <div class="aspect-square overflow-hidden bg-stone-200 relative group cursor-pointer">
+                        <img src="images/archive5.jpg"
+                            class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 hover-zoom-img"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-stone-100 text-xs italic text-stone-400\'>[archive5.jpg]</div>'">
+                    </div>
+                    <div class="aspect-square overflow-hidden bg-stone-200 relative group cursor-pointer">
+                        <img src="images/archive6.jpg"
+                            class="w-full h-full object-cover grayscale opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 hover-zoom-img"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center bg-stone-100 text-xs italic text-stone-400\'>[archive6.jpg]</div>'">
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 text-gray-400 pt-24 pb-12 border-t-[5px] border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-16 border-b border-gray-800 pb-16">
+            <div class="col-span-1 md:col-span-2 pr-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="images/logo_sainthilaire46.jpg"
+                        class="h-10 opacity-80 grayscale hover:grayscale-0 transition-all rounded"
+                        onerror="this.style.display='none'">
+                    <h4 class="text-white font-serif text-2xl italic">Saint Hilaire</h4>
+                </div>
+                <p class="text-sm leading-loose max-w-md mb-8 text-gray-500">
+                    Notre association "Mémoire et Patrimoine" œuvre au quotidien pour recenser, protéger et valoriser
+                    les richesses historiques et naturelles de notre commune.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="far fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-8 border-b border-gray-800 pb-2 inline-block">
+                    Navigation</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-[8px] opacity-50"></i> Accueil</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-8 border-b border-gray-800 pb-2 inline-block">
+                    Légal & Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" onclick="showSection('association')"
+                            class="hover:text-emerald-400 transition-colors">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 max-w-7xl mx-auto px-4">
+            <p>&copy; 2025 Saint-Hilaire Mémoire & Patrimoine. Tous droits réservés.</p>
+            <p class="mt-2 md:mt-0">Fait avec <i class="fas fa-heart text-red-900 mx-1"></i> pour le Lot</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Reveal Animation Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+
+        // Mobile Menu Toggle (Simplified)
+        function toggleMobileMenu() {
+            // Implementation if needed, matching index.html logic
+        }
+    </script>
+</body>
+
+</html>

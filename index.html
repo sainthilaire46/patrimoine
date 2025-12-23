@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Hilaire | Mémoire & Patrimoine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            900: '#022c22',
+                            950: '#011c16',
+                        },
+                        alabaster: {
+                            50: '#fbf9f6',
+                            100: '#f3f1ed',
+                            200: '#e6e2db',
+                        },
+                        bronze: {
+                            400: '#e2be5a',
+                            500: '#cca43b',
+                            600: '#b08d33',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'slow-zoom': 'slowZoom 20s linear infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slowZoom: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        /* Custom Utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-shadow-md {
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-shadow-lg {
+            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image Hover Effects */
+        .hover-zoom-img {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .group:hover .hover-zoom-img {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        #lightbox {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Smooth section transitions */
+        .page-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-alabaster-50 text-emerald-900 font-sans font-light antialiased selection:bg-bronze-500/20 selection:text-emerald-950 tracking-wide leading-relaxed">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <a href="#" onclick="showSection('home')" class="flex items-center group gap-4">
+                    <div class="flex flex-col">
+                        <span
+                            class="font-serif text-lg text-emerald-950 tracking-tight leading-none group-hover:text-bronze-600 transition-colors duration-300">Saint
+                            Hilaire</span>
+                        <span
+                            class="text-[0.6rem] uppercase tracking-[0.2em] text-emerald-800/60 leading-none mt-1 group-hover:text-emerald-800 transition-colors">Mémoire
+                            & Patrimoine</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <!-- Desktop Menu -->
+                <ul
+                    class="hidden lg:flex space-x-12 items-center font-light text-sm tracking-[0.1em] text-emerald-900/80">
+                    <li><a href="#" onclick="showSection('home')" id="nav-home"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">ACCUEIL</a>
+                    </li>
+                    <li class="relative group">
+                        <a href="javascript:void(0)" id="nav-bati"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full cursor-default">BÂTI</a>
+                        <!-- Submenu -->
+                        <ul
+                            class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white/95 backdrop-blur-md border border-emerald-900/10 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top -translate-y-2 group-hover:translate-y-0 pb-2 pt-2">
+                            <li><a href="#" onclick="showSection('bati', 'bati-moulins')"
+                                    class="block px-6 py-3 text-xs tracking-widest uppercase hover:bg-bronze-50 hover:text-bronze-600 transition-colors">Les
+                                    Moulins du Veyre</a>
+                            </li>
+                            <li><a href="#" onclick="showSection('bati', 'bati-fours')"
+                                    class="block px-6 py-3 text-xs tracking-widest uppercase hover:bg-bronze-50 hover:text-bronze-600 transition-colors">Les
+                                    Fours à Pains</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" onclick="showSection('botanique')" id="nav-botanique"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">NATUREL</a>
+                    </li>
+                    <li><a href="#" onclick="showSection('humain')" id="nav-humain"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">HUMAIN</a>
+                    </li>
+                    <li><a href="#" onclick="showSection('association')" id="nav-association"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">L'ASSOCIATION</a>
+                    </li>
+                    <li><a href="#" onclick="showSection('blog')" id="nav-blog"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">BLOG
+                            & ÉVÈNEMENTS</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Button -->
+                <button class="lg:hidden text-emerald-900 p-2 hover:text-bronze-600 transition-colors"
+                    onclick="toggleMobileMenu()">
+                    <div class="space-y-1.5">
+                        <span class="block w-6 h-0.5 bg-current"></span>
+                        <span class="block w-4 h-0.5 bg-current ml-auto"></span>
+                        <span class="block w-6 h-0.5 bg-current"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="lg:hidden hidden glass-nav border-t border-emerald-900/5 absolute w-full left-0 top-full shadow-2xl pb-6">
+            <div class="px-8 py-6 space-y-4">
+                <a href="#" onclick="showSection('home'); toggleMobileMenu()"
+                    class="block text-xl font-serif italic text-emerald-900 hover:text-bronze-600">Accueil</a>
+                <a href="#" onclick="showSection('bati'); toggleMobileMenu()"
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Bâti</a>
+                <a href="#" onclick="showSection('botanique'); toggleMobileMenu()"
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Botanique</a>
+                <a href="#" onclick="showSection('humain'); toggleMobileMenu()"
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Humain</a>
+                <a href="#" onclick="showSection('association'); toggleMobileMenu()"
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Association</a>
+                <a href="#" onclick="showSection('blog'); toggleMobileMenu()"
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Blog &
+                    Évènements</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <div id="main-content" class="pt-20">
+
+        <!-- SECTION: HOME -->
+        <div id="section-home" class="page-section active min-h-screen">
+            <!-- Hero -->
+            <header class="relative h-[90vh] flex items-center justify-center overflow-hidden bg-emerald-950">
+                <div class="absolute inset-0 select-none">
+                    <img src="images/sainthilairedrone.jpg" alt="Saint-Hilaire Paysage"
+                        class="w-full h-full object-cover brightness-110 contrast-110 saturate-110 opacity-90"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000'">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40"></div>
+                    <div
+                        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay">
+                    </div>
+                </div>
+
+                <div
+                    class="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in-up flex flex-col items-center -mt-32">
+                    <div class="mb-8 w-[1px] h-24 bg-gradient-to-b from-transparent to-white/60"></div>
+                    <h1
+                        class="font-serif text-6xl md:text-8xl lg:text-9xl text-emerald-950 font-medium leading-none tracking-tight italic">
+                        Saint Hilaire
+                    </h1>
+
+                    <div class="mt-12 flex items-center justify-center gap-6">
+                        <div class="h-[1px] w-12 bg-bronze-300"></div>
+                        <span
+                            class="text-sm md:text-base uppercase tracking-[0.3em] text-emerald-950 font-normal drop-shadow-sm">Mémoire
+                            & Patrimoine</span>
+                        <div class="h-[1px] w-12 bg-bronze-300"></div>
+                    </div>
+
+                    <p
+                        class="mt-96 text-2xl md:text-3xl text-white/95 max-w-4xl mx-auto font-light leading-relaxed tracking-wide font-serif italic drop-shadow-sm">
+                        Un voyage immobile au cœur du Ségala.
+                    </p>
+
+
+                </div>
+            </header>
+
+            <!-- Introduction Grid -->
+            <main class="max-w-[90rem] mx-auto px-6 py-32" id="discover-start">
+                <div class="flex flex-col md:flex-row items-end justify-between mb-20 reveal">
+                    <div>
+
+                        <h2 class="font-serif text-5xl md:text-6xl text-emerald-950 leading-none italic">Notre Héritage
+                        </h2>
+                    </div>
+                    <div class="hidden md:block w-[1px] h-32 bg-emerald-900/10 mr-12"></div>
+                    <p class="md:w-1/3 text-emerald-900/60 font-light mt-8 md:mt-0 text-justify">
+                        Découvrez les trois piliers qui fondent l'âme de Saint-Hilaire. Une exploration entre nature
+                        sauvage, pierres séculaires et mémoire vivante.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="group relative aspect-[3/4] overflow-hidden cursor-pointer reveal"
+                        onclick="showSection('bati')">
+                        <div class="absolute inset-0 bg-emerald-950 transition-all duration-700">
+                            <img src="images/home_card_bati.png"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 grayscale group-hover:grayscale-0"
+                                alt="Patrimoine Bâti">
+                        </div>
+                        <div class="absolute inset-0 border-[0.5px] border-white/20 m-4 z-20 pointer-events-none"></div>
+
+                        <div class="absolute bottom-0 left-0 p-10 w-full z-20">
+                            <span
+                                class="text-xs text-white/60 tracking-[0.2em] uppercase block mb-2 opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">01</span>
+                            <h3
+                                class="font-serif text-3xl text-white italic mb-2 group-hover:ml-4 transition-all duration-500">
+                                Patrimoine Bâti</h3>
+                            <p
+                                class="text-white/60 text-sm font-light mt-4 opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-20 transition-all duration-500 delay-200 leading-relaxed border-l border-bronze-500 pl-4">
+                                Moulins et pierres sèches, témoins de notre histoire.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group relative aspect-[3/4] overflow-hidden cursor-pointer reveal delay-100"
+                        onclick="showSection('botanique')">
+                        <div class="absolute inset-0 bg-emerald-950 transition-all duration-700">
+                            <img src="images/home_card_naturel.png"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 grayscale group-hover:grayscale-0"
+                                alt="Patrimoine Naturel">
+                        </div>
+                        <div class="absolute inset-0 border-[0.5px] border-white/20 m-4 z-20 pointer-events-none"></div>
+
+                        <div class="absolute bottom-0 left-0 p-10 w-full z-20">
+                            <span
+                                class="text-xs text-white/60 tracking-[0.2em] uppercase block mb-2 opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">02</span>
+                            <h3
+                                class="font-serif text-3xl text-white italic mb-2 group-hover:ml-4 transition-all duration-500">
+                                Patrimoine Naturel</h3>
+                            <p
+                                class="text-white/60 text-sm font-light mt-4 opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-20 transition-all duration-500 delay-200 leading-relaxed border-l border-bronze-500 pl-4">
+                                Une flore sauvage d'une richesse exceptionnelle.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group relative aspect-[3/4] overflow-hidden cursor-pointer reveal delay-200"
+                        onclick="showSection('humain')">
+                        <div class="absolute inset-0 bg-emerald-950 transition-all duration-700">
+                            <img src="images/home_card_humain.png"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 grayscale group-hover:grayscale-0"
+                                alt="Patrimoine Humain">
+                        </div>
+                        <div class="absolute inset-0 border-[0.5px] border-white/20 m-4 z-20 pointer-events-none"></div>
+
+                        <div class="absolute bottom-0 left-0 p-10 w-full z-20">
+                            <span
+                                class="text-xs text-white/60 tracking-[0.2em] uppercase block mb-2 opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">03</span>
+                            <h3
+                                class="font-serif text-3xl text-white italic mb-2 group-hover:ml-4 transition-all duration-500">
+                                Matrimoine Humain</h3>
+                            <p
+                                class="text-white/60 text-sm font-light mt-4 opacity-0 h-0 overflow-hidden group-hover:opacity-100 group-hover:h-20 transition-all duration-500 delay-200 leading-relaxed border-l border-bronze-500 pl-4">
+                                Les récits et visages de ceux qui ont fait le village.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Text -->
+                <div class="mt-40 mb-20 max-w-4xl mx-auto reveal">
+                    <div class="text-center relative">
+                        <i class="fas fa-quote-left text-6xl text-bronze-500/20 absolute -top-12 left-0 -z-10"></i>
+                        <h2 class="text-4xl md:text-5xl font-serif text-emerald-950 mb-12 italic leading-tight">
+                            "Un joyau rural niché au nord du Lot,<br>entre <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 to-bronze-600">terres
+                                et pierres</span>."
+                        </h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                            <p class="text-base text-emerald-900/70 leading-loose">
+                                <strong class="text-emerald-900 font-medium">Saint-Hilaire</strong> est une commune
+                                rare du Ségala Lotois. Terre de contrastes au climat montagnard, elle est drainée par
+                                les eaux vives du Veyre.
+                            </p>
+                            <p class="text-base text-emerald-900/70 leading-loose">
+                                Ici, le temps semble ralentir. Chaque pierre, chaque fleur, chaque sentier raconte une
+                                histoire que nous avons à cœur de préserver.
+                            </p>
+                        </div>
+
+                        <div class="flex justify-center items-center gap-16 pt-16 mt-12 border-t border-emerald-900/5">
+                            <div class="text-center group">
+                                <div
+                                    class="text-4xl font-serif text-bronze-500 group-hover:text-emerald-900 transition-colors duration-500">
+                                    Ségala</div>
+                                <div class="text-[0.6rem] uppercase tracking-[0.2em] text-emerald-900/40 mt-2">Terroir
+                                </div>
+                            </div>
+                            <div class="w-[1px] h-12 bg-emerald-900/10"></div>
+                            <div class="text-center group">
+                                <div
+                                    class="text-4xl font-serif text-bronze-500 group-hover:text-emerald-900 transition-colors duration-500">
+                                    Lot</div>
+                                <div class="text-[0.6rem] uppercase tracking-[0.2em] text-emerald-900/40 mt-2">
+                                    Département</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+
+        <!-- SECTION: PATRIMOINE BÂTI -->
+        <div id="section-bati" class="page-section hidden">
+
+            <!-- Spacer to replace header margin -->
+            <div class="h-24 w-full bg-emerald-950/5"></div>
+
+            <main class="max-w-6xl mx-auto px-4 py-12">
+                <div class="space-y-40">
+                    <!-- Item 1 -->
+                    <div class="flex flex-col md:flex-row gap-20 items-center reveal">
+                        <div class="md:w-1/2 ">
+                            <div
+                                class="relative group aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                                <img src="images/moulin.webp"
+                                    class="w-full h-full object-cover hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                                    alt="Moulin"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=800'">
+                                <div
+                                    class="absolute inset-0 border-[0.5px] border-white/20 m-4 pointer-events-none z-20">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 space-y-8">
+                            <h3 id="bati-moulins" class="text-5xl font-serif text-emerald-950 italic leading-tight">Les
+                                Moulins<br>du
+                                Veyre</h3>
+                            <div class="w-16 h-[1px] bg-bronze-500"></div>
+                            <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
+                                Jadis essentiels à la vie agricole, les moulins jalonnent le cours du Veyre. Ces
+                                bâtisses en pierre, souvent envahies par la végétation, racontent l'époque où chaque
+                                grain était moulu localement. L'association œuvre à leur recensement précis pour
+                                préserver cette ingénierie rurale.
+                            </p>
+                            <ul class="space-y-4 mt-8 text-emerald-800/80 text-sm font-medium tracking-wide">
+                                <li class="flex items-center gap-4"><span
+                                        class="w-1.5 h-1.5 bg-bronze-500 rounded-full"></span>
+                                    Architecture hydraulique traditionnelle</li>
+                                <li class="flex items-center gap-4"><span
+                                        class="w-1.5 h-1.5 bg-bronze-500 rounded-full"></span>
+                                    Sites pittoresques en bord de rivière</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Item 2 (Reversed) -->
+                    <div class="flex flex-col md:flex-row-reverse gap-20 items-center reveal">
+                        <div class="md:w-1/2">
+                            <div
+                                class="relative group aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                                <img src="images/four.webp"
+                                    class="w-full h-full object-cover hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                                    alt="Four"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544070078-a212eda27b49?auto=format&fit=crop&q=80&w=800'">
+                                <div
+                                    class="absolute inset-0 border-[0.5px] border-white/20 m-4 pointer-events-none z-20">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 space-y-8">
+                            <h3 id="bati-fours" class="text-5xl font-serif text-emerald-950 italic leading-tight">Les
+                                Fours<br>à Pain
+                            </h3>
+                            <div class="w-16 h-[1px] bg-bronze-500"></div>
+                            <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
+                                Véritables cœurs battants des hameaux, les fours à pain symbolisaient le partage.
+                                Plusieurs fours communaux ont été patiemment restaurés et s'embrasent à nouveau lors des
+                                fêtes de village, perpétuant des gestes séculaires et rassemblant les habitants autour
+                                du pain chaud.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+
+        <!-- SECTION: BOTANIQUE -->
+        <div id="section-botanique" class="page-section hidden bg-transparent">
+            <header class="h-[70vh] relative flex items-center justify-center bg-emerald-950 overflow-hidden">
+                <div class="absolute inset-0">
+                    <img src="images/segala_chataigneraie_header.png"
+                        class="w-full h-full object-cover opacity-60 animate-slow-zoom hover-zoom-img"
+                        alt="Paysage Châtaigneraie Ségala"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2000'">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-alabaster-50"></div>
+                </div>
+                <div class="relative z-10 text-center max-w-4xl px-4 mt-20">
+                    <span
+                        class="text-emerald-800 font-bold tracking-[0.3em] text-lg uppercase mb-6 block border-b border-emerald-800/20 pb-4 inline-block">Biodiversité</span>
+                    <h2 class="font-serif text-6xl md:text-8xl text-emerald-950 mb-8 italic font-medium leading-none">
+                        Fleurs Sauvages</h2>
+                    <p class="text-xl text-emerald-800 font-light max-w-2xl mx-auto">Partez à la découverte des joyaux
+                        floraux qui égayent nos campagnes au fil des saisons. Des orchidées délicates aux plantes
+                        médicinales ancestrales, notre patrimoine botanique local est d'une richesse insoupçonnée.</p>
+                </div>
+            </header>
+
+            <div class="max-w-7xl mx-auto px-4 -mt-20 relative z-20 mb-20">
+                <!-- Intro Blurb -->
+                <div
+                    class="bg-white p-10 md:p-14 rounded-2xl shadow-xl border border-emerald-100 max-w-5xl mx-auto mb-20 text-center reveal relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-5 text-emerald-900 text-9xl font-serif italic">"
+                    </div>
+                    <p class="text-2xl font-serif text-gray-700 italic leading-relaxed relative z-10">Au printemps, nos
+                        talus et sous-bois se transforment en une galerie d'art naturel, où les orchidées sauvages
+                        déploient leurs formes fascinantes.</p>
+                    <div class="mt-8 flex justify-center gap-2">
+                        <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                        <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                        <div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECTION 1 (Vert) : Orchidées Sauvages -->
+            <section class="py-20 bg-[#d0e6d6]">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 id="botanique-orchidees" class="text-emerald-900 text-3xl font-serif font-bold">Les
+                            Orchidées Sauvages : Joyaux
+                            Printaniers</h3>
+                        <span class="hidden md:inline-block text-sm text-gray-500 italic">Cliquez sur les images pour
+                            agrandir</span>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- Orchis Mâle -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Orchis Mâle')">
+                                <img src="images/fleur_orchis_male.webp"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Orchis Mâle"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558293842-c0fd3db8a8b6?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">26
+                                    Avril</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Orchis Mâle</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Visible dès la fin avril, cette
+                                    orchidée aux tons
+                                    pourprés forme des épis denses et élancés. Son nom latin <em>Orchis mascula</em>
+                                    évoque
+                                    sa silhouette robuste. Elle préfère les prairies semi-ombragées et les lisières de
+                                    forêt.</p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                            <h4 class="font-serif text-3xl italic text-emerald-950 mb-6">Orchis Mâle</h4>
+                            <div class="w-12 h-0.5 bg-emerald-300/50 mb-6"></div>
+                            <p class="text-sm text-gray-600 mt-2">Visible dès la fin avril, cette orchidée aux tons
+                                pourprés forme des épis denses et élancés. Son nom latin <em>Orchis mascula</em>
+                                évoque
+                                sa silhouette robuste. Elle préfère les prairies semi-ombragées et les lisières de
+                                forêt.</p>
+                        </div>
+                    </div>
+
+                    <!-- Orchis Brûlé -->
+                    <div
+                        class="bg-white rounded-xl shadow-xl shadow-emerald-900/5 border border-white/60 hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-500 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                        <div class="w-full md:w-1/2 relative cursor-zoom-in h-64 md:h-auto overflow-hidden"
+                            onclick="openLightbox(this.querySelector('img').src, 'Orchis Brûlé')">
+                            <!-- Orchis Brûlé -->
+                            <div
+                                class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                                <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                    onclick="openLightbox(this.querySelector('img').src, 'Orchis Brûlé')">
+                                    <img src="images/fleur_orchis_brule.jpg"
+                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                        alt="Orchis Brûlé"
+                                        onerror="this.onerror=null; this.src='https://via.placeholder.com/400x500?text=Orchis+Brûlé'">
+                                </div>
+                                <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                    <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">14
+                                        Mai</span>
+                                    <h4
+                                        class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                        Orchis Brûlé</h4>
+                                    <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                    <p class="text-sm text-emerald-900/60 leading-loose">Fleurissant mi-mai, cette
+                                        orchidée tire son nom de
+                                        ses fleurs supérieures qui semblent avoir été noircies par le feu. Son parfum
+                                        subtil de vanille attire les pollinisateurs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            </section>
+
+            <!-- SECTION 2 (Standard) : Diversité Orchidées -->
+            <section class="py-20">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 class="text-emerald-900 text-3xl font-serif font-bold">La Diversité des Orchidées Locales
+                        </h3>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- Céphalanthère à longues feuilles -->
+                        <!-- Céphalanthère à longues feuilles -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Céphalanthère à longues feuilles')">
+                                <img src="images/fleur_cephalanthere.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Céphalanthère à longues feuilles"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596720426673-e4c196f7c8ec?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">Mai -
+                                    Juin</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Céphalanthère</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Cette élégante orchidée blanche se
+                                    distingue par
+                                    sa hampe florale élancée. Elle affectionne les sous-bois clairs et illumine les
+                                    zones ombragées de nos bois.</p>
+                            </div>
+                        </div>
+
+                        <!-- Orchis Bouc -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Orchis Bouc')">
+                                <img src="images/fleur_orchis_bouc.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Orchis Bouc"
+                                    onerror="this.onerror=null; this.src='https://via.placeholder.com/400x500?text=Orchis+Bouc'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">20
+                                    Juin</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Orchis Bouc</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Une orchidée spectaculaire par sa
+                                    taille et son odeur caractéristique. Ses longs pétales en lanières lui donnent un
+                                    aspect échevelé unique.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3 (Vert) : Renonculacées -->
+            <!-- SECTION 3 (Vert) : Renonculacées -->
+            <section class="py-20 bg-emerald-900/5">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 class="text-emerald-900 text-3xl font-serif font-bold">Les Renonculacées : Éclats de Couleur
+                            Printaniers
+                        </h3>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- Ficaire fausse renoncule -->
+                        <div
+                            class="bg-white rounded-xl shadow-xl shadow-emerald-900/5 border border-white/60 hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-500 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-64 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Ficaire fausse renoncule')">
+                                <img src="images/fleur_ficaire.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Ficaire fausse renoncule"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618335829731-599e97c12656?auto=format&fit=crop&q=80&w=400'">
+                                <div
+                                    class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+                                    5 Avril</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                                <h4 class="font-serif text-3xl italic text-emerald-950 mb-6">Ficaire fausse renoncule
+                                </h4>
+                                <div class="w-12 h-0.5 bg-emerald-300/50 mb-6"></div>
+                                <p class="text-sm text-gray-600 mt-2">Dès début avril, cette petite fleur dorée tapisse
+                                    les
+                                    sous-bois humides et les bords de ruisseaux. Facilement identifiable par ses 8 à 12
+                                    pétales jaune vif et brillants, elle forme souvent des colonies étendues qui
+                                    illuminent
+                                    le sol forestier au sortir de l'hiver.</p>
+                            </div>
+                        </div>
+
+                        <!-- Ancolie -->
+                        <div
+                            class="bg-white rounded-xl shadow-xl shadow-emerald-900/5 border border-white/60 hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-500 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-64 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Ancolie')">
+                                <img src="images/fleur_ancolie.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Ancolie"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1590483259586-7a7051b8546a?auto=format&fit=crop&q=80&w=400'">
+                                <div
+                                    class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+                                    24 Mai</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                                <h4 class="font-serif text-3xl italic text-emerald-950 mb-6">Ancolie</h4>
+                                <div class="w-12 h-0.5 bg-emerald-300/50 mb-6"></div>
+                                <p class="text-sm text-gray-600 mt-2">Fleurissant fin mai, l'ancolie enchante par ses
+                                    fleurs
+                                    bleues ou violettes aux éperons recourbés caractéristiques. Cette renonculacée
+                                    élégante,
+                                    aussi appelée "gant de Notre-Dame", pousse dans les prairies fraîches et les
+                                    lisières
+                                    forestières où elle attire de nombreux pollinisateurs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 4 (Standard) : Asphodèle -->
+            <section class="py-20">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 class="text-emerald-900 text-3xl font-serif font-bold">L'Asphodèle : Un Patrimoine Botanique
+                            Menacé
+                        </h3>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- Asphodèle -->
+                        <div
+                            class="bg-white rounded-xl shadow-xl shadow-emerald-900/5 border border-white/60 hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-500 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-64 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Asphodèle')">
+                                <img src="images/fleur_asphodele.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Asphodèle"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1623842848900-54a86782ff19?auto=format&fit=crop&q=80&w=400'">
+                                <div
+                                    class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+                                    26 Mai</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                                <h4 class="font-serif text-3xl italic text-emerald-950 mb-6">Asphodèle</h4>
+                                <div class="w-12 h-0.5 bg-emerald-300/50 mb-6"></div>
+                                <h5 class="font-serif text-sm font-bold text-emerald-700 mt-1 mb-2">Un Patrimoine
+                                    Botanique
+                                    Menacé</h5>
+                                <div class="text-sm text-gray-600 space-y-2">
+                                    <p>L'asphodèle, reconnaissable à sa hampe florale élancée portant de nombreuses
+                                        fleurs
+                                        blanches étoilées, représente un élément emblématique mais de plus en plus rare
+                                        de
+                                        notre flore locale. Cette liliacée majestueuse fleurit généralement fin mai,
+                                        illuminant de ses épis blancs les prairies naturelles.</p>
+                                    <p>Autrefois commune dans les prairies de fauche du Ségala, cette plante vivace a
+                                        considérablement régressé ces dernières décennies. Ses tubercules racinaires,
+                                        similaires à ceux du dahlia, supportent mal le travail mécanique des sols
+                                        agricoles
+                                        modernes. Les labours et autres pratiques intensives ont ainsi progressivement
+                                        fait
+                                        disparaître cette espèce de nombreuses parcelles.</p>
+                                    <p class="font-medium text-emerald-800">En raison de son déclin marqué, il est
+                                        vivement
+                                        recommandé de ne pas cueillir l'asphodèle afin de préserver les populations
+                                        restantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 5 (Vert) : Plantes Médicinales -->
+            <section class="py-20 bg-[#d0e6d6]">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 id="botanique-medicinales" class="text-emerald-900 text-3xl font-serif font-bold">Plantes
+                            aux Vertus Médicinales
+                            Traditionnelles
+                        </h3>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- Reine des prés -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Reine des prés')">
+                                <img src="images/fleur_reine_des_pres.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Reine des prés"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629633596707-160533038668?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">Été</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Reine des prés</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Cette grande plante des lieux
+                                    humides dresse ses plumes vaporeuses de fleurs blanc crème. Elle est célèbre pour
+                                    contenir de l'acide salicylique.</p>
+                            </div>
+                        </div>
+
+                        <!-- Plantain majeur -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Plantain majeur')">
+                                <img src="images/fleur_plantain_majeur.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Plantain majeur"
+                                    onerror="this.onerror=null; this.src='https://plus.unsplash.com/premium_photo-1675713876007-88544df6244f?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">13
+                                    Mai</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Plantain majeur</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                            </div>
+                        </div>
+
+                        <!-- Millepertuis -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Millepertuis')">
+                                <img src="images/fleur_millepertuis.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Millepertuis"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1624536735528-7634f1bf5198?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">Juin</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Millepertuis</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Surnommé "l'herbe de la
+                                    Saint-Jean", le millepertuis s'épanouit au solstice d'été. Ses fleurs jaune d'or
+                                    perforées contiennent une huile rouge caractéristique.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 6 (Standard) : Espèces Protégées -->
+            <section class="py-20">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 class="text-emerald-900 text-3xl font-serif font-bold">Espèces Protégées et Rares</h3>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- Érythrone dent-de-chien -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Érythrone dent-de-chien')">
+                                <img src="images/fleur_erythrone.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Érythrone dent-de-chien"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588602656911-37d45366432b?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">24
+                                    Mars</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Érythrone dent-de-chien</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Une des premières fleurs du
+                                    printemps. Ses pétales roses recourbés et ses feuilles tachetées en font une espèce
+                                    remarquable des sous-bois frais.</p>
+                            </div>
+                        </div>
+
+                        <!-- Scille à deux feuilles -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Scille à deux feuilles')">
+                                <img src="images/fleur_scille.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Scille à deux feuilles"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1615560410756-347589d8F51b?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">5
+                                    Mars</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Scille à deux feuilles</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Petite étoile bleue des sous-bois,
+                                    la scille annonce la fin de l'hiver. Elle forme souvent des tapis bleutés
+                                    spectaculaires avec les anémones.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 7 (Vert) : Fleurs Estivales -->
+            <section class="py-20 bg-emerald-900/5">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 class="text-emerald-900 text-3xl font-serif font-bold">Fleurs des Prairies Estivales</h3>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- 13. Aquillée millefeuille -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Achillée millefeuille')">
+                                <img src="images/fleur_achillee.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Achillée millefeuille"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596720426673-e4c196f7c8ec?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">17
+                                    Juin</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Achillée millefeuille</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Plante médicinale aux multiples
+                                    vertus, elle prospère dans les prairies ensoleillées.</p>
+                            </div>
+                        </div>
+
+                        <!-- 14. Centaurée jacée -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Centaurée jacée')">
+                                <img src="images/fleur_centauree.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Centaurée jacée"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629813567705-726ff3857508?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">18
+                                    Juin</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Centaurée jacée</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Commune dans nos prairies, cette
+                                    "tête de moineau" aux fleurs purpurines attire une multitude de papillons tout
+                                    l'été.</p>
+                            </div>
+                        </div>
+
+                        <!-- New: Épervière -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Épervière')">
+                                <img src="images/fleur_eperviere.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Épervière"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596554522437-14811a2f9011?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">Été</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Épervière</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Avec ses fleurs jaunes semblables à
+                                    celles du pissenlit, elle colore les talus secs. Son nom rappelle qu'on croyait
+                                    autrefois qu'elle affûtait la vue des éperviers.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 8 (Standard) : Fleurs Printanières -->
+            <section class="py-20">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 class="text-emerald-900 text-3xl font-serif font-bold">Les Fleurs Printanières des Sous-bois
+                        </h3>
+                    </div>
+
+                    <div class="space-y-16">
+                        <!-- 1. Lathrée clandestine -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Lathrée clandestine')">
+                                <img src="images/fleur_lathree.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Lathrée clandestine"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1678216335905-24e073c66f54?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">24
+                                    Mars</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Lathrée clandestine</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Plante parasite aux étranges fleurs
+                                    violettes qui sortent directement de terre au pied des peupliers et des saules en
+                                    zones humides.</p>
+                            </div>
+                        </div>
+
+                        <!-- 4. Anémone sylvie -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Anémone sylvie')">
+                                <img src="images/fleur_anemone.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    alt="Anémone sylvie"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1586944322434-d02f92882269?auto=format&fit=crop&q=80&w=400'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span
+                                    class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">Printemps</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Anémone sylvie</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Tapissant les sous-bois de ses
+                                    étoiles blanches dès mars, elle est l'annonciatrice du printemps dans nos forêts de
+                                    feuillus.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SECTION 9 (Vert) : Calendrier -->
+            <section class="py-20 bg-emerald-900/5">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 id="botanique-calendrier" class="text-emerald-900 text-3xl font-serif font-bold">Calendrier
+                            de Floraison 2026</h3>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-12 reveal">
+                        <p class="text-gray-600 mb-8 italic text-sm">Dates indicatives sujettes aux variations
+                            climatiques.
+                        </p>
+
+                        <div class="relative border-l-4 border-emerald-200 ml-3 md:ml-6 space-y-12">
+
+                            <!-- Mars -->
+                            <div class="relative pl-8 md:pl-12">
+                                <div
+                                    class="absolute -left-3 top-0 w-6 h-6 bg-emerald-600 rounded-full border-4 border-white shadow-md">
+                                </div>
+                                <h4 class="font-serif text-xl font-bold text-emerald-900 mb-4">Mars</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">Début Mars</span>
+                                        <span class="text-gray-700">Anémone sylvie</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">24 Mars</span>
+                                        <span class="text-gray-700">Lathrée clandestine, Érythrone dent-de-chien, Scille
+                                            à
+                                            deux feuilles</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Avril - Mai -->
+                            <div class="relative pl-8 md:pl-12">
+                                <div
+                                    class="absolute -left-3 top-0 w-6 h-6 bg-emerald-600 rounded-full border-4 border-white shadow-md">
+                                </div>
+                                <h4 class="font-serif text-xl font-bold text-emerald-900 mb-4">Avril - Mai</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">5 Avril</span>
+                                        <span class="text-gray-700">Ficaire fausse renoncule</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">26 Avril</span>
+                                        <span class="text-gray-700">Orchis mâle</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">1 Mai</span>
+                                        <span class="text-gray-700">Stellaire holostée</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">13 Mai</span>
+                                        <span class="text-gray-700">Silène enflé, Plantain majeur</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">14 Mai</span>
+                                        <span class="text-gray-700">Orchis brûlé</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Fin Mai - Juin -->
+                            <div class="relative pl-8 md:pl-12">
+                                <div
+                                    class="absolute -left-3 top-0 w-6 h-6 bg-emerald-600 rounded-full border-4 border-white shadow-md">
+                                </div>
+                                <h4 class="font-serif text-xl font-bold text-emerald-900 mb-4">Fin Mai - Juin</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">24 Mai</span>
+                                        <span class="text-gray-700">Ancolie</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">26 Mai</span>
+                                        <span class="text-gray-700">Asphodèle</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">17 Juin</span>
+                                        <span class="text-gray-700">Achillée millefeuille</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">18 Juin</span>
+                                        <span class="text-gray-700">Centaurée jacée</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">20 Juin</span>
+                                        <span class="text-gray-700">Orchis bouc</span>
+                                    </li>
+                                    <li class="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
+                                        <span class="font-bold text-emerald-700 min-w-[100px]">23 Juin</span>
+                                        <span class="text-gray-700">Digitale</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Autres Fleurs -->
+                </div>
+            </section>
+
+            <!-- SECTION 10 (Standard) : Autres Fleurs -->
+            <section class="py-20">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12 pl-4 border-l-4 border-emerald-500 reveal">
+                        <h3 class="text-emerald-900 text-2xl font-serif font-bold">Autres Fleurs Remarquables</h3>
+                    </div>
+
+                    <div class="space-y-16">
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- 7. Stellaire holostée -->
+                        <div
+                            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-64 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Stellaire holostée')">
+                                <img src="images/fleur_stellaire.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Stellaire holostée"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1620885233077-508b49528659?auto=format&fit=crop&q=80&w=400'">
+                                <div
+                                    class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+                                    1 Mai</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                                <h4 class="font-serif text-3xl italic text-emerald-950 mb-6">Stellaire holostée</h4>
+                                <div class="w-12 h-0.5 bg-emerald-300/50 mb-6"></div>
+                            </div>
+                        </div>
+
+                        <!-- 8. Silène enflé -->
+                        <div
+                            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group reveal flex flex-col md:flex-row-reverse min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-64 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Silène enflé')">
+                                <img src="images/fleur_silene.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Silène enflé"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1621966030953-659f1c750435?auto=format&fit=crop&q=80&w=400'">
+                                <div
+                                    class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+                                    13 Mai</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                                <h4 class="font-serif text-3xl italic text-emerald-950 mb-6">Silène enflé</h4>
+                                <div class="w-12 h-0.5 bg-emerald-300/50 mb-6"></div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- 17. Digitale -->
+                        <div
+                            class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-64 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Digitale')">
+                                <img src="images/fleur_digitale.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                    alt="Digitale"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1594916894086-63d03874ce52?auto=format&fit=crop&q=80&w=400'">
+                                <div
+                                    class="absolute top-2 right-2 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg">
+                                    23 Juin</div>
+                            </div>
+                            <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
+                                <h4 class="font-serif text-3xl italic text-emerald-950 mb-6">Digitale</h4>
+                                <div class="w-12 h-0.5 bg-emerald-300/50 mb-6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- SECTION: PATRIMOINE HUMAIN -->
+        <div id="section-humain" class="page-section hidden bg-stone-100">
+            <div class="grid lg:grid-cols-2 min-h-screen">
+                <div class="bg-stone-200 lg:h-auto h-96 relative overflow-hidden">
+                    <img src="images/section_humain_histoires.png"
+                        class="absolute inset-0 w-full h-full object-cover grayscale opacity-90"
+                        alt="Mains travaillant">
+                    <div class="absolute inset-0 bg-stone-900/10"></div>
+                </div>
+                <div class="p-12 lg:p-24 flex flex-col justify-center bg-[#fdfbf7]">
+                    <span
+                        class="text-amber-700 font-bold tracking-widest text-sm uppercase mb-6 flex items-center gap-2">
+                        <span class="w-8 h-[1px] bg-amber-700"></span> Mémoire Orale
+                    </span>
+                    <h2 id="humain-recits" class="font-serif text-5xl md:text-6xl text-stone-900 mb-12 italic">Des
+                        histoires de vie</h2>
+
+                    <div class="space-y-16">
+                        <blockquote class="relative pl-8 border-l-4 border-amber-300 reveal">
+                            <i class="fas fa-quote-left text-4xl text-amber-200 absolute -top-6 left-4 opacity-50"></i>
+                            <p class="text-xl md:text-2xl font-serif text-stone-700 italic mb-6 leading-relaxed">"Avoir
+                                20 ans en période de guerre cela marque toute une vie. Ma génération a été meurtrie par
+                                ce drame..."</p>
+                            <footer class="flex flex-wrap items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-stone-300 overflow-hidden">
+                                    <img src="images/bernadette_20ans.jpg" class="w-full h-full object-cover" alt="B">
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-stone-900 uppercase tracking-wide">Bernadette
+                                        Benne</div>
+                                    <div class="text-xs text-stone-500">Centenaire du village</div>
+                                </div>
+                                <a href="bernadette_benne.html"
+                                    class="ml-auto text-xs font-bold text-emerald-700 bg-emerald-100 hover:bg-emerald-200 px-3 py-1 rounded-full transition-colors flex items-center gap-1 group">
+                                    Lire le témoignage <i
+                                        class="fas fa-book-open group-hover:translate-x-0.5 transition-transform"></i>
+                                </a>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="relative pl-8 border-l-4 border-amber-300 reveal delay-100">
+                            <p class="text-xl md:text-2xl font-serif text-stone-700 italic mb-6 leading-relaxed">"Le
+                                Ségala était la terre du seigle, un pays rude. On en faisait un pain noir qui
+                                nourrissait les familles nombreuses. C'était dur, mais il y avait de la solidarité."</p>
+                            <footer class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-stone-300 overflow-hidden"><img
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100"
+                                        class="w-full h-full object-cover"></div>
+                                <div>
+                                    <div class="text-sm font-bold text-stone-900 uppercase tracking-wide">Marie-Thérèse
+                                    </div>
+                                    <div class="text-xs text-stone-500">Habitante du village</div>
+                                </div>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="relative pl-8 border-l-4 border-amber-300 reveal delay-200">
+                            <p class="text-xl md:text-2xl font-serif text-stone-700 italic mb-6 leading-relaxed">"Les
+                                foires étaient les grands moments de l'année. On y vendait les bêtes, on y prenait des
+                                nouvelles... tout le canton s'y retrouvait."</p>
+                            <footer class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-stone-300 overflow-hidden flex items-center justify-center text-stone-500 font-bold">
+                                    J</div>
+                                <div>
+                                    <div class="text-sm font-bold text-stone-900 uppercase tracking-wide">Jean</div>
+                                    <div class="text-xs text-stone-500">Agriculteur retraité</div>
+                                </div>
+                            </footer>
+                        </blockquote>
+                    </div>
+
+                    <div
+                        class="mt-20 bg-white p-8 rounded-xl shadow-lg border border-stone-200 reveal flex items-center gap-6">
+                        <div class="bg-amber-100 p-4 rounded-full text-amber-800"><i
+                                class="fas fa-microphone-alt text-2xl"></i></div>
+                        <div>
+                            <h3 id="humain-collectage" class="font-bold text-lg mb-1 text-stone-900">Projet de
+                                Collectage</h3>
+                            <p class="text-stone-600 text-sm">L'association enregistre ces témoignages précieux.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: ASSOCIATION & CONTACT -->
+        <div id="section-association" class="page-section hidden">
+            <div class="bg-emerald-900 text-white py-32 text-center relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5">
+                </div>
+                <h2 class="font-serif text-5xl md:text-6xl italic mb-6 relative z-10">L'Association</h2>
+                <p class="text-emerald-200/80 text-xl max-w-2xl mx-auto relative z-10 font-light">Rejoignez-nous pour
+                    préserver, restaurer et faire vivre notre héritage commun.</p>
+            </div>
+            <main class="max-w-6xl mx-auto px-4 py-20 -mt-24 relative z-20">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <!-- About -->
+                    <div
+                        class="bg-white p-10 md:p-12 rounded-2xl shadow-xl reveal h-full border-t-4 border-emerald-500">
+                        <h3 class="font-serif text-3xl text-emerald-900 font-bold mb-8">Notre Mission</h3>
+                        <p class="text-gray-600 leading-loose mb-10 text-lg">
+                            Fondée par des passionnés, l'association <span class="text-emerald-700 font-semibold">"Saint
+                                Hilaire, Mémoire et Patrimoine"</span> œuvre bénévolement pour la sauvegarde de
+                            l'identité locale.
+                        </p>
+                        <ul class="space-y-6 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="bg-emerald-100 p-2 rounded-full mr-4 text-emerald-600"><i
+                                        class="fas fa-search"></i></div>
+                                <div><span class="font-bold block text-emerald-900">Inventorier</span>Recenser le petit
+                                    patrimoine bâti et naturel.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-emerald-100 p-2 rounded-full mr-4 text-emerald-600"><i
+                                        class="fas fa-hammer"></i></div>
+                                <div><span class="font-bold block text-emerald-900">Restaurer</span>Entretenir et
+                                    rénover les édifices menacés.</div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="bg-emerald-100 p-2 rounded-full mr-4 text-emerald-600"><i
+                                        class="fas fa-users"></i></div>
+                                <div><span class="font-bold block text-emerald-900">Transmettre</span>Organiser des
+                                    événements culturels et pédagogiques.</div>
+                            </li>
+                        </ul>
+                        <div class="mt-10 pt-8 border-t border-gray-100">
+                            <a href="#"
+                                class="inline-block bg-emerald-100 text-emerald-800 px-6 py-3 rounded-lg font-bold hover:bg-emerald-200 transition-colors">📄
+                                Télécharger le bulletin d'adhésion</a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-emerald-50 p-10 md:p-12 rounded-2xl shadow-xl reveal delay-100 h-full">
+                        <h3 class="font-serif text-3xl text-emerald-900 font-bold mb-8">Nous écrire</h3>
+                        <form class="space-y-6"
+                            onsubmit="event.preventDefault(); alert('Message envoyé avec succès (simulation)'); this.reset();">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label
+                                        class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Nom</label>
+                                    <input type="text" required
+                                        class="w-full px-4 py-3 rounded-lg border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white"
+                                        placeholder="Votre nom">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Email</label>
+                                    <input type="email" required
+                                        class="w-full px-4 py-3 rounded-lg border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white"
+                                        placeholder="Email@exemple.com">
+                                </div>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Sujet</label>
+                                <select
+                                    class="w-full px-4 py-3 rounded-lg border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white">
+                                    <option>Demande d'information</option>
+                                    <option>Devenir bénévole</option>
+                                    <option>Signaler un élément de patrimoine</option>
+                                    <option>Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Message</label>
+                                <textarea rows="5" required
+                                    class="w-full px-4 py-3 rounded-lg border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white"
+                                    placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-emerald-700 text-white font-bold py-4 rounded-lg hover:bg-emerald-800 transition-all shadow-lg shadow-emerald-700/20 transform hover:-translate-y-1">Envoyer
+                                le message</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- SECTION: BLOG -->
+        <div id="section-blog" class="page-section hidden bg-gray-50 min-h-screen">
+            <header class="py-24 px-4 text-center bg-white border-b border-gray-200">
+                <span class="text-emerald-600 font-bold tracking-widest text-xs uppercase mb-4 block">Actualités</span>
+                <h2 class="font-serif text-5xl text-gray-900 italic mb-4">Agenda & Blog</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Suivez la vie de l'association et ne manquez aucun événement.
+                </p>
+            </header>
+            <main class="max-w-6xl mx-auto px-4 py-16">
+                <div class="grid md:grid-cols-3 gap-10">
+                    <!-- Event 1 -->
+                    <article
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col reveal group cursor-pointer">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="images/moulin.webp"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-xs font-bold shadow text-gray-900">
+                                15 SEPT 2025
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col relative">
+                            <h3
+                                class="font-serif text-2xl font-bold text-emerald-900 mb-3 group-hover:text-emerald-700 transition-colors">
+                                Journées du Patrimoine</h3>
+                            <p class="text-gray-600 text-sm mb-6 flex-1 leading-relaxed">Circuit découverte des moulins
+                                avec démonstration de mouture et dégustation de pain local cuit au four communal.</p>
+                            <div class="flex items-center text-emerald-600 text-sm font-bold uppercase tracking-wider">
+                                Lire plus <i
+                                    class="fas fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Event 2 -->
+                    <article
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 reveal delay-100 flex flex-col group cursor-pointer">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="images/fleur_intro.webp"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=800'">
+                            <div
+                                class="absolute top-4 left-4 bg-gray-200 px-3 py-1 rounded text-xs font-bold shadow text-gray-600">
+                                12 JUIN 2025
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <h3 class="font-serif text-2xl font-bold text-gray-800 mb-3">Sortie Orchidées</h3>
+                            <p class="text-gray-600 text-sm mb-6 flex-1 leading-relaxed">Une vingtaine de participants
+                                pour cette promenade matinale sur les coteaux calcaires. Bilan : 8 espèces observées !
+                            </p>
+                            <div
+                                class="flex items-center text-gray-500 group-hover:text-amber-600 transition-colors text-sm font-bold uppercase tracking-wider">
+                                Voir le compte-rendu <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Empty State -->
+                    <div
+                        class="border-2 border-dashed border-gray-300 rounded-2xl flex flex-col items-center justify-center p-8 text-center bg-gray-50 hover:bg-gray-100 transition-colors reveal delay-200">
+                        <div
+                            class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-emerald-200">
+                            <i class="far fa-calendar-plus text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-500 mb-2">Bientôt...</h4>
+                        <p class="text-gray-400 text-sm">D'autres sorties et conférences sont en préparation.</p>
+                        <button class="mt-6 text-emerald-600 font-bold text-sm hover:underline">S'inscrire à la
+                            newsletter</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 text-gray-400 pt-24 pb-12 border-t-[5px] border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-16 border-b border-gray-800 pb-16">
+            <div class="col-span-1 md:col-span-2 pr-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="images/logo_sainthilaire46.jpg"
+                        class="h-10 opacity-80 grayscale hover:grayscale-0 transition-all rounded"
+                        onerror="this.style.display='none'">
+                    <h4 class="text-white font-serif text-2xl italic">Saint Hilaire</h4>
+                </div>
+                <p class="text-sm leading-loose max-w-md mb-8 text-gray-500">
+                    Notre association "Mémoire et Patrimoine" œuvre au quotidien pour recenser, protéger et valoriser
+                    les richesses historiques et naturelles de notre commune.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="far fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-8 border-b border-gray-800 pb-2 inline-block">
+                    Navigation</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" onclick="showSection('home')"
+                            class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-[8px] opacity-50"></i> Accueil</a></li>
+                    <li><a href="#" onclick="showSection('bati')"
+                            class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-[8px] opacity-50"></i> Patrimoine Bâti</a></li>
+                    <li><a href="#" onclick="showSection('botanique')"
+                            class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-[8px] opacity-50"></i> Botanique</a></li>
+                    <li><a href="#" onclick="showSection('humain')"
+                            class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-[8px] opacity-50"></i> Patrimoine Humain</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-8 border-b border-gray-800 pb-2 inline-block">
+                    Légal & Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" onclick="showSection('association')"
+                            class="hover:text-emerald-400 transition-colors">Mentions Légales</a></li>
+                    <li><a href="#" onclick="showSection('association')"
+                            class="hover:text-emerald-400 transition-colors">Politique de Confidentialité</a></li>
+                    <li><a href="#" onclick="showSection('association')"
+                            class="bg-emerald-900/50 text-emerald-400 px-3 py-1 rounded hover:bg-emerald-800 transition-colors inline-block mt-2">Adhérer
+                            à l'asso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 max-w-7xl mx-auto px-4">
+            <p>&copy; 2025 Saint-Hilaire Mémoire & Patrimoine. Tous droits réservés.</p>
+            <p class="mt-2 md:mt-0">Fait avec <i class="fas fa-heart text-red-900 mx-1"></i> pour le Lot</p>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox"
+        class="fixed inset-0 z-[100] bg-black/95 hidden flex justify-center items-center p-4 backdrop-blur-md opacity-0 transition-opacity duration-300"
+        onclick="closeLightbox()">
+        <button
+            class="absolute top-6 right-6 text-white/50 hover:text-white text-5xl transition-colors focus:outline-none z-50">&times;</button>
+        <div class="max-w-6xl max-h-[90vh] flex flex-col items-center relative">
+            <img id="lightbox-img" src="" class="max-w-full max-h-[80vh] object-contain rounded shadow-2xl"
+                onclick="event.stopPropagation()">
+            <div class="mt-6 bg-black/50 backdrop-blur px-6 py-3 rounded-full border border-white/10">
+                <p id="lightbox-caption" class="text-white font-serif italic text-lg tracking-wide"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Navigation Logic
+        function showSection(sectionId, elementId = null) {
+            const isJump = !!elementId;
+
+            // Handle visibility immediately for jump to avoid flash
+            document.querySelectorAll('.page-section').forEach(el => {
+                if (el.id === 'section-' + sectionId) {
+                    el.classList.remove('hidden');
+
+                    if (isJump) {
+                        el.classList.add('active'); // No fade in for jump
+                    } else {
+                        // Smooth fade in for normal navigation
+                        setTimeout(() => el.classList.add('active'), 10);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                } else {
+                    el.classList.remove('active');
+                    if (isJump) {
+                        el.classList.add('hidden'); // Immediate hide for jump
+                    } else {
+                        setTimeout(() => el.classList.add('hidden'), 500); // Wait for fade out
+                    }
+                }
+            });
+
+            // Update Navbar Active State
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-emerald-900', 'font-bold');
+                link.classList.add('text-gray-600');
+            });
+
+            // Highlight current
+            const currentNav = document.getElementById('nav-' + sectionId);
+            if (currentNav) {
+                currentNav.classList.remove('text-gray-600');
+                currentNav.classList.add('text-emerald-900', 'font-bold');
+            }
+
+            // Scroll to specific element if needed (Instant with offset)
+            if (isJump) {
+                // Use timeout to ensure layout is updated (removing hidden)
+                setTimeout(() => {
+                    const el = document.getElementById(elementId);
+                    if (el) {
+                        // Calculate offset for fixed navbar (approx 100px) + extra breathing room
+                        const offset = 180;
+                        const elementPosition = el.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "auto" // Instant jump
+                        });
+                    }
+                }, 10);
+            }
+        }
+
+        // Lightbox
+        function openLightbox(src, caption) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+
+            img.src = src;
+            cap.textContent = caption || '';
+            lb.classList.remove('hidden');
+            setTimeout(() => lb.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.add('opacity-0');
+            setTimeout(() => {
+                lb.classList.add('hidden');
+                document.getElementById('lightbox-img').src = '';
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.reveal');
+            elements.forEach(el => observer.observe(el));
+
+            // Initialize first section active
+            document.getElementById('section-home').classList.add('active');
+        });
+
+        // Sticky Navbar effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md', 'bg-white/95');
+                nav.classList.remove('h-20');
+                nav.classList.add('h-16');
+            } else {
+                nav.classList.remove('shadow-md', 'bg-white/95');
+                nav.classList.remove('h-16');
+                nav.classList.add('h-20');
+            }
+        });
+
+        // Escape key for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+
+</html>
