@@ -251,7 +251,6 @@
                     </p>
 
 
-
                 </div>
             </header>
 
@@ -383,55 +382,20 @@
                     </div>
 
                     <!-- Notre Démarche -->
-                    <!-- Bottom Content Grid -->
-                    <div class="mt-32 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start reveal">
-
-                        <!-- Notre Démarche -->
-                        <div class="text-center md:text-left">
-                            <div class="w-20 h-[1px] bg-bronze-500 mb-10 mx-auto md:mx-0"></div>
-                            <h2 class="font-serif text-3xl md:text-4xl text-emerald-950 italic mb-8">Notre démarche</h2>
-                            <div
-                                class="relative bg-alabaster-100 p-8 md:p-10 rounded shadow-sm border border-emerald-900/5">
-                                <i class="fas fa-quote-right text-4xl text-bronze-500/10 absolute bottom-6 right-6"></i>
-                                <p class="text-lg text-emerald-900/80 font-light leading-relaxed italic text-justify">
-                                    Le patrimoine n'est pas qu'une affaire d'architecture. C'est l'histoire d'un moulin
-                                    en ruine, le vol d'un rapace, l'éclat d'une orchidée, les anecdotes vécues de nos
-                                    anciens, l'écho d'un métier disparu, ou le souvenir d'un chemin de traverse. Nous
-                                    collectons ces fragments de vie et de nature pour que l'âme de notre village reste
-                                    vivante.
-                                </p>
-                            </div>
+                    <div class="mt-32 max-w-4xl mx-auto text-center reveal px-6">
+                        <div class="w-20 h-[1px] bg-bronze-500 mx-auto mb-10"></div>
+                        <h2 class="font-serif text-3xl md:text-4xl text-emerald-950 italic mb-8">Notre démarche</h2>
+                        <div
+                            class="relative bg-alabaster-100 p-8 md:p-12 rounded shadow-sm border border-emerald-900/5">
+                            <i class="fas fa-quote-right text-4xl text-bronze-500/10 absolute bottom-6 right-6"></i>
+                            <p
+                                class="text-lg md:text-xl text-emerald-900/80 font-light leading-relaxed italic text-justify">
+                                Le patrimoine n'est pas qu'une affaire d'architecture. C'est l'histoire d'un moulin en
+                                ruine, les anecdotes vécues de nos anciens, l'écho d'un métier disparu, ou le souvenir
+                                d'un chemin de traverse. Nous collectons ces fragments de vie pour que le passé de notre
+                                village reste une mémoire vivante.
+                            </p>
                         </div>
-
-                        <!-- Le Saviez-vous ? -->
-                        <div class="text-center md:text-left pt-10 md:pt-0">
-                            <div class="w-20 h-[1px] bg-emerald-900/20 mb-10 mx-auto md:mx-0"></div>
-                            <div class="flex items-center gap-4 mb-8 justify-center md:justify-start">
-                                <h2 class="font-serif text-3xl md:text-4xl text-emerald-950 italic">Le Saviez-vous ?
-                                </h2>
-                                <button onclick="rotateFact()"
-                                    class="w-8 h-8 rounded-full border border-emerald-900/20 flex items-center justify-center text-emerald-900/40 hover:text-emerald-900 hover:border-emerald-900 transition-all rotate-0 hover:rotate-180 duration-500">
-                                    <i class="fas fa-sync-alt text-xs"></i>
-                                </button>
-                            </div>
-
-                            <div
-                                class="relative bg-white p-8 md:p-10 rounded-sm shadow-[0_3px_10px_rgb(0,0,0,0.05)] border-l-4 border-bronze-500 rotate-1 hover:rotate-0 transition-transform duration-300">
-                                <div id="fact-content" class="min-h-[140px] flex items-center">
-                                    <p class="text-lg text-emerald-900/70 font-light leading-relaxed">
-                                        Le nom "Prat" signifie tout simplement "Pré" en occitan. Le moulin tire son nom
-                                        des prairies humides qui l'entourent, qui servaient autrefois de pâturages pour
-                                        les bêtes pendant que les paysans attendaient que leur grain soit
-                                        moulu.<br><br>Si vous allez vous y promener, cherchez le petit sentier qui part
-                                        du lieu-dit "Le Fau" : c'est le chemin historique que les habitants de
-                                        Saint-Hilaire empruntaient avec leurs ânes chargés de sacs de céréales !
-                                    </p>
-                                </div>
-                                <span
-                                    class="absolute -top-3 -right-3 w-8 h-8 bg-bronze-500 rounded-full flex items-center justify-center text-white text-sm shadow-md">?</span>
-                            </div>
-                        </div>
-                    </div>
             </main>
         </div>
 
@@ -1780,71 +1744,6 @@
         // Escape key for lightbox
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
-        });
-        // Simple Fact Rotator
-        const facts = [
-            "Le nom \"Prat\" signifie tout simplement \"Pré\" en occitan. Le moulin tire son nom des prairies humides qui l'entourent, qui servaient autrefois de pâturages pour les bêtes pendant que les paysans attendaient que leur grain soit moulu.<br><br>Si vous allez vous y promener, cherchez le petit sentier qui part du lieu-dit \"Le Fau\" : c'est le chemin historique que les habitants de Saint-Hilaire empruntaient avec leurs ânes chargés de sacs de céréales !",
-            "Le Moulin du Prat (parfois orthographié Pray ou Pré), situé à Bessonies — commune voisine qui partage le même code postal (46210) et la même vallée de la Veyre que Saint-Hilaire — est l'un des joyaux du patrimoine meunier du Haut-Ségala.",
-            "<strong class='text-emerald-900 font-medium'>L'anecdote de la \"Trompe\" et du cordon de mousse</strong><br><br>Il y a quelques années, lors d'une inspection du mécanisme du Moulin du Prat, on a découvert un trou soudain dans la \"trompe\" en bois (le grand conduit en bois qui amène l'eau avec pression sur la roue horizontale).<br><br>En ouvrant le couvercle de cette trompe pour la réparer, les restaurateurs et l'association Visages de Ségala ont découvert un secret de fabrication ancestral : l'étanchéité était assurée par des cordons de mousse naturelle.<br><br><strong>L'astuce :</strong> Au lieu d'utiliser des joints modernes, les anciens meuniers plaçaient de la mousse des bois dans les rainures du bois. Sous la pression de l'eau, la mousse gonflait et colmatait parfaitement les interstices.<br><br><strong>La preuve du temps :</strong> Ce qui a le plus surpris les experts, c'est que cette mousse, bien que vieille de plusieurs décennies (voire plus), était restée parfaitement conservée et efficace grâce à l'humidité constante de la rivière. C'est un exemple magnifique de la manière dont les gens du Ségala utilisaient les ressources de la nature pour faire fonctionner leur industrie.",
-            "<strong class='text-emerald-900 font-medium'>Le Circuit des Trois Moulins :</strong><br>Le Moulin du Prat fait partie d'un parcours historique avec le Moulin de la Ressègue (à Parlan) et le Moulin des Conturies (à Bagnac). À l'époque, ces moulins ne se faisaient pas seulement concurrence, ils se \"passaient\" l'eau de la Veyre les uns après les autres.<br><br>Un autre moulin qui faisait autrefois partie de ce circuit était le <strong>moulin de Savadat</strong> (ou Sabadat). Malheureusement, ce n'est plus qu'un tas de pierres aujourd'hui.",
-
-            "L'église de Saint-Hilaire abrite une fresque du XIVe siècle redécouverte par hasard lors de travaux en 1998.",
-            "Le nom 'Ségala' vient de 'seigle', la seule céréale qui acceptait de pousser sur ces terres acides avant l'arrivée de la chaux."
-        ];
-
-        let currentFactIndex = -1;
-        let rotationInterval;
-        let isPaused = false;
-
-        function rotateFact() {
-            const container = document.getElementById('fact-content');
-            const p = container.querySelector('p');
-
-            // Fade out
-            p.style.opacity = '0';
-            p.style.transition = 'opacity 0.3s ease';
-
-            setTimeout(() => {
-                let newIndex;
-                do {
-                    newIndex = Math.floor(Math.random() * facts.length);
-                } while (newIndex === currentFactIndex && facts.length > 1);
-
-                currentFactIndex = newIndex;
-                const randomFact = facts[newIndex];
-
-                p.innerHTML = randomFact;
-                // Fade in
-                p.style.opacity = '1';
-            }, 300);
-
-            // Reset timer on manual or auto rotation
-            resetRotationTimer();
-        }
-
-        function startRotationTimer() {
-            rotationInterval = setInterval(() => {
-                if (!isPaused) {
-                    rotateFact();
-                }
-            }, 12000); // 12 seconds per fact
-        }
-
-        function resetRotationTimer() {
-            clearInterval(rotationInterval);
-            startRotationTimer();
-        }
-
-        // Initialize Auto Rotation and Hover Pause
-        document.addEventListener('DOMContentLoaded', () => {
-            const factContainer = document.querySelector('.bg-white.p-8.md\\:p-10'); // Select the card container
-
-            if (factContainer) {
-                factContainer.addEventListener('mouseenter', () => isPaused = true);
-                factContainer.addEventListener('mouseleave', () => isPaused = false);
-            }
-
-            startRotationTimer();
         });
     </script>
 </body>
