@@ -1920,7 +1920,7 @@
                         <!-- Video Section -->
                         <div class="bg-gray-100 relative aspect-video md:h-full md:aspect-auto">
                             <iframe class="w-full h-full absolute inset-0 md:static"
-                                src="https://www.youtube-nocookie.com/embed/afEzwMXxhhY?modestbranding=1&rel=0"
+                                src="https://www.youtube-nocookie.com/embed/afEzwMXxhhY?modestbranding=1&rel=0&enablejsapi=1"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
@@ -2152,12 +2152,10 @@
                     }
                 } else {
                     // STOP VIDEO PLAYBACK
-                    // When a section is hidden, we must stop any playing videos (iframes)
+                    // Use YouTube API to pause the video
                     const iframes = el.querySelectorAll('iframe');
                     iframes.forEach(iframe => {
-                        // Resetting the src attribute forces the iframe to reload, stopping the audio/video
-                        const currentSrc = iframe.src;
-                        iframe.src = currentSrc;
+                        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
                     });
 
                     el.classList.remove('active');
