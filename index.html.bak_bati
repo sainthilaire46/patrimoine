@@ -440,309 +440,234 @@
 
 
         <!-- SECTION: PATRIMOINE BÂTI -->
-<!-- SECTION: BATI - MOULINS GENERAL -->
-<div id="section-bati-moulins-general" class="page-section hidden">
-    <div class="h-24 w-full bg-emerald-950/5"></div>
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <div class="space-y-20">
-            <div class="text-center max-w-4xl mx-auto mb-16 reveal">
-                <h2 class="text-5xl font-serif text-emerald-950 italic leading-tight mb-8">Les Moulins du Veyre</h2>
-                <div class="w-24 h-[1px] bg-bronze-500 mx-auto mb-8"></div>
-                <p class="text-emerald-900/70 leading-loose text-lg font-light">
-                    Jadis essentiels à la vie agricole, les moulins jalonnent le cours du Veyre. Ces bâtisses en pierre
-                    racontent l'époque où chaque grain était moulu localement.
-                </p>
-            </div>
+        <div id="section-bati" class="page-section hidden">
 
-            <!-- Grid of Mills -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
-                <!-- Card: Moulin du Prat -->
-                <div class="group cursor-pointer" onclick="showSection('bati-moulins-prat')">
-                    <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative">
-                        <img src="images/moulin.webp"
-                            class="w-full h-full object-cover hover-zoom-img transition-all duration-700"
-                            alt="Moulin du Prat">
-                        <div
-                            class="absolute inset-0 bg-emerald-950/20 group-hover:bg-transparent transition-all duration-500">
-                        </div>
-                    </div>
-                    <h3
-                        class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
-                        Moulin du Prat</h3>
-                    <p class="text-sm text-emerald-900/60 mt-2">Le témoin vivant de notre histoire.</p>
-                </div>
-                <!-- Card: Moulin de la Ressague -->
-                <div class="group cursor-pointer opacity-75">
-                    <div
-                        class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative bg-gray-100 flex items-center justify-center">
-                        <span class="text-emerald-900/40 font-serif italic">Bientôt disponible</span>
-                    </div>
-                    <h3
-                        class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
-                        Moulin de la Ressague</h3>
-                </div>
-                <!-- Card: Moulin de la Payssière -->
-                <div class="group cursor-pointer opacity-75">
-                    <div
-                        class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative bg-gray-100 flex items-center justify-center">
-                        <span class="text-emerald-900/40 font-serif italic">Bientôt disponible</span>
-                    </div>
-                    <h3
-                        class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
-                        Moulin de la Payssière</h3>
-                </div>
-            </div>
-        </div>
-    </main>
-</div>
+            <!-- Spacer to replace header margin -->
+            <div class="h-24 w-full bg-emerald-950/5"></div>
 
-<!-- SECTION: BATI - FOURS GENERAL -->
-<div id="section-bati-fours-general" class="page-section hidden">
-    <div class="h-24 w-full bg-emerald-950/5"></div>
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <div class="text-center max-w-4xl mx-auto mb-16 reveal">
-            <h2 class="text-5xl font-serif text-emerald-950 italic leading-tight mb-8">Les Fours à Pain</h2>
-            <div class="w-24 h-[1px] bg-bronze-500 mx-auto mb-8"></div>
-            <p class="text-emerald-900/70 leading-loose text-lg font-light">
-                Véritables cœurs battants des hameaux, les fours à pain symbolisaient le partage. Plusieurs fours
-                communaux ont été patiemment restaurés.
-            </p>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
-            <!-- Card: Four Communal -->
-            <div class="group cursor-pointer">
-                <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative">
-                    <img src="images/four_a_pain_gen.webp"
-                        class="w-full h-full object-cover hover-zoom-img transition-all duration-700"
-                        alt="Four Communal">
-                </div>
-                <h3 class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
-                    Four du Bourg</h3>
-                <p class="text-sm text-emerald-900/60 mt-2">Restauré et fonctionnel.</p>
-            </div>
-        </div>
-    </main>
-</div>
-
-<!-- SECTION: BATI - CHATEAUX GENERAL -->
-<div id="section-bati-chateaux-general" class="page-section hidden">
-    <div class="h-24 w-full bg-emerald-950/5"></div>
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <div class="text-center max-w-4xl mx-auto mb-16 reveal">
-            <h2 class="text-5xl font-serif text-emerald-950 italic leading-tight mb-8">Les Châteaux des Alentours</h2>
-            <div class="w-24 h-[1px] bg-bronze-500 mx-auto mb-8"></div>
-            <p class="text-emerald-900/70 leading-loose text-lg font-light">
-                Témoins de l'histoire seigneuriale du Ségala, ces demeures d'exception marquent le paysage de leur
-                architecture noble.
-            </p>
-        </div>
-        <!-- Grid of Castles -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
-            <!-- Card: Château de Bessonies -->
-            <div class="group cursor-pointer" onclick="showSection('bati-chateau-bessonies')">
-                <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative">
-                    <img src="images/chateau_bessonies_photo.jpg"
-                        class="w-full h-full object-cover hover-zoom-img transition-all duration-700"
-                        alt="Château de Bessonies">
-                    <div
-                        class="absolute inset-0 bg-emerald-950/20 group-hover:bg-transparent transition-all duration-500">
-                    </div>
-                </div>
-                <h3 class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
-                    Château de Bessonies</h3>
-                <p class="text-sm text-emerald-900/60 mt-2">Le refuge du Maréchal Ney.</p>
-            </div>
-        </div>
-    </main>
-</div>
-
-
-<!-- SECTION: DETAIL - MOULIN DU PRAT -->
-<div id="section-bati-moulins-prat" class="page-section hidden">
-    <div class="h-24 w-full bg-emerald-950/5"></div>
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <button onclick="showSection('bati-moulins-general')"
-            class="mb-8 text-sm text-bronze-600 hover:text-emerald-900 transition-colors uppercase tracking-widest flex items-center gap-2">
-            <span>←</span> Retour aux Moulins
-        </button>
-        <div class="flex flex-col md:flex-row gap-20 items-start reveal">
-            <div class="md:w-1/2 sticky top-32">
-                <div class="relative group aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
-                    <img src="images/moulin.webp"
-                        class="w-full h-full object-cover hover-zoom-img transition-all duration-1000"
-                        alt="Moulin du Prat">
-                </div>
-            </div>
-            <div class="md:w-1/2 space-y-8">
-                <h3 class="text-5xl font-serif text-emerald-950 italic leading-tight">Moulin du Prat</h3>
-                <div class="w-16 h-[1px] bg-bronze-500"></div>
-                <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
-                    Le nom "Prat" signifie tout simplement "Pré" en occitan. Le moulin tire son nom des prairies humides
-                    qui l'entourent, qui servaient autrefois de pâturages pour les bêtes pendant que les paysans
-                    attendaient que leur grain soit moulu.
-                </p>
-                <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
-                    Si vous allez vous y promener, cherchez le petit sentier qui part du lieu-dit "Le Fau" : c'est le
-                    chemin historique que les habitants de Saint-Hilaire empruntaient avec leurs ânes chargés de sacs de
-                    céréales !
-                </p>
-            </div>
-        </div>
-    </main>
-</div>
-
-<!-- SECTION: DETAIL - CHATEAU BESSONIES -->
-<div id="section-bati-chateau-bessonies" class="page-section hidden">
-    <div class="h-24 w-full bg-emerald-950/5"></div>
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <button onclick="showSection('bati-chateaux-general')"
-            class="mb-8 text-sm text-bronze-600 hover:text-emerald-900 transition-colors uppercase tracking-widest flex items-center gap-2">
-            <span>←</span> Retour aux Châteaux
-        </button>
-        <div class="flex flex-col md:flex-row gap-20 items-start reveal">
-            <div class="md:w-1/2 sticky top-32">
-                <div class="relative group aspect-[4/3] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
-                    <img src="images/chateau_bessonies_photo.jpg"
-                        class="w-full h-full object-cover hover-zoom-img transition-all duration-1000"
-                        alt="Château de Bessonies">
-                </div>
-            </div>
-            <div class="md:w-1/2 space-y-8">
-                <h3 class="text-5xl font-serif text-emerald-950 italic leading-tight">Le Château<br>de Bessonies</h3>
-                <div class="w-16 h-[1px] bg-bronze-500"></div>
-
-                <h4 class="text-xl text-emerald-900 font-medium tracking-wide uppercase text-sm">Le Refuge du Maréchal
-                    Ney</h4>
-
-                <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
-                    Le château de Bessonies, situé dans le département du Lot (à la limite du Cantal), est un lieu
-                    chargé d'une atmosphère singulière. S'il est aujourd'hui une demeure d'hôtes raffinée, il est
-                    surtout célèbre pour avoir été le théâtre d'un des épisodes les plus tragiques de l'histoire de
-                    France : la fin de cavale du Maréchal Ney.
-                </p>
-
-                <div class="space-y-6 mt-8">
-                    <!-- Anecdotes Accordion (Kept from previous) -->
-                    <!-- Anecdote 1 -->
-                    <details class="group border-b border-emerald-900/10 pb-4 cursor-pointer">
-                        <summary
-                            class="list-none flex justify-between items-center text-emerald-900 font-medium hover:text-bronze-600 transition-colors">
-                            <span>1. Le Refuge du "Brave des Braves"</span>
-                            <span
-                                class="text-bronze-500 group-open:rotate-180 transition-transform duration-300">▼</span>
-                        </summary>
-                        <div
-                            class="mt-4 text-sm text-emerald-900/60 leading-relaxed pl-4 border-l border-bronze-500/30 space-y-4 text-justify">
-                            <p>Après la défaite de Waterloo en 1815, le Maréchal Ney est proscrit par la Restauration.
-                                Il cherche un lieu pour se cacher. Il choisit Bessonies car la baronne de Bessonies est
-                                la cousine germaine de son épouse.</p>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">L’ambiance « lion en cage »</strong>
-                                <p>Les récits de l’époque décrivent Ney tournant sans fin dans sa chambre au
-                                    rez-de-chaussée, marchant de long en large avec une nervosité extrême, conscient que
-                                    l’étau se resserrait.</p>
-                            </div>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">L'anecdote du sabre</strong>
-                                <p>C'est un objet de luxe qui l'aurait trahi. Ney avait laissé sur une table de salon un
-                                    sabre richement orné (cadeau de l'Empereur). Un visiteur ou un agent l'aurait
-                                    remarqué, déduisant que seul un haut dignitaire impérial pouvait posséder une telle
-                                    arme dans ce recoin perdu du Lot.</p>
+            <main class="max-w-6xl mx-auto px-4 py-12">
+                <div class="space-y-40">
+                    <!-- Item 1 -->
+                    <div class="flex flex-col md:flex-row gap-20 items-center reveal">
+                        <div class="md:w-1/2 ">
+                            <div
+                                class="relative group aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                                <img src="images/moulin.webp"
+                                    class="w-full h-full object-cover hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                                    alt="Moulin"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&q=80&w=800'">
+                                <div
+                                    class="absolute inset-0 border-[0.5px] border-white/20 m-4 pointer-events-none z-20">
+                                </div>
                             </div>
                         </div>
-                    </details>
-
-                    <!-- Anecdote 2 -->
-                    <details class="group border-b border-emerald-900/10 pb-4 cursor-pointer">
-                        <summary
-                            class="list-none flex justify-between items-center text-emerald-900 font-medium hover:text-bronze-600 transition-colors">
-                            <span>2. Une arrestation à quelques heures près</span>
-                            <span
-                                class="text-bronze-500 group-open:rotate-180 transition-transform duration-300">▼</span>
-                        </summary>
-                        <div
-                            class="mt-4 text-sm text-emerald-900/60 leading-relaxed pl-4 border-l border-bronze-500/30 space-y-4 text-justify">
-                            <p>L’arrestation de Ney au château le 3 août 1815 tient à une série de malchance.</p>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">Le messager blessé</strong>
-                                <p>Le directeur des postes d'Aurillac, prévenu de l'arrivée imminente des gendarmes,
-                                    avait envoyé un émissaire pour prévenir le Maréchal. En tentant de couper à travers
-                                    champs pour gagner du temps, le messager fit une chute et se cassa la jambe. Il ne
-                                    put jamais atteindre le château.</p>
-                            </div>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">La trahison</strong>
-                                <p>Il fut officiellement dénoncé par un voisin, Jean-Baptiste de La Tour de La Placette.
-                                    Les gendarmes investirent le château alors que Ney n'avait opposé aucune résistance,
-                                    refusant même une offre d'évasion d'un de ses partisans au motif qu'il avait donné
-                                    sa parole.</p>
-                            </div>
-                        </div>
-                    </details>
-
-                    <!-- Anecdote 3 -->
-                    <details class="group border-b border-emerald-900/10 pb-4 cursor-pointer">
-                        <summary
-                            class="list-none flex justify-between items-center text-emerald-900 font-medium hover:text-bronze-600 transition-colors">
-                            <span>3. Les propriétaires : des survivants</span>
-                            <span
-                                class="text-bronze-500 group-open:rotate-180 transition-transform duration-300">▼</span>
-                        </summary>
-                        <div
-                            class="mt-4 text-sm text-emerald-900/60 leading-relaxed pl-4 border-l border-bronze-500/30 space-y-4 text-justify">
-                            <p>Le destin des seigneurs de Bessonies n'est pas moins mouvementé que celui de leur
-                                illustre invité.</p>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">Sauvé par la chute de Robespierre</strong>
-                                <p>Jean-Joseph de Bessonies, propriétaire durant la Révolution, avait été condamné à la
-                                    guillotine. Il ne dut son salut qu'à un timing incroyable : l'exécution de
-                                    Robespierre survint juste avant la sienne, entraînant l'arrêt des massacres de la
-                                    Terreur.</p>
-                            </div>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">Une lignée fidèle</strong>
-                                <p>La famille est restée propriétaire du château pendant des siècles, traversant les
-                                    guerres de religion et la Révolution, avant que le domaine ne soit repris et
-                                    restauré par les actuels propriétaires, Philippe et Christophe.</p>
-                            </div>
-                        </div>
-                    </details>
-
-                    <!-- Anecdote 4 -->
-                    <details class="group border-b border-emerald-900/10 pb-4 cursor-pointer">
-                        <summary
-                            class="list-none flex justify-between items-center text-emerald-900 font-medium hover:text-bronze-600 transition-colors">
-                            <span>4. Le château aujourd'hui : Immersion historique</span>
-                            <span
-                                class="text-bronze-500 group-open:rotate-180 transition-transform duration-300">▼</span>
-                        </summary>
-                        <div
-                            class="mt-4 text-sm text-emerald-900/60 leading-relaxed pl-4 border-l border-bronze-500/30 space-y-4 text-justify">
-                            <p>Le château a été transformé en chambres d'hôtes, mais il conserve une dimension muséale.
+                        <div class="md:w-1/2 space-y-8">
+                            <h3 id="bati-moulins" class="text-5xl font-serif text-emerald-950 italic leading-tight">Les
+                                Moulins<br>du
+                                Veyre</h3>
+                            <div class="w-16 h-[1px] bg-bronze-500"></div>
+                            <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
+                                Jadis essentiels à la vie agricole, les moulins jalonnent le cours du Veyre. Ces
+                                bâtisses en pierre, souvent envahies par la végétation, racontent l'époque où chaque
+                                grain était moulu localement. L'association œuvre à leur recensement précis pour
+                                préserver cette ingénierie rurale.
                             </p>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">Les noms des suites</strong>
-                                <p>Clin d'œil à l'histoire, les chambres portent des noms du calendrier révolutionnaire
-                                    : Floréal, Prairial, Messidor et Thermidor.</p>
-                            </div>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">Le musée Ney</strong>
-                                <p>On peut toujours visiter la chambre où le Maréchal a passé ses derniers instants de
-                                    liberté, ainsi que sa bibliothèque. Des mannequins de cire (réalisés avec l'aide du
-                                    musée Grévin) y reconstituent la scène de l'arrestation.</p>
-                            </div>
-                            <div>
-                                <strong class="text-emerald-800 block mb-1">Le parc</strong>
-                                <p>Un jardin de 3 hectares entoure la bâtisse, avec un labyrinthe d'ifs récemment
-                                    planté, ajoutant au côté mystérieux du lieu.</p>
+                            <ul class="space-y-4 mt-8 text-emerald-800/80 text-sm font-medium tracking-wide">
+                                <li class="flex items-center gap-4"><span
+                                        class="w-1.5 h-1.5 bg-bronze-500 rounded-full"></span>
+                                    Architecture hydraulique traditionnelle</li>
+                                <li class="flex items-center gap-4"><span
+                                        class="w-1.5 h-1.5 bg-bronze-500 rounded-full"></span>
+                                    Sites pittoresques en bord de rivière</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Item 2 (Reversed) -->
+                    <div class="flex flex-col md:flex-row-reverse gap-20 items-center reveal">
+                        <div class="md:w-1/2">
+                            <div
+                                class="relative group aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                                <img src="images/four.webp"
+                                    class="w-full h-full object-cover hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                                    alt="Four" onerror="this.onerror=null; this.src='images/four_a_pain_gen.webp'">
+                                <div
+                                    class="absolute inset-0 border-[0.5px] border-white/20 m-4 pointer-events-none z-20">
+                                </div>
                             </div>
                         </div>
-                    </details>
+                        <div class="md:w-1/2 space-y-8">
+                            <h3 id="bati-fours" class="text-5xl font-serif text-emerald-950 italic leading-tight">Les
+                                Fours<br>à Pain
+                            </h3>
+                            <div class="w-16 h-[1px] bg-bronze-500"></div>
+                            <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
+                                Véritables cœurs battants des hameaux, les fours à pain symbolisaient le partage.
+                                Plusieurs fours communaux ont été patiemment restaurés et s'embrasent à nouveau lors des
+                                fêtes de village, perpétuant des gestes séculaires et rassemblant les habitants autour
+                                du pain chaud.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Château de Bessonies -->
+                    <div class="flex flex-col md:flex-row gap-20 items-center reveal">
+                        <div class="md:w-1/2">
+                            <div
+                                class="relative group aspect-[4/3] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                                <img src="images/chateau_bessonies_photo.jpg"
+                                    class="w-full h-full object-cover hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000"
+                                    alt="Château de Bessonies"
+                                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599619351208-3e6c839d6828?auto=format&fit=crop&q=80&w=800'">
+                                <div
+                                    class="absolute inset-0 border-[0.5px] border-white/20 m-4 pointer-events-none z-20">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 space-y-8">
+                            <h3 id="bati-chateau" class="text-5xl font-serif text-emerald-950 italic leading-tight">Le
+                                Château<br>de Bessonies</h3>
+                            <div class="w-16 h-[1px] bg-bronze-500"></div>
+
+                            <h4 class="text-xl text-emerald-900 font-medium tracking-wide uppercase text-sm">Le Refuge
+                                du Maréchal Ney</h4>
+
+                            <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
+                                Le château de Bessonies, situé dans le département du Lot (à la limite du Cantal), est
+                                un lieu chargé d'une atmosphère singulière. S'il est aujourd'hui une demeure d'hôtes
+                                raffinée, il est surtout célèbre pour avoir été le théâtre d'un des épisodes les plus
+                                tragiques de l'histoire de France : la fin de cavale du Maréchal Ney.
+                            </p>
+
+                            <div class="space-y-6 mt-8">
+                                <!-- Anecdote 1 -->
+                                <details class="group border-b border-emerald-900/10 pb-4 cursor-pointer">
+                                    <summary
+                                        class="list-none flex justify-between items-center text-emerald-900 font-medium hover:text-bronze-600 transition-colors">
+                                        <span>1. Le Refuge du "Brave des Braves"</span>
+                                        <span
+                                            class="text-bronze-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                                    </summary>
+                                    <div
+                                        class="mt-4 text-sm text-emerald-900/60 leading-relaxed pl-4 border-l border-bronze-500/30 space-y-4 text-justify">
+                                        <p>Après la défaite de Waterloo en 1815, le Maréchal Ney est proscrit par la
+                                            Restauration. Il cherche un lieu pour se cacher. Il choisit Bessonies car la
+                                            baronne de Bessonies est la cousine germaine de son épouse.</p>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">L’ambiance « lion en cage
+                                                »</strong>
+                                            <p>Les récits de l’époque décrivent Ney tournant sans fin dans sa chambre au
+                                                rez-de-chaussée, marchant de long en large avec une nervosité extrême,
+                                                conscient que l’étau se resserrait.</p>
+                                        </div>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">L'anecdote du sabre</strong>
+                                            <p>C'est un objet de luxe qui l'aurait trahi. Ney avait laissé sur une table
+                                                de salon un sabre richement orné (cadeau de l'Empereur). Un visiteur ou
+                                                un agent l'aurait remarqué, déduisant que seul un haut dignitaire
+                                                impérial pouvait posséder une telle arme dans ce recoin perdu du Lot.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </details>
+
+                                <!-- Anecdote 2 -->
+                                <details class="group border-b border-emerald-900/10 pb-4 cursor-pointer">
+                                    <summary
+                                        class="list-none flex justify-between items-center text-emerald-900 font-medium hover:text-bronze-600 transition-colors">
+                                        <span>2. Une arrestation à quelques heures près</span>
+                                        <span
+                                            class="text-bronze-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                                    </summary>
+                                    <div
+                                        class="mt-4 text-sm text-emerald-900/60 leading-relaxed pl-4 border-l border-bronze-500/30 space-y-4 text-justify">
+                                        <p>L’arrestation de Ney au château le 3 août 1815 tient à une série de
+                                            malchance.</p>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">Le messager blessé</strong>
+                                            <p>Le directeur des postes d'Aurillac, prévenu de l'arrivée imminente des
+                                                gendarmes, avait envoyé un émissaire pour prévenir le Maréchal. En
+                                                tentant de couper à travers champs pour gagner du temps, le messager fit
+                                                une chute et se cassa la jambe. Il ne put jamais atteindre le château.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">La trahison</strong>
+                                            <p>Il fut officiellement dénoncé par un voisin, Jean-Baptiste de La Tour de
+                                                La Placette. Les gendarmes investirent le château alors que Ney n'avait
+                                                opposé aucune résistance, refusant même une offre d'évasion d'un de ses
+                                                partisans au motif qu'il avait donné sa parole.</p>
+                                        </div>
+                                    </div>
+                                </details>
+
+                                <!-- Anecdote 3 -->
+                                <details class="group border-b border-emerald-900/10 pb-4 cursor-pointer">
+                                    <summary
+                                        class="list-none flex justify-between items-center text-emerald-900 font-medium hover:text-bronze-600 transition-colors">
+                                        <span>3. Les propriétaires : des survivants</span>
+                                        <span
+                                            class="text-bronze-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                                    </summary>
+                                    <div
+                                        class="mt-4 text-sm text-emerald-900/60 leading-relaxed pl-4 border-l border-bronze-500/30 space-y-4 text-justify">
+                                        <p>Le destin des seigneurs de Bessonies n'est pas moins mouvementé que celui de
+                                            leur illustre invité.</p>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">Sauvé par la chute de
+                                                Robespierre</strong>
+                                            <p>Jean-Joseph de Bessonies, propriétaire durant la Révolution, avait été
+                                                condamné à la guillotine. Il ne dut son salut qu'à un timing incroyable
+                                                : l'exécution de Robespierre survint juste avant la sienne, entraînant
+                                                l'arrêt des massacres de la Terreur.</p>
+                                        </div>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">Une lignée fidèle</strong>
+                                            <p>La famille est restée propriétaire du château pendant des siècles,
+                                                traversant les guerres de religion et la Révolution, avant que le
+                                                domaine ne soit repris et restauré par les actuels propriétaires,
+                                                Philippe et Christophe.</p>
+                                        </div>
+                                    </div>
+                                </details>
+
+                                <!-- Anecdote 4 -->
+                                <details class="group border-b border-emerald-900/10 pb-4 cursor-pointer">
+                                    <summary
+                                        class="list-none flex justify-between items-center text-emerald-900 font-medium hover:text-bronze-600 transition-colors">
+                                        <span>4. Le château aujourd'hui : Immersion historique</span>
+                                        <span
+                                            class="text-bronze-500 group-open:rotate-180 transition-transform duration-300">▼</span>
+                                    </summary>
+                                    <div
+                                        class="mt-4 text-sm text-emerald-900/60 leading-relaxed pl-4 border-l border-bronze-500/30 space-y-4 text-justify">
+                                        <p>Le château a été transformé en chambres d'hôtes, mais il conserve une
+                                            dimension muséale.</p>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">Les noms des suites</strong>
+                                            <p>Clin d'œil à l'histoire, les chambres portent des noms du calendrier
+                                                révolutionnaire : Floréal, Prairial, Messidor et Thermidor.</p>
+                                        </div>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">Le musée Ney</strong>
+                                            <p>On peut toujours visiter la chambre où le Maréchal a passé ses derniers
+                                                instants de liberté, ainsi que sa bibliothèque. Des mannequins de cire
+                                                (réalisés avec l'aide du musée Grévin) y reconstituent la scène de
+                                                l'arrestation.</p>
+                                        </div>
+                                        <div>
+                                            <strong class="text-emerald-800 block mb-1">Le parc</strong>
+                                            <p>Un jardin de 3 hectares entoure la bâtisse, avec un labyrinthe d'ifs
+                                                récemment planté, ajoutant au côté mystérieux du lieu.</p>
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </main>
-</div>                <!-- SECTION: BOTANIQUE -->
+
+
+                <!-- SECTION: BOTANIQUE -->
                 <div id="section-botanique" class="page-section hidden bg-transparent">
                     <header class="h-[70vh] relative flex items-center justify-center bg-emerald-950 overflow-hidden">
                         <div class="absolute inset-0">
