@@ -2265,14 +2265,34 @@
                 }
             }
 
-            // If we are at root/home, we might want to manually ensure it's set without jump (smooth) or with jump (instant)?
-            // For now, use the standard showSection. 
-            // If it's the initial load, maybe we want to force 'active' immediately?
-            // showSection handles everything.
-            if (jumpElementId) {
-                showSection(targetSection, jumpElementId);
+            // If we are at root/home, check if it's already active (Cached HTML case)
+            const targetEl = document.getElementById('section-' + targetSection);
+
+            if (targetEl && targetEl.classList.contains('active')) {
+                // It is already visible (likely from cached HTML with 'active' class)
+                // We do NOT want to re-run showSection because it might toggle classes/restart animations.
+                // Just ensure others are hidden and scroll is correct.
+                document.querySelectorAll('.page-section').forEach(el => {
+                    if (el !== targetEl) {
+                        el.classList.remove('active');
+                        el.classList.add('hidden');
+                    }
+                });
+
+                // Handle Jump or Scroll
+                if (jumpElementId) {
+                    const jumpEl = document.getElementById(jumpElementId);
+                    if (jumpEl) jumpEl.scrollIntoView();
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             } else {
-                showSection(targetSection);
+                // Standard Clean Load
+                if (jumpElementId) {
+                    showSection(targetSection, jumpElementId);
+                } else {
+                    showSection(targetSection);
+                }
             }
         });
 
