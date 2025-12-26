@@ -219,7 +219,7 @@
     <div id="main-content" class="pt-20">
 
         <!-- SECTION: HOME -->
-        <div id="section-home" class="page-section active min-h-screen">
+        <div id="section-home" class="page-section min-h-screen">
             <!-- Hero -->
             <header class="relative h-[90vh] flex items-center justify-center overflow-hidden bg-emerald-950">
                 <div class="absolute inset-0 select-none">
@@ -2235,22 +2235,6 @@
             rootMargin: "0px 0px -50px 0px"
         };
 
-        // Handle page load with hash
-        window.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash.substring(1); // Remove '#'
-
-            if (hash) {
-                // Check if it's a known section or subsection
-                if (hash.startsWith('bati-')) {
-                    // It's a sub-section of Bati
-                    showSection('bati', hash);
-                } else if (['home', 'bati', 'botanique', 'humain', 'association', 'blog'].includes(hash)) {
-                    // It's a main section
-                    showSection(hash);
-                }
-            }
-        });
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2260,12 +2244,36 @@
             });
         }, observerOptions);
 
+        // Consolidate Initialization
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Observers
             const elements = document.querySelectorAll('.reveal');
             elements.forEach(el => observer.observe(el));
 
-            // Initialize first section active
-            document.getElementById('section-home').classList.add('active');
+            // Handle Initial Routing
+            const hash = window.location.hash.substring(1); // Remove '#'
+            let targetSection = 'home';
+            let jumpElementId = null;
+
+            if (hash) {
+                if (hash.startsWith('bati-')) {
+                    // Sub-section of Bati
+                    targetSection = 'bati';
+                    jumpElementId = hash;
+                } else if (['home', 'bati', 'botanique', 'humain', 'association', 'blog'].includes(hash)) {
+                    targetSection = hash;
+                }
+            }
+
+            // If we are at root/home, we might want to manually ensure it's set without jump (smooth) or with jump (instant)?
+            // For now, use the standard showSection. 
+            // If it's the initial load, maybe we want to force 'active' immediately?
+            // showSection handles everything.
+            if (jumpElementId) {
+                showSection(targetSection, jumpElementId);
+            } else {
+                showSection(targetSection);
+            }
         });
 
         // Sticky Navbar effect
