@@ -122,13 +122,25 @@
         }
 
         .page-section.active .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            animation-delay: 0.3s;
+            animation: fadeInUp 0.7s ease-out forwards;
+            animation-delay: 0.2s;
         }
 
         .animate-fade-in-up {
             opacity: 0;
             transform: translateY(20px);
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
