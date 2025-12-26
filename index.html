@@ -2058,32 +2058,42 @@
                 <!-- Article: Sortie Botanique -->
                 <article
                     class="bg-white rounded-2xl overflow-hidden shadow-xl mb-16 reveal border border-emerald-900/5">
-                    <div class="p-8 md:p-12">
-                        <div class="flex items-center gap-4 mb-6">
-                            <span
-                                class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Nature</span>
-                            <span class="text-gray-400 text-sm">26 Juin 2023</span>
-                        </div>
-                        <h3 class="font-serif text-3xl md:text-3xl text-emerald-950 italic mb-6">Sortie botanique avec
-                            notre guide Claude Destruel</h3>
-                        <div class="text-gray-600 leading-relaxed mb-8 max-w-4xl">
-                            <p class="mb-4"><strong>Franc succès pour cette 1re édition.</strong></p>
-                            <p>
-                                Samedi 3 juin s’est déroulé notre première sortie botanique le long des routes et
-                                chemins calmes autour du bourg de Saint Hilaire. Nous étions une quinzaine de personnes
-                                sur un parcours d’environ 3 km à découvrir ou redécouvrir les nombreux trésors naturels
-                                d’une flore sauvage insoupçonnée.
-                            </p>
+                    <div class="grid md:grid-cols-2">
+                        <!-- Content Section -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                            <div class="flex items-center gap-4 mb-6">
+                                <span
+                                    class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Nature</span>
+                                <span class="text-gray-400 text-sm">26 Juin 2023</span>
+                            </div>
+                            <h3 class="font-serif text-3xl md:text-3xl text-emerald-950 italic mb-6">Sortie botanique
+                                avec notre guide Claude Destruel</h3>
+                            <div class="text-gray-600 leading-relaxed mb-6 max-w-4xl">
+                                <p class="mb-4"><strong>Franc succès pour cette 1re édition.</strong></p>
+                                <p>
+                                    Samedi 3 juin s’est déroulé notre première sortie botanique le long des routes et
+                                    chemins calmes autour du bourg de Saint Hilaire. Nous étions une quinzaine de
+                                    personnes sur un parcours d’environ 3 km à découvrir ou redécouvrir les nombreux
+                                    trésors naturels d’une flore sauvage insoupçonnée.
+                                </p>
+                            </div>
                             <button onclick="toggleBotanyGallery()"
-                                class="mt-4 text-emerald-700 font-bold uppercase tracking-wider text-sm hover:text-emerald-900 transition-colors inline-flex items-center gap-2 focus:outline-none">
+                                class="text-emerald-700 font-bold uppercase tracking-wider text-sm hover:text-emerald-900 transition-colors inline-flex items-center gap-2 focus:outline-none self-start">
                                 Voir les photos de notre sortie <i id="botany-arrow"
                                     class="fas fa-chevron-down transition-transform duration-300"></i>
                             </button>
                         </div>
+                        <!-- Main Image Section -->
+                        <div class="relative h-64 md:h-auto order-1 md:order-2">
+                            <img src="images/sortie_botanique_9.jpg" alt="Sortie botanique principale"
+                                class="w-full h-full object-cover absolute inset-0">
+                        </div>
+                    </div>
 
-                        <!-- Gallery Grid -->
-                        <div id="botany-gallery"
-                            class="hidden grid grid-cols-2 md:grid-cols-3 gap-4 transition-all duration-500">
+                    <!-- Hidden Gallery Section (Full Width) -->
+                    <div id="botany-gallery"
+                        class="hidden px-8 md:px-12 pb-8 md:pb-12 border-t border-gray-100 pt-6 bg-white transition-all duration-500">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             <!-- Image 2 -->
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_2.jpg', 'Sortie botanique photo 2')">
@@ -2124,12 +2134,6 @@
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_8.jpg', 'Sortie botanique photo 8')">
                                 <img src="images/sortie_botanique_8.jpg" alt="Sortie botanique 8"
-                                    class="w-full h-full object-cover">
-                            </div>
-                            <!-- Image 9 -->
-                            <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
-                                onclick="openLightbox('images/sortie_botanique_9.jpg', 'Sortie botanique photo 9')">
-                                <img src="images/sortie_botanique_9.jpg" alt="Sortie botanique 9"
                                     class="w-full h-full object-cover">
                             </div>
                         </div>
