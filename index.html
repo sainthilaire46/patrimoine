@@ -38,7 +38,6 @@
                         }
                     },
                     animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                         'slow-zoom': 'slowZoom 20s linear infinite alternate',
                     },
                     keyframes: {
@@ -120,6 +119,16 @@
         .page-section.active {
             display: block;
             opacity: 1;
+        }
+
+        .page-section.active .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
         }
     </style>
 </head>
@@ -232,7 +241,8 @@
                     </div>
                 </div>
 
-                <div class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center -mt-32">
+                <div
+                    class="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in-up flex flex-col items-center -mt-32">
                     <div class="mb-8 w-[1px] h-24 bg-gradient-to-b from-transparent to-white/60"></div>
                     <h1
                         class="font-serif text-6xl md:text-8xl lg:text-9xl text-emerald-950 font-medium leading-none tracking-tight italic">
