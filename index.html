@@ -2141,13 +2141,28 @@
             // Handle visibility immediately for jump to avoid flash
             document.querySelectorAll('.page-section').forEach(el => {
                 if (el.id === 'section-' + sectionId) {
+                    // Make it visible but transparent first
                     el.classList.remove('hidden');
+
+                    // Force CSS Display change to take effect
+                    // This overrides the css class .page-section { display: none } temporarily if needed
+                    // But adding .active handles display:block. 
+                    // To transition opacity, we need display:block applied in a previous frame (or forced reflow).
 
                     if (isJump) {
                         el.classList.add('active'); // No fade in for jump
                     } else {
-                        // Smooth fade in for normal navigation
-                        setTimeout(() => el.classList.add('active'), 10);
+                        // Smooth fade in
+                        // Trick: set display manually, force reflow, then add active
+                        el.style.display = 'block';
+                        void el.offsetWidth; // Trigger Reflow
+                        el.classList.add('active');
+
+                        // Clean up inline style so CSS class controls it
+                        setTimeout(() => {
+                            el.style.display = '';
+                        }, 500);
+
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                 } else {
