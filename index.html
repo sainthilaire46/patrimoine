@@ -2214,6 +2214,108 @@
                     </div>
                 </article>
 
+                <!-- Article: Rencontre René Pezet -->
+                <article
+                    class="bg-white rounded-2xl overflow-hidden shadow-xl mb-16 reveal border border-emerald-900/5">
+                    <div class="grid md:grid-cols-2">
+                        <!-- Content Section -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                            <div class="flex items-center gap-4 mb-6">
+                                <span
+                                    class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Patrimoine</span>
+                                <span class="text-gray-400 text-sm">26 Octobre 2019</span>
+                            </div>
+                            <h3 class="font-serif text-3xl md:text-3xl text-emerald-950 italic mb-6">Rencontre avec René
+                                Pezet</h3>
+
+                            <div class="text-gray-600 leading-relaxed mb-6 space-y-4">
+                                <p>
+                                    René Pezet, un passionné et grand connaisseur des moulins, nous a fait l’honneur de
+                                    nous rejoindre lors de notre réunion d’association du 26 octobre qui a eu lieu à la
+                                    mairie de Saint Hilaire. Nous lui indiquons que nous nous intéressons aux moulins
+                                    mais aussi à tout ce qui résulte du petit patrimoine. L’objet de la réunion concerne
+                                    les moulins.
+                                </p>
+                                <blockquote class="border-l-4 border-bronze-500 pl-4 italic text-emerald-900/80 my-6">
+                                    "Pour Monsieur Pezet, il n’y a pas de petit patrimoine, c’est un patrimoine de
+                                    pays."
+                                </blockquote>
+                                <p>
+                                    Sur Saint Hilaire, il ne reste plus de moulins en état. Il est question du moulin de
+                                    Liffernet, mais il semblerait qu’il n’en reste pas grand-chose et il est quasiment
+                                    inaccessible. Ce moulin a failli être en état de marche, mais lorsque des essais ont
+                                    été effectués cela n’a pas fonctionné.
+                                </p>
+                                <button onclick="togglePezetDetails()"
+                                    class="text-emerald-700 font-bold uppercase tracking-wider text-sm hover:text-emerald-900 transition-colors inline-flex items-center gap-2 focus:outline-none mt-4">
+                                    Lire le compte-rendu complet <i id="pezet-arrow"
+                                        class="fas fa-chevron-down transition-transform duration-300"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Image Section -->
+                        <div class="relative h-64 md:h-auto order-1 md:order-2 bg-gray-50 group cursor-pointer"
+                            onclick="openLightbox('images/pezet.jpg', 'René Pezet')">
+                            <img src="images/pezet.jpg" alt="René Pezet"
+                                class="w-full h-full object-contain absolute inset-0 hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+
+                    <!-- Hidden Details Section -->
+                    <div id="pezet-details"
+                        class="hidden px-8 md:px-12 pb-8 md:pb-12 border-t border-gray-100 pt-6 bg-white transition-all duration-500">
+                        <div class="space-y-6 text-gray-600 leading-relaxed">
+                            <p>
+                                Monsieur Pezet indique qu’à Liffernet, il y a un type de turbine qui est assez rare au
+                                pays. On voit plutôt des Rouets comme au Moulin du PRAT qui est un moulin phénoménal
+                                d’un point de vue conservation. Au moulin de Liffernet, une turbine rare (type cloche) a
+                                été installée par une entreprise de Strasbourg sur les arrivées d'eau des anciens
+                                rouets.
+                            </p>
+                            <p>
+                                Le propriétaire est Didier, fils de Vermande du Puech. En règle générale tous les
+                                moulins sont privés. Pour faire une exposition, il faut d'abord comprendre le
+                                fonctionnement des moulins régionaux, différents de ceux du Célé et du Lot (roues à cuve
+                                ou à puits).
+                            </p>
+
+                            <!-- Illustration 1: Turbine -->
+                            <div class="aspect-video relative overflow-hidden rounded-lg shadow-md my-8 group cursor-pointer bg-gray-50"
+                                onclick="openLightbox('images/moulin_turbine.jpg', 'Turbine rare de type cloche du Moulin de Liffernet')">
+                                <img src="images/moulin_turbine.jpg" alt="Turbine Moulin de Liffernet"
+                                    class="w-full h-full object-contain hover:scale-105 transition-transform duration-700">
+                            </div>
+
+                            <p>
+                                Le Moulin du FAU a été équipé d'entrée avec deux Rouets en puits et deux Rouets volants
+                                (comme au Moulin du PRAT). La question se pose de cette configuration mixte. Beaucoup de
+                                moulins à rouets volants sont passés aux rouets métalliques dès que le fer est devenu
+                                accessible.
+                            </p>
+
+                            <p>
+                                Les rouets à Puits utilisent une conduite forcée en forme d’entonnoir. Le moulin du Prat
+                                utilise une conduite forcée commandée par une rispe.
+                            </p>
+
+                            <!-- Placeholder 2: Two photos -->
+                            <div class="grid md:grid-cols-2 gap-4 my-8">
+                                <div class="aspect-video relative overflow-hidden rounded shadow-sm group cursor-pointer bg-gray-50"
+                                    onclick="openLightbox('images/moulin_conduite.jpg', 'Moulin du Prat (Conduite forcée)')">
+                                    <img src="images/moulin_conduite.jpg" alt="Moulin du Prat Conduite"
+                                        class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all hover:scale-105 duration-700">
+                                </div>
+                                <div class="aspect-video relative overflow-hidden rounded shadow-sm group cursor-pointer bg-gray-50"
+                                    onclick="openLightbox('images/moulin_rouet.jpg', 'Rouet à puits')">
+                                    <img src="images/moulin_rouet.jpg" alt="Rouet à puits"
+                                        class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all hover:scale-105 duration-700">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
                 <div class="grid md:grid-cols-3 gap-10">
                     <!-- Event 1 -->
                     <article
@@ -2638,6 +2740,20 @@
         function toggleArticleDetails() {
             const details = document.getElementById('article-details');
             const arrow = document.getElementById('details-arrow');
+
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                arrow.classList.add('rotate-180');
+            } else {
+                details.classList.add('hidden');
+                arrow.classList.remove('rotate-180');
+            }
+        }
+
+        // Pezet Article Toggle
+        function togglePezetDetails() {
+            const details = document.getElementById('pezet-details');
+            const arrow = document.getElementById('pezet-arrow');
 
             if (details.classList.contains('hidden')) {
                 details.classList.remove('hidden');
