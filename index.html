@@ -285,7 +285,8 @@
                     </div>
                     <div class="hidden md:block w-[1px] h-32 bg-emerald-900/10 mr-12"></div>
                     <p class="md:w-1/3 text-emerald-900/60 font-light mt-8 md:mt-0 text-justify">
-                        Découvrez les trois piliers qui fondent l'âme de Saint-Hilaire. Une exploration entre nature
+                        Découvrez les trois piliers qui fondent l'âme de Saint-Hilaire et ses villages alentours. Une
+                        exploration entre nature
                         sauvage, pierres séculaires et mémoire vivante.
                     </p>
                 </div>
@@ -296,7 +297,7 @@
                         onclick="showSection('bati')">
                         <div class="absolute inset-0 bg-emerald-950 transition-all duration-700">
                             <img src="images/home_card_bati.png"
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 grayscale group-hover:grayscale-0"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 opacity-90 group-hover:opacity-100"
                                 alt="Patrimoine Bâti">
                         </div>
                         <div class="absolute inset-0 border-[0.5px] border-white/20 m-4 z-20 pointer-events-none"></div>
@@ -319,7 +320,7 @@
                         onclick="showSection('botanique')">
                         <div class="absolute inset-0 bg-emerald-950 transition-all duration-700">
                             <img src="images/home_card_naturel.png"
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 grayscale group-hover:grayscale-0"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 opacity-90 group-hover:opacity-100"
                                 alt="Patrimoine Naturel">
                         </div>
                         <div class="absolute inset-0 border-[0.5px] border-white/20 m-4 z-20 pointer-events-none"></div>
@@ -342,7 +343,7 @@
                         onclick="showSection('humain')">
                         <div class="absolute inset-0 bg-emerald-950 transition-all duration-700">
                             <img src="images/home_card_humain.png"
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 grayscale group-hover:grayscale-0"
+                                class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 opacity-90 group-hover:opacity-100"
                                 alt="Patrimoine Humain">
                         </div>
                         <div class="absolute inset-0 border-[0.5px] border-white/20 m-4 z-20 pointer-events-none"></div>
@@ -475,6 +476,21 @@
 
                     <!-- Grid of Mills -->
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+                        <!-- Card: Variante Technique -->
+                        <div class="group cursor-pointer" onclick="showSection('bati-moulins-variante')">
+                            <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative bg-gray-50">
+                                <img src="images/moulin_turbine.jpg"
+                                    class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 hover-zoom-img transition-all duration-700"
+                                    alt="Schéma Rouet à Puits">
+                                <div
+                                    class="absolute inset-0 bg-emerald-950/20 group-hover:bg-transparent transition-all duration-500">
+                                </div>
+                            </div>
+                            <h3
+                                class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
+                                Variante technique spécifique</h3>
+                            <p class="text-sm text-emerald-900/60 mt-2">Le génie du moulin à rouet.</p>
+                        </div>
                         <!-- Card: Moulin du Prat -->
                         <div class="group cursor-pointer" onclick="showSection('bati-moulins-prat')">
                             <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative">
@@ -575,6 +591,177 @@
                             class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
                             Château de Bessonies</h3>
                         <p class="text-sm text-emerald-900/60 mt-2">Le refuge du Maréchal Ney.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+
+        <!-- SECTION: DETAIL - VARIANTE TECHNIQUE -->
+        <div id="section-bati-moulins-variante" class="page-section hidden">
+            <div class="h-24 w-full bg-emerald-950/5"></div>
+            <main class="max-w-6xl mx-auto px-4 py-12">
+                <button onclick="showSection('bati-moulins-general')"
+                    class="mb-8 text-sm text-bronze-600 hover:text-emerald-900 transition-colors uppercase tracking-widest flex items-center gap-2">
+                    <span>←</span> Retour aux Moulins
+                </button>
+                <div class="flex flex-col md:flex-row gap-20 items-start reveal">
+                    <div class="md:w-1/2 sticky top-32">
+                        <div
+                            class="relative group aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10 bg-gray-100 p-4 border border-gray-200">
+                            <img src="images/moulin_turbine.jpg"
+                                class="w-full h-full object-contain hover:scale-105 transition-all duration-1000 sepia-[.3]"
+                                alt="Coupe transversale moulin à puits">
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-serif text-emerald-950 italic text-xl mb-4">Comprendre la mécanique</h4>
+                            <div
+                                class="aspect-video w-full rounded-lg overflow-hidden shadow-lg border border-gray-200 bg-gray-100 relative">
+                                <!-- Placeholder for Video if user provides valid link later -->
+                                <div class="absolute inset-0 flex items-center justify-center flex-col text-center p-6">
+                                    <i class="fab fa-youtube text-5xl text-red-600 mb-4 opacity-80"></i>
+                                    <p class="text-gray-500 font-medium">Vidéo explicative : Les moulins à eau</p>
+                                    <a href="https://www.youtube.com/results?search_query=moulin+a+eau+mecanisme+fonctionnement"
+                                        target="_blank"
+                                        class="mt-2 text-xs text-blue-600 underline hover:text-blue-800">Voir des vidéos
+                                        similaires</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 space-y-8">
+                        <h3 class="text-4xl lg:text-5xl font-serif text-emerald-950 italic leading-tight">Le Rouet à
+                            Puits</h3>
+                        <div class="w-16 h-[1px] bg-bronze-500"></div>
+
+                        <h4 class="text-xl text-emerald-900 font-medium tracking-wide uppercase text-sm">Variante
+                            technique spécifique et ingénieuse</h4>
+
+                        <p class="text-emerald-900/70 leading-loose text-lg text-justify font-light">
+                            Voici les informations exclusives sur ce mécanisme particulier utilisant une conduite en
+                            forme d'entonnoir.
+                        </p>
+
+                        <div class="space-y-8 mt-8">
+
+                            <!-- 1. Le Principe -->
+                            <div>
+                                <h4 class="font-serif text-2xl text-emerald-950 mb-4">1. Le Principe du "Puits" (ou
+                                    Cuve)</h4>
+                                <p class="text-emerald-900/60 leading-relaxed text-justify mb-4">
+                                    Contrairement aux moulins à rouets classiques où l'eau arrive par une canalisation
+                                    inclinée en bois (la trompe ou le canon) pour frapper la roue, le système "à puits"
+                                    utilise la <strong>gravité verticale pure</strong> couplée à un effet
+                                    tourbillonnaire.
+                                </p>
+                                <ul
+                                    class="list-disc pl-5 space-y-2 text-emerald-900/60 leading-relaxed marker:text-bronze-500">
+                                    <li><strong>La structure :</strong> Il s'agit d'une tour creuse en maçonnerie,
+                                        hermétique, bâtie directement au-dessus de la chambre du rouet. Ce "puits" fait
+                                        office de conduite forcée verticale.</li>
+                                    <li><strong>Forme d'entonnoir :</strong> L'intérieur du puits est souvent profilé ou
+                                        se termine par un rétrécissement conique (l'entonnoir) à sa base. Cette forme
+                                        est cruciale pour augmenter la pression de l'eau juste avant son éjection (effet
+                                        Venturi).</li>
+                                </ul>
+                            </div>
+
+                            <!-- 2. La Conduite -->
+                            <div>
+                                <h4 class="font-serif text-2xl text-emerald-950 mb-4">2. La Conduite Forcée en Entonnoir
+                                </h4>
+                                <p class="text-emerald-900/60 leading-relaxed text-justify mb-4">
+                                    La spécificité de la "conduite en entonnoir" dans ces moulins réside dans sa
+                                    capacité à transformer une faible hauteur de chute en une pression exploitable.
+                                </p>
+                                <div class="space-y-6">
+                                    <!-- Step 1: Mise en charge -->
+                                    <div
+                                        class="bg-gray-50 p-4 rounded-lg flex flex-col md:flex-row gap-4 items-start group">
+                                        <div class="md:w-1/3 aspect-video relative rounded-md overflow-hidden flex-shrink-0 cursor-pointer"
+                                            onclick="openLightbox('images/moulin_puits_mise_en_charge.jpg', 'Mise en charge : Pression de la colonne d\'eau')">
+                                            <img src="images/moulin_puits_mise_en_charge.jpg" alt="Mise en charge puits"
+                                                class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transition-transform duration-700">
+                                        </div>
+                                        <div>
+                                            <h5 class="text-emerald-950 font-bold mb-2">Mise en charge</h5>
+                                            <p class="text-emerald-900/60 text-sm leading-relaxed text-justify">
+                                                L'eau du bief remplit le puits vertical. La colonne d'eau ainsi créée
+                                                exerce une forte pression au fond.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 2: Injection Vortex -->
+                                    <div
+                                        class="bg-gray-50 p-4 rounded-lg flex flex-col md:flex-row gap-4 items-start group">
+                                        <div class="md:w-1/3 aspect-video relative rounded-md overflow-hidden flex-shrink-0 cursor-pointer"
+                                            onclick="openLightbox('images/moulin_puits_vortex.jpg', 'Injection Vortex : Création du tourbillon')">
+                                            <img src="images/moulin_puits_vortex.jpg" alt="Vortex hydraulique"
+                                                class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transition-transform duration-700">
+                                        </div>
+                                        <div>
+                                            <h5 class="text-emerald-950 font-bold mb-2">Injection Vortex</h5>
+                                            <p class="text-emerald-900/60 text-sm leading-relaxed text-justify">
+                                                Souvent, l'eau n'arrive pas seulement de haut en bas, mais est
+                                                introduite tangentiellement dans cet entonnoir. Cela crée un tourbillon
+                                                (vortex) à l'intérieur de la conduite forcée.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Step 3: Impact -->
+                                    <div
+                                        class="bg-gray-50 p-4 rounded-lg flex flex-col md:flex-row gap-4 items-start group">
+                                        <div class="md:w-1/3 aspect-video relative rounded-md overflow-hidden flex-shrink-0 cursor-pointer"
+                                            onclick="openLightbox('images/moulin_puits_impact_rouet.jpg', 'Impact : Jet sous pression sur le rouet')">
+                                            <img src="images/moulin_puits_impact_rouet.jpg" alt="Impact sur le rouet"
+                                                class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500 hover:scale-105 transition-transform duration-700">
+                                        </div>
+                                        <div>
+                                            <h5 class="text-emerald-950 font-bold mb-2">Impact</h5>
+                                            <p class="text-emerald-900/60 text-sm leading-relaxed text-justify">
+                                                L'eau sous pression jaillit par l'orifice inférieur de l'entonnoir (le
+                                                gargouille ou l'injecteur) pour frapper violemment les cuillères (pales
+                                                concaves) du rouet horizontal situé juste en dessous.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3. Avantages -->
+                            <div class="bg-alabaster-100 p-6 rounded border-l-4 border-bronze-500">
+                                <h4 class="font-serif text-xl text-emerald-950 mb-4">3. Avantages techniques</h4>
+                                <p class="text-emerald-900/60 leading-relaxed text-justify mb-4">
+                                    Ce type de conduite forcée était privilégié dans certaines régions (Sud-Ouest,
+                                    Espagne, montagne sèche) :
+                                </p>
+                                <ul class="space-y-3 text-emerald-900/60 leading-relaxed">
+                                    <li><strong class="text-emerald-800">Rendement avec peu d'eau :</strong> La forme en
+                                        entonnoir concentre un débit faible pour lui donner une vitesse maximale. Idéal
+                                        pour les petits ruisseaux à débit irrégulier.</li>
+                                    <li><strong class="text-emerald-800">Protection :</strong> Le "puits" en pierre est
+                                        durable et ne craint pas le gel, contrairement aux trompes en bois.</li>
+                                    <li><strong class="text-emerald-800">Simplification :</strong> Élimine le besoin
+                                        d'engrenages de renvoi d'angle. L'axe du rouet entraîne directement la meule
+                                        située à l'étage supérieur.</li>
+                                </ul>
+                            </div>
+
+                            <!-- 4. Distinction -->
+                            <div>
+                                <h4
+                                    class="font-serif text-xl text-emerald-950 mb-4 border-b border-emerald-900/10 pb-2">
+                                    4. Distinction terminologique</h4>
+                                <p class="text-emerald-900/60 leading-relaxed text-justify font-light italic">
+                                    Attention à ne pas confondre avec le <strong>Moulin à Trompe</strong> (tronc d'arbre
+                                    évidé incliné) ou le toponyme <strong>Moulin de Puits</strong> (village de Puits en
+                                    Côte-d'Or, utilisant souvent des roues verticales).
+                                </p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </main>
@@ -946,7 +1133,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Orchis Mâle')">
                                 <img src="images/fleur_orchis_male.webp"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Orchis Mâle"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558293842-c0fd3db8a8b6?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -992,7 +1179,7 @@
                                 <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                     onclick="openLightbox(this.querySelector('img').src, 'Orchis Brûlé')">
                                     <img src="images/fleur_orchis_brule.jpg"
-                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                         alt="Orchis Brûlé"
                                         onerror="this.onerror=null; this.src='https://via.placeholder.com/400x500?text=Orchis+Brûlé'">
                                 </div>
@@ -1033,7 +1220,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Céphalanthère à longues feuilles')">
                                 <img src="images/fleur_cephalanthere.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Céphalanthère à longues feuilles"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596720426673-e4c196f7c8ec?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1060,7 +1247,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Orchis Bouc')">
                                 <img src="images/fleur_orchis_bouc.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Orchis Bouc"
                                     onerror="this.onerror=null; this.src='https://via.placeholder.com/400x500?text=Orchis+Bouc'">
                             </div>
@@ -1239,7 +1426,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Reine des prés')">
                                 <img src="images/fleur_reine_des_pres.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Reine des prés"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629633596707-160533038668?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1263,7 +1450,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Plantain majeur')">
                                 <img src="images/fleur_plantain_majeur.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Plantain majeur"
                                     onerror="this.onerror=null; this.src='https://plus.unsplash.com/premium_photo-1675713876007-88544df6244f?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1283,7 +1470,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Millepertuis')">
                                 <img src="images/fleur_millepertuis.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Millepertuis"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1624536735528-7634f1bf5198?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1319,7 +1506,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Érythrone dent-de-chien')">
                                 <img src="images/fleur_erythrone.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Érythrone dent-de-chien"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588602656911-37d45366432b?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1343,7 +1530,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Scille à deux feuilles')">
                                 <img src="images/fleur_scille.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Scille à deux feuilles"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1615560410756-347589d8F51b?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1380,7 +1567,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Achillée millefeuille')">
                                 <img src="images/fleur_achillee.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Achillée millefeuille"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596720426673-e4c196f7c8ec?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1403,7 +1590,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Centaurée jacée')">
                                 <img src="images/fleur_centauree.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Centaurée jacée"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629813567705-726ff3857508?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1428,7 +1615,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Épervière')">
                                 <img src="images/fleur_eperviere_gen.webp"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Épervière"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596554522437-14811a2f9011?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1467,7 +1654,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Lathrée clandestine')">
                                 <img src="images/fleur_lathree.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Lathrée clandestine"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1678216335905-24e073c66f54?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1492,7 +1679,7 @@
                             <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
                                 onclick="openLightbox(this.querySelector('img').src, 'Anémone sylvie')">
                                 <img src="images/fleur_anemone.jpg"
-                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 grayscale group-hover:grayscale-0"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
                                     alt="Anémone sylvie"
                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1586944322434-d02f92882269?auto=format&fit=crop&q=80&w=400'">
                             </div>
@@ -1727,8 +1914,7 @@
         <div id="section-humain" class="page-section hidden bg-stone-100">
             <div class="grid lg:grid-cols-2 min-h-screen">
                 <div class="bg-stone-200 lg:h-auto h-96 relative overflow-hidden">
-                    <img src="images/section_humain_histoires.png"
-                        class="absolute inset-0 w-full h-full object-cover grayscale opacity-90"
+                    <img src="images/section_humain_histoires.png" class="absolute inset-0 w-full h-full object-cover "
                         alt="Mains travaillant">
                     <div class="absolute inset-0 bg-stone-900/10"></div>
                 </div>
@@ -2050,7 +2236,7 @@
                         <!-- Image Section -->
                         <div class="relative h-64 md:h-auto order-1 md:order-2">
                             <img src="images/genealogie.png" alt="Atelier Généalogie"
-                                class="w-full h-full object-cover absolute inset-0">
+                                class="w-full h-full object-cover absolute inset-0 opacity-90 hover:opacity-100 transition-opacity duration-500">
                         </div>
                     </div>
                 </article>
@@ -2086,7 +2272,7 @@
                         <!-- Main Image Section -->
                         <div class="relative h-64 md:h-auto order-1 md:order-2">
                             <img src="images/sortie_botanique_9.jpg" alt="Sortie botanique principale"
-                                class="w-full h-full object-cover absolute inset-0">
+                                class="w-full h-full object-cover absolute inset-0 opacity-90 hover:opacity-100 transition-opacity duration-500">
                         </div>
                     </div>
 
@@ -2098,43 +2284,43 @@
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_2.jpg', 'Sortie botanique photo 2')">
                                 <img src="images/sortie_botanique_2.jpg" alt="Sortie botanique 2"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
                             </div>
                             <!-- Image 3 -->
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_3.jpg', 'Sortie botanique photo 3')">
                                 <img src="images/sortie_botanique_3.jpg" alt="Sortie botanique 3"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
                             </div>
                             <!-- Image 4 -->
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_4.jpg', 'Sortie botanique photo 4')">
                                 <img src="images/sortie_botanique_4.jpg" alt="Sortie botanique 4"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
                             </div>
                             <!-- Image 5 -->
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_5.jpg', 'Sortie botanique photo 5')">
                                 <img src="images/sortie_botanique_5.jpg" alt="Sortie botanique 5"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
                             </div>
                             <!-- Image 6 -->
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_6.jpg', 'Sortie botanique photo 6')">
                                 <img src="images/sortie_botanique_6.jpg" alt="Sortie botanique 6"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
                             </div>
                             <!-- Image 7 -->
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_7.jpg', 'Sortie botanique photo 7')">
                                 <img src="images/sortie_botanique_7.jpg" alt="Sortie botanique 7"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
                             </div>
                             <!-- Image 8 -->
                             <div class="aspect-square rounded-lg overflow-hidden bg-gray-100 cursor-pointer hover:opacity-90 transition-opacity"
                                 onclick="openLightbox('images/sortie_botanique_8.jpg', 'Sortie botanique photo 8')">
                                 <img src="images/sortie_botanique_8.jpg" alt="Sortie botanique 8"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-500">
                             </div>
                         </div>
                     </div>
@@ -2304,12 +2490,12 @@
                                 <div class="aspect-video relative overflow-hidden rounded shadow-sm group cursor-pointer bg-gray-50"
                                     onclick="openLightbox('images/moulin_conduite.jpg', 'Moulin du Prat (Conduite forcée)')">
                                     <img src="images/moulin_conduite.jpg" alt="Moulin du Prat Conduite"
-                                        class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all hover:scale-105 duration-700">
+                                        class="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-500 transition-all hover:scale-105 duration-700">
                                 </div>
                                 <div class="aspect-video relative overflow-hidden rounded shadow-sm group cursor-pointer bg-gray-50"
                                     onclick="openLightbox('images/moulin_rouet.jpg', 'Rouet à puits')">
                                     <img src="images/moulin_rouet.jpg" alt="Rouet à puits"
-                                        class="w-full h-full object-contain grayscale hover:grayscale-0 transition-all hover:scale-105 duration-700">
+                                        class="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-500 transition-all hover:scale-105 duration-700">
                                 </div>
                             </div>
                         </div>
@@ -2345,7 +2531,7 @@
 
                     <!-- Event 2 -->
                     <article
-                        class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 reveal delay-100 flex flex-col group cursor-pointer">
+                        class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 opacity-90 hover:opacity-100 transition-all duration-300 reveal delay-100 flex flex-col group cursor-pointer">
                         <div class="h-48 overflow-hidden relative">
                             <img src="images/fleur_intro.webp"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -2394,7 +2580,7 @@
             <div class="col-span-1 md:col-span-2 pr-10">
                 <div class="flex items-center gap-3 mb-6">
                     <img src="images/logo_sainthilaire46.jpg"
-                        class="h-10 opacity-80 grayscale hover:grayscale-0 transition-all rounded"
+                        class="h-10 opacity-80 opacity-90 hover:opacity-100 transition-opacity duration-500 transition-all rounded"
                         onerror="this.style.display='none'">
                     <h4 class="text-white font-serif text-2xl italic">Saint Hilaire</h4>
                 </div>
