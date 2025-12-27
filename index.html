@@ -476,6 +476,26 @@
 
                     <!-- Grid of Mills -->
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+                        <!-- Card: Magazine Article -->
+                        <div class="group cursor-pointer" onclick="showSection('bati-moulins-magazine')">
+                            <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative bg-emerald-900">
+                                <!-- Uses a gradient overlay on a related image or just a styled block -->
+                                <img src="images/moulin_rouet.jpg"
+                                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 hover-zoom-img transition-all duration-700 mix-blend-overlay"
+                                    alt="L'Art de l'Eau et de la Pierre">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-emerald-900/40 to-bronze-900/40 group-hover:bg-transparent transition-all duration-500">
+                                </div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span
+                                        class="text-white/80 font-serif italic text-lg tracking-widest border border-white/30 px-4 py-2 uppercase group-hover:bg-white/10 transition-all">Monographie</span>
+                                </div>
+                            </div>
+                            <h3
+                                class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
+                                L'Art de l'Eau et de la Pierre</h3>
+                            <p class="text-sm text-emerald-900/60 mt-2">Monographie exhaustive des moulins à rouet.</p>
+                        </div>
                         <!-- Card: Variante Technique -->
                         <div class="group cursor-pointer" onclick="showSection('bati-moulins-variante')">
                             <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative bg-gray-50">
@@ -494,7 +514,7 @@
                         <!-- Card: Moulin du Prat -->
                         <div class="group cursor-pointer" onclick="showSection('bati-moulins-prat')">
                             <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative">
-                                <img src="images/moulin.webp"
+                                <img src="images/prat1.jpg"
                                     class="w-full h-full object-cover hover-zoom-img transition-all duration-700"
                                     alt="Moulin du Prat">
                                 <div
@@ -507,14 +527,19 @@
                             <p class="text-sm text-emerald-900/60 mt-2">Le témoin vivant de notre histoire.</p>
                         </div>
                         <!-- Card: Moulin de la Ressague -->
-                        <div class="group cursor-pointer opacity-75">
-                            <div
-                                class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative bg-gray-100 flex items-center justify-center">
-                                <span class="text-emerald-900/40 font-serif italic">Bientôt disponible</span>
+                        <div class="group cursor-pointer">
+                            <div class="aspect-[4/3] overflow-hidden rounded-sm shadow-lg mb-4 relative bg-gray-50">
+                                <img src="images/ressegue1.jpg"
+                                    class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500 hover-zoom-img transition-all duration-700"
+                                    alt="Moulin de la Ressague">
+                                <div
+                                    class="absolute inset-0 bg-emerald-950/20 group-hover:bg-transparent transition-all duration-500">
+                                </div>
                             </div>
                             <h3
                                 class="text-2xl font-serif text-emerald-950 italic group-hover:text-bronze-600 transition-colors">
                                 Moulin de la Ressague</h3>
+                            <p class="text-sm text-emerald-900/60 mt-2">Patrimoine en sommeil.</p>
                         </div>
                         <!-- Card: Moulin de la Payssière -->
                         <div class="group cursor-pointer opacity-75">
@@ -780,7 +805,7 @@
                     <div class="md:w-1/2 sticky top-32">
                         <div
                             class="relative group aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
-                            <img src="images/moulin.webp"
+                            <img src="images/prat1.jpg"
                                 class="w-full h-full object-cover hover-zoom-img transition-all duration-1000"
                                 alt="Moulin du Prat">
                         </div>
@@ -797,10 +822,10 @@
                                 entre le Lot et le Cantal, au cœur d'une zone de partage historique entre Quercy et
                                 Auvergne.
                             </p>
-                            <p>
-                                <i class="fas fa-map-marker-alt text-bronze-500 mr-2"></i> <strong
-                                    class="text-emerald-900 font-medium">Accès :</strong> Depuis Bessonies, on y accède
-                                par le lieu-dit Le Fau en prenant la direction de Saint-Hilaire (D201).
+                            <i class="fas fa-map-marker-alt text-bronze-500 mr-2"></i> <strong
+                                class="text-emerald-900 font-medium">Accès
+                                :</strong> Depuis Bessonies, on y accède
+                            par le lieu-dit Le Fau en prenant la direction de Saint-Hilaire (D201).
                             </p>
                         </div>
 
@@ -887,6 +912,521 @@
                         </div>
                     </div>
                 </div>
+            </main>
+        </div>
+
+
+        <!-- SECTION: MAGAZINE ARTICLE (Restyled) -->
+        <div id="section-bati-moulins-magazine" class="page-section hidden bg-alabaster-50">
+            <!-- Navigation Back -->
+            <div class="fixed top-24 left-6 z-50">
+                <button onclick="showSection('bati-moulins-general')"
+                    class="text-sm text-emerald-900/80 hover:text-emerald-950 transition-colors uppercase tracking-widest flex items-center gap-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm hover:shadow-md border border-white/20">
+                    <span>←</span> Retour aux Moulins
+                </button>
+            </div>
+
+            <!-- Header Hero -->
+            <header class="h-[60vh] relative flex items-center justify-center bg-emerald-950 overflow-hidden">
+                <!-- Background Image -->
+                <img src="images/moulin_rouet.jpg"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 animate-slow-zoom mix-blend-luminosity"
+                    alt="Moulins du Veyre">
+
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-alabaster-50"></div>
+
+                <div class="relative z-10 text-center text-white px-4 animate-fade-in-up mt-10">
+                    <span
+                        class="text-bronze-400 font-bold tracking-[0.3em] text-xs uppercase mb-6 block border-b border-bronze-400/30 pb-4 inline-block">Monographie
+                        Technique</span>
+                    <h1 class="font-serif text-5xl md:text-7xl italic mb-6 font-medium text-emerald-950">L'Art de
+                        l'Eau<br>et de la Pierre</h1>
+                    <p class="text-xl font-light text-emerald-800 max-w-2xl mx-auto tracking-wide leading-loose">
+                        Les Moulins à Rouet Volant de la Vallée du Veyre</p>
+                    <div class="mt-8 flex justify-center gap-6 text-xs uppercase tracking-widest text-emerald-900/60">
+                        <span>Patrimoine Vernaculaire</span>
+                        <span class="w-px h-4 bg-emerald-900/20"></span>
+                        <span>Ségala Lotois</span>
+                    </div>
+                </div>
+            </header>
+
+            <main class="max-w-5xl mx-auto px-6 py-20">
+
+                <!-- Introduction -->
+                <div class="glass-card p-10 md:p-14 rounded-sm border-l-4 border-bronze-500 mb-20 reveal relative">
+                    <i class="fas fa-water text-4xl text-bronze-500/20 absolute top-6 right-6"></i>
+                    <p class="font-bold mb-4 uppercase text-xs tracking-[0.2em] text-bronze-600">Introduction</p>
+                    <p class="mb-6 italic font-serif text-xl text-emerald-950">
+                        "Avant l'ère de la machine à vapeur et de l'électricité, c'est l'eau qui a fourni la force
+                        motrice nécessaire à la subsistance des populations."
+                    </p>
+
+                    <div
+                        class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none border-t border-emerald-900/10 pt-6 mt-6">
+                        <p>
+                            L'histoire rurale de la France, et plus particulièrement celle du Quercy et du Massif
+                            central, est indissociable de la domestication de l'énergie hydraulique. Avant l'ère de la
+                            machine à vapeur et de l'électricité, c'est l'eau qui a fourni la force motrice nécessaire à
+                            la transformation des matières premières agricoles, permettant la subsistance des
+                            populations et l'émergence d'une économie préindustrielle.
+                        </p>
+                        <p>
+                            Dans cette grande fresque technologique, le Ségala lotois occupe une place singulière. Cette
+                            région de transition, « terre à seigle » aux confins du Lot et du Cantal, se distingue par
+                            une géologie cristalline et un réseau hydrographique dense mais capricieux, qui a imposé aux
+                            bâtisseurs locaux des solutions techniques spécifiques.
+                        </p>
+                        <p>
+                            Au cœur de ce territoire, la vallée du Veyre, modeste affluent du Célé, constitue un
+                            conservatoire exceptionnel de cette ingéniosité vernaculaire. Contrairement aux grands
+                            moulins de plaine équipés de roues verticales monumentales, les moulins du Veyre et de ses
+                            affluents ont adopté majoritairement un mécanisme discret, robuste et particulièrement
+                            adapté aux cours d'eau à régime torrentiel et à débit variable : le système à rouet volant.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section I -->
+                <section class="mb-24 reveal">
+                    <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                        <span class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">I</span>
+                        <h2 class="text-4xl font-serif text-emerald-950 italic">Le Déterminisme Géographique</h2>
+                    </div>
+
+                    <div
+                        class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                        <p>
+                            Pour comprendre l'émergence et la persistance du moulin à rouet volant dans la vallée du
+                            Veyre, il est indispensable d'analyser le substrat physique sur lequel cette technologie
+                            s'est déployée. Le moulin est avant tout une réponse architecturale et mécanique à des
+                            contraintes environnementales strictes.
+                        </p>
+
+                        <h3 class="text-2xl font-serif text-emerald-950 italic mt-8 mb-4">Le Ségala Lotois : Une Île
+                            Cristalline</h3>
+
+                        <p>
+                            Le département du Lot est souvent associé à l'image des Causses, ces vastes plateaux
+                            calcaires secs, perméables, où l'eau s'infiltre pour circuler en rivières souterraines. Le
+                            Ségala, situé à l'extrémité nord-est du département, offre un contraste saisissant avec ce
+                            modèle. Il constitue géologiquement l'avant-poste du Massif central.
+                        </p>
+
+                        <div class="bg-white p-8 border border-stone-100 shadow-lg relative my-8">
+                            <h4
+                                class="font-bold text-lg mb-3 text-bronze-600 font-serif uppercase tracking-widest text-xs">
+                                La Nature des Sols</h4>
+                            <p class="font-light italic text-emerald-900 leading-relaxed">
+                                Le substrat du Ségala est composé de roches métamorphiques et magmatiques : schistes,
+                                gneiss, micaschistes et granites. Cette géologie a deux conséquences fondamentales pour
+                                l'économie rurale et l'implantation des moulins.
+                            </p>
+                        </div>
+
+                        <p>
+                            <strong class="text-emerald-950 font-medium">L'Imperméabilité</strong> : Contrairement au
+                            calcaire, ces roches ne laissent pas l'eau s'infiltrer. Les précipitations, abondantes sur
+                            ces reliefs accrochant les flux d'ouest, ruissellent en surface. Cela engendre un réseau
+                            hydrographique extrêmement dense, ramifié en une multitude de ruisseaux et de rivières,
+                            créant un potentiel énergétique diffus mais omniprésent.
+                        </p>
+                        <p>
+                            <strong class="text-emerald-950 font-medium">L'Acidité et la Froideur des Sols</strong> : La
+                            décomposition de ces roches donne des sols siliceux, acides et pauvres en calcaire.
+                            Historiquement, ces terres étaient inhospitalières pour le blé froment, culture noble
+                            exigeant des terres riches. Elles étaient en revanche favorables au seigle, céréale rustique
+                            qui supporte l'acidité et le froid. C'est cette culture dominante qui a donné son nom à la
+                            région : <em>Segala</em>, la terre à seigle.
+                        </p>
+
+                        <h3 class="text-2xl font-serif text-emerald-950 italic mt-12 mb-4">Le Veyre : Artère Vitale du
+                            Haut Ségala</h3>
+
+                        <p>
+                            Le Veyre est la rivière structurante de notre zone d'étude. Affluent de la rive droite du
+                            Célé, il appartient au grand bassin versant de la Garonne via le Lot. Prenant naissance dans
+                            le département du Cantal, sur la commune de Parlan, à une altitude d'environ 695 mètres, il
+                            s'écoule globalement du nord vers le sud sur une longueur de 32,9 kilomètres.
+                        </p>
+                        <p>
+                            Le régime du Veyre est de type pluvial océanique à influence montagnarde. En hiver et au
+                            printemps, les précipitations abondantes et la fonte des neiges gonflent la rivière. En été,
+                            le débit s'effondre. Cette variabilité extrême est la contrainte majeure pour la meunerie.
+                            Le meunier ne disposait pas d'une force constante.
+                        </p>
+                    </div>
+
+                    <figure class="my-16 max-w-3xl mx-auto group">
+                        <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                            <!-- Placeholder generic background for nature/valley -->
+                            <div
+                                class="w-full h-80 bg-stone-200 flex items-center justify-center text-stone-400 italic">
+                                [Image: Paysage de la Vallée du Veyre]
+                            </div>
+                        </div>
+                        <figcaption class="text-center text-xs text-emerald-900/50 mt-4 italic tracking-wide">La vallée
+                            du Veyre, un écrin de verdure et d'eau.</figcaption>
+                    </figure>
+                </section>
+
+                <!-- Section II -->
+                <section class="mb-24 reveal">
+                    <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                        <span class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">II</span>
+                        <h2 class="text-4xl font-serif text-emerald-950 italic">Le Rouet Volant</h2>
+                    </div>
+
+                    <div
+                        class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                        <p>
+                            L'expression « mécanisme très spécifique » fait référence à une technologie fascinante par
+                            sa simplicité apparente et son efficacité réelle. Le rouet volant n'est pas une version
+                            primitive de la roue à aubes verticale, mais une branche technologique distincte, celle des
+                            roues horizontales à impulsion, ancêtres directs des turbines Pelton modernes.
+                        </p>
+
+                        <h3 class="text-2xl font-serif text-emerald-950 italic mt-8 mb-4">Distinction Taxonomique</h3>
+
+                        <div class="overflow-x-auto my-8 border border-emerald-900/10 rounded-lg shadow-sm">
+                            <table class="min-w-full bg-white text-sm md:text-base">
+                                <thead class="bg-emerald-950 text-white">
+                                    <tr>
+                                        <th class="px-6 py-4 text-left font-serif font-normal italic tracking-wider">
+                                            Caractéristique</th>
+                                        <th class="px-6 py-4 text-left font-serif font-normal italic tracking-wider">
+                                            Roue Verticale</th>
+                                        <th class="px-6 py-4 text-left font-serif font-normal italic tracking-wider">
+                                            Roue Horizontale</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-emerald-900/10">
+                                    <tr class="hover:bg-alabaster-50">
+                                        <td class="px-6 py-4 font-bold text-emerald-950">Axe de Rotation</td>
+                                        <td class="px-6 py-4">Horizontal</td>
+                                        <td class="px-6 py-4">Vertical</td>
+                                    </tr>
+                                    <tr class="hover:bg-alabaster-50">
+                                        <td class="px-6 py-4 font-bold text-emerald-950">Transmission</td>
+                                        <td class="px-6 py-4">Renvoi d'angle nécessaire</td>
+                                        <td class="px-6 py-4">Prise directe</td>
+                                    </tr>
+                                    <tr class="hover:bg-alabaster-50">
+                                        <td class="px-6 py-4 font-bold text-emerald-950">Type d'Énergie</td>
+                                        <td class="px-6 py-4">Poids de l'eau</td>
+                                        <td class="px-6 py-4">Impulsion du jet</td>
+                                    </tr>
+                                    <tr class="hover:bg-alabaster-50">
+                                        <td class="px-6 py-4 font-bold text-emerald-950">Adaptation</td>
+                                        <td class="px-6 py-4">Gros débits</td>
+                                        <td class="px-6 py-4">Faibles débits</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="text-2xl font-serif text-emerald-950 italic mt-12 mb-4">Anatomie du Mécanisme</h3>
+
+                        <div class="grid md:grid-cols-2 gap-8 my-10 text-justify">
+                            <div
+                                class="bg-emerald-50/50 p-8 rounded-lg border border-emerald-900/5 hover:border-bronze-500/30 transition-colors">
+                                <h4 class="font-bold text-lg mb-3 text-emerald-950 font-serif">La Trompe (Le Canelou)
+                                </h4>
+                                <p class="text-sm leading-relaxed">C'est l'injecteur du système. Conduit en bois ou en
+                                    fonte, de forme tronconique, elle canalise l'eau depuis le réservoir et accélère le
+                                    flux pour transformer la pression statique en pression dynamique.</p>
+                            </div>
+
+                            <div
+                                class="bg-emerald-50/50 p-8 rounded-lg border border-emerald-900/5 hover:border-bronze-500/30 transition-colors">
+                                <h4 class="font-bold text-lg mb-3 text-emerald-950 font-serif">Le Rouet (Le Rodet)</h4>
+                                <p class="text-sm leading-relaxed">La turbine elle-même, constituée d'un moyeu central
+                                    avec des aubes incurvées en forme de cuillère. Cette forme concave permet de
+                                    recevoir le jet d'eau et transmet une impulsion maximale.</p>
+                            </div>
+
+                            <div
+                                class="bg-emerald-50/50 p-8 rounded-lg border border-emerald-900/5 hover:border-bronze-500/30 transition-colors">
+                                <h4 class="font-bold text-lg mb-3 text-emerald-950 font-serif">L'Arbre Moteur (L'Aouré)
+                                </h4>
+                                <p class="text-sm leading-relaxed">L'axe vertical qui transmet le mouvement, reposant
+                                    sur un pivot en acier et traversant le plancher du moulin. Il entraîne directement
+                                    la meule courante.</p>
+                            </div>
+
+                            <div
+                                class="bg-emerald-50/50 p-8 rounded-lg border border-emerald-900/5 hover:border-bronze-500/30 transition-colors">
+                                <h4 class="font-bold text-lg mb-3 text-emerald-950 font-serif">La Trempure</h4>
+                                <p class="text-sm leading-relaxed">Mécanisme ingénieux permettant de soulever ou
+                                    abaisser millimétriquement l'ensemble arbre + meule, réglant ainsi la finesse de la
+                                    farine sans arrêter le moulin.</p>
+                            </div>
+                        </div>
+
+                        <p>
+                            Le génie du rouet volant réside dans sa vitesse de rotation. Grâce à son petit diamètre et à
+                            la vitesse du jet, il tourne naturellement à 80-120 tours/minute et peut donc entraîner la
+                            meule en prise directe, sans les engrenages multiplicateurs nécessaires aux roues
+                            verticales.
+                        </p>
+                    </div>
+
+                    <figure class="my-16 max-w-3xl mx-auto group">
+                        <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                            <img src="images/moulin_turbine.jpg" alt="Rouet Volant"
+                                class="w-full hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000">
+                        </div>
+                        <figcaption class="text-center text-xs text-emerald-900/50 mt-4 italic tracking-wide">Mécanisme
+                            du rouet volant (Moulin du Prat).</figcaption>
+                    </figure>
+                </section>
+
+                <!-- Section III -->
+                <section class="mb-24 reveal">
+                    <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                        <span
+                            class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">III</span>
+                        <h2 class="text-4xl font-serif text-emerald-950 italic">Architecture & Économie</h2>
+                    </div>
+
+                    <div
+                        class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                        <p>
+                            Les moulins du Veyre ne sont pas seulement des machines ; ce sont des édifices inscrits dans
+                            un paysage et une tradition architecturale forte, celle du Ségala.
+                        </p>
+
+                        <h3 class="text-2xl font-serif text-emerald-950 italic mt-8 mb-4">L'Implantation : Le Défi
+                            Topographique</h3>
+
+                        <p>
+                            Les moulins ne sont jamais construits en travers du lit majeur de la rivière. Ils sont bâtis
+                            en dérivation. Une chaussée modeste barre le cours du Veyre en amont pour détourner une
+                            partie du débit. Le bief suit la courbe de niveau sur le flanc de la vallée, créant
+                            artificiellement la hauteur de chute nécessaire.
+                        </p>
+
+                        <h3 class="text-2xl font-serif text-emerald-950 italic mt-12 mb-4">Le Bâtiment : Pierre et Lauze
+                        </h3>
+
+                        <p>
+                            L'architecture du moulin ségalin se distingue par ses murs en schiste ou gneiss local,
+                            donnant des maçonneries d'aspect rustique aux teintes sombres. La toiture pentue, couverte
+                            de lauzes de schiste taillées en écailles, est la signature paysagère, influencée par la
+                            proximité de l'Auvergne.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-stone-100 shadow-lg relative my-10">
+                        <i class="fas fa-layer-group text-3xl text-bronze-500/20 absolute top-4 left-4"></i>
+                        <h4 class="font-bold text-xl mb-6 text-emerald-950 font-serif pt-4">Organisation Spatiale
+                            Verticale</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="font-bold text-bronze-600 mr-4 text-xl">→</span>
+                                <span class="text-emerald-900/80"><strong>Le Sous-sol</strong> : Chambre d'eau voûtée en
+                                    pierre, abritant les rouets</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-bronze-600 mr-4 text-xl">→</span>
+                                <span class="text-emerald-900/80"><strong>Le Rez-de-Chaussée</strong> : Chambre des
+                                    meules, atelier de transformation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="font-bold text-bronze-600 mr-4 text-xl">→</span>
+                                <span class="text-emerald-900/80"><strong>L'Étage</strong> : Logement du meunier ou
+                                    grenier à grain</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Illustration 3 -->
+                <!-- Illustration 3: Le Moulin du Prat -->
+                <figure class="my-16 max-w-3xl mx-auto group reveal">
+                    <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                        <img src="images/prat1.jpg" alt="Le Moulin du Prat restauré"
+                            class="w-full hover-zoom-img grayscale group-hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <figcaption class="text-center text-xs text-emerald-900/50 mt-4 italic tracking-wide">
+                        Le Moulin du Prat, restauré et fonctionnel.
+                    </figcaption>
+                </figure>
+
+                <!-- Section IV -->
+                <section class="mb-24 reveal">
+                    <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                        <span class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">IV</span>
+                        <h2 class="text-4xl font-serif text-emerald-950 italic">L'Économie du Moulin</h2>
+                    </div>
+
+                    <div
+                        class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                        <p>
+                            Le moulin était le pivot de l'économie de subsistance du Ségala. Il transformait les trois
+                            productions majeures de ce terroir pauvre : le seigle, la châtaigne et la noix.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6 my-12">
+                        <div
+                            class="bg-amber-50 p-6 rounded-lg border-t-4 border-bronze-500 shadow-sm transition-transform hover:-translate-y-1">
+                            <h4 class="font-bold text-xl mb-3 text-emerald-950 font-serif">Le Seigle</h4>
+                            <p class="text-sm text-emerald-900/80">Le pain noir du Ségala. Le sol acide ne portait que
+                                cette céréale rustique, base calorique de la paysannerie jusqu'à la fin du XIXe siècle.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-amber-50 p-6 rounded-lg border-t-4 border-bronze-500 shadow-sm transition-transform hover:-translate-y-1">
+                            <h4 class="font-bold text-xl mb-3 text-emerald-950 font-serif">La Châtaigne</h4>
+                            <p class="text-sm text-emerald-900/80">L'arbre à pain. Séchées puis moulues, les châtaignes
+                                produisaient une farine douce pour les bouillies et galettes traditionnelles.</p>
+                        </div>
+
+                        <div
+                            class="bg-amber-50 p-6 rounded-lg border-t-4 border-bronze-500 shadow-sm transition-transform hover:-translate-y-1">
+                            <h4 class="font-bold text-xl mb-3 text-emerald-950 font-serif">L'Huile de Noix</h4>
+                            <p class="text-sm text-emerald-900/80">L'or jaune. Seule matière grasse disponible, extraite
+                                par pressage dans des installations dédiées conservées dans certains moulins.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Partie V -->
+                <section class="mb-20 relative bg-emerald-900 text-white -mx-6 px-6 py-12 rounded-lg shadow-2xl">
+                    <span
+                        class="magazine-section-number text-white/5 absolute top-0 left-0 p-8 font-serif font-bold text-9xl">V</span>
+                    <div class="relative z-10">
+                        <div class="flex items-end gap-6 mb-12 border-b border-white/10 pb-6 pl-20">
+                            <h2 class="text-4xl font-serif text-white italic">Monographie des Moulins</h2>
+                        </div>
+
+                        <div class="space-y-8">
+                            <div
+                                class="bg-emerald-800/50 p-8 rounded-lg border border-white/10 hover:bg-emerald-800/70 transition-colors">
+                                <h3 class="text-2xl font-bold mb-4 font-serif text-bronze-400">Le Moulin du Prat</h3>
+                                <p class="text-white/60 text-sm mb-4 font-serif italic tracking-wide">Commune de
+                                    Bessonies / Saint-Hilaire</p>
+                                <p class="leading-relaxed text-white/90">L'exemple le plus didactique et le mieux
+                                    restauré du Haut-Ségala. Tombé en ruine totale dans les années 1990, il a été
+                                    reconstruit de 1997 à 2006. Le rouet volant a été reconstitué à l'identique et
+                                    fonctionne aujourd'hui lors des visites. Un site incontournable pour comprendre le
+                                    mécanisme in situ.</p>
+                            </div>
+
+                            <div
+                                class="bg-emerald-800/50 p-8 rounded-lg border border-white/10 hover:bg-emerald-800/70 transition-colors">
+                                <h3 class="text-2xl font-bold mb-4 font-serif text-bronze-400">Le Moulin des Conturies
+                                </h3>
+                                <p class="text-white/60 text-sm mb-4 font-serif italic tracking-wide">Commune de
+                                    Bagnac-sur-Célé</p>
+                                <p class="leading-relaxed text-white/90">Site historique majeur appartenant à la famille
+                                    Castagé depuis le XVIIe siècle. Il a conservé ses meules à farine et son huilerie
+                                    complète. Modernisé pour produire de l'électricité verte, il prouve que ces vieux
+                                    moulins peuvent avoir une utilité contemporaine. Inscrit aux Monuments Historiques.
+                                </p>
+                            </div>
+
+                            <div
+                                class="bg-emerald-800/50 p-8 rounded-lg border border-white/10 hover:bg-emerald-800/70 transition-colors">
+                                <h3 class="text-2xl font-bold mb-4 font-serif text-bronze-400">Le Moulin de la Ressègue
+                                </h3>
+                                <p class="text-white/60 text-sm mb-4 font-serif italic tracking-wide">Commune de Parlan
+                                    / Bessonies</p>
+                                <p class="leading-relaxed text-white/90">Situé à la frontière Cantal-Lot, ce moulin
+                                    possède une charge mémorielle forte. En février 1944, il a servi de refuge à un
+                                    groupe de maquisards. Son isolement en faisait une cachette idéale, symbolisant le
+                                    rôle social des moulins comme lieux de refuge et de résistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Partie VI -->
+                <section class="mb-24 reveal">
+                    <div class="flex items-end gap-6 mb-12 border-b border-emerald-900/10 pb-6">
+                        <span class="text-6xl font-serif text-bronze-200/50 -mb-4 -ml-2 font-bold select-none">VI</span>
+                        <h2 class="text-4xl font-serif text-emerald-950 italic">Enjeux Contemporains</h2>
+                    </div>
+
+                    <div
+                        class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none mb-12">
+                        <p>
+                            La situation actuelle est celle d'une tension entre deux objectifs vertueux : la protection
+                            du patrimoine et la protection de l'environnement.
+                        </p>
+                    </div>
+
+                    <div class="grid gap-6">
+                        <div
+                            class="bg-blue-50/50 border-l-4 border-blue-800 p-6 rounded-r-lg group hover:bg-blue-50 transition-colors">
+                            <h4 class="font-bold text-xl mb-2 text-blue-900 font-serif group-hover:text-blue-700">La
+                                Continuité Écologique</h4>
+                            <p class="text-base text-emerald-900/70">La Directive Cadre sur l'Eau européenne impose le
+                                rétablissement de la circulation libre des poissons et des sédiments. Les seuils des
+                                moulins sont parfois accusés de bloquer cette circulation. Des solutions existent :
+                                passes à poissons rustiques, rivières de contournement, mais elles restent coûteuses.
+                            </p>
+                        </div>
+
+                        <div
+                            class="bg-emerald-50/50 border-l-4 border-emerald-600 p-6 rounded-r-lg group hover:bg-emerald-50 transition-colors">
+                            <h4 class="font-bold text-xl mb-2 text-emerald-900 font-serif group-hover:text-emerald-700">
+                                Le Potentiel Énergétique</h4>
+                            <p class="text-base text-emerald-900/70">Dans le contexte de transition énergétique, les
+                                moulins du Veyre représentent un gisement de petite hydroélectricité. Le rouet volant
+                                peut être remplacé par une micro-turbine moderne qui s'insère dans la structure
+                                existante, comme l'a fait le Moulin des Conturies.</p>
+                        </div>
+
+                        <div
+                            class="bg-purple-50/50 border-l-4 border-purple-800 p-6 rounded-r-lg group hover:bg-purple-50 transition-colors">
+                            <h4 class="font-bold text-xl mb-2 text-purple-900 font-serif group-hover:text-purple-700">Le
+                                Tourisme Vert</h4>
+                            <p class="text-base text-emerald-900/70">Le Ségala mise sur le tourisme lent. Les chemins de
+                                randonnée qui longent le Veyre valorisent ce patrimoine. Le moulin restauré devient une
+                                halte, un lieu d'interprétation du paysage et de l'histoire.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Conclusion -->
+                <section
+                    class="bg-gradient-to-br from-emerald-950 to-black text-white p-12 -mx-6 rounded-b-lg relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay">
+                    </div>
+                    <div class="relative z-10">
+                        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-10 text-center italic text-bronze-400">
+                            Conclusion</h2>
+
+                        <div class="prose-lg prose-invert max-w-none text-center">
+                            <p class="text-xl leading-relaxed text-white/90 font-light">
+                                Les moulins à rouet volant de la vallée du Veyre ne sont pas de simples reliques
+                                pittoresques. Ils sont les témoins sophistiqués d'une intelligence technique
+                                vernaculaire. Face à un environnement contraignant, les habitants du Ségala ont su
+                                développer une machine parfaite : le rouet volant. Simple, robuste, efficace.
+                            </p>
+
+                            <div class="w-12 h-[1px] bg-white/20 mx-auto my-8"></div>
+
+                            <p class="text-xl leading-relaxed text-white/80 font-light italic">
+                                Aujourd'hui, ces moulins nous interrogent sur notre rapport aux ressources. Ils
+                                fonctionnaient à l'énergie solaire, avec des matériaux biosourcés et locaux, dans une
+                                économie circulaire parfaite. Une leçon de modernité venue du passé.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="text-center mt-12 pb-12">
+                    <button onclick="showSection('bati-moulins-general')"
+                        class="text-emerald-900 hover:text-bronze-600 font-serif italic transition-colors">
+                        ← Retour à la liste des Moulins
+                    </button>
+                </div>
+
             </main>
         </div>
 
