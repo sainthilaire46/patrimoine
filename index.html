@@ -2640,8 +2640,13 @@
                     <!-- Contact Form -->
                     <div class="bg-emerald-50 p-10 md:p-12 rounded-2xl shadow-xl reveal delay-100 h-full">
                         <h3 class="font-serif text-3xl text-emerald-900 font-bold mb-8">Nous écrire</h3>
-                        <form class="space-y-6" action="mailto:olivier.guillemant@gmail.com" method="post"
-                            enctype="text/plain">
+                        <form class="space-y-6" action="https://formsubmit.co/olivier.guillemant@gmail.com"
+                            method="POST">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_subject" value="Nouveau message via le site Sainthilaire46.fr">
+                            <input type="hidden" name="_next" value="https://sainthilaire46.fr/index.html">
+                            <input type="hidden" name="_captcha" value="false">
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label
