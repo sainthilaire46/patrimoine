@@ -2640,20 +2640,20 @@
                     <!-- Contact Form -->
                     <div class="bg-emerald-50 p-10 md:p-12 rounded-2xl shadow-xl reveal delay-100 h-full">
                         <h3 class="font-serif text-3xl text-emerald-900 font-bold mb-8">Nous écrire</h3>
-                        <form class="space-y-6"
-                            onsubmit="event.preventDefault(); alert('Message envoyé avec succès (simulation)'); this.reset();">
+                        <form class="space-y-6" action="mailto:olivier.guillemant@gmail.com" method="post"
+                            enctype="text/plain">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label
                                         class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Nom</label>
-                                    <input type="text" required
+                                    <input type="text" name="nom" required
                                         class="w-full px-4 py-3 rounded-lg border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white"
                                         placeholder="Votre nom">
                                 </div>
                                 <div>
                                     <label
                                         class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Email</label>
-                                    <input type="email" required
+                                    <input type="email" name="email" required
                                         class="w-full px-4 py-3 rounded-lg border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white"
                                         placeholder="Email@exemple.com">
                                 </div>
@@ -2661,7 +2661,7 @@
                             <div>
                                 <label
                                     class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Sujet</label>
-                                <select
+                                <select name="sujet"
                                     class="w-full px-4 py-3 rounded-lg border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white">
                                     <option>Demande d'information</option>
                                     <option>Devenir bénévole</option>
@@ -2672,7 +2672,7 @@
                             <div>
                                 <label
                                     class="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Message</label>
-                                <textarea rows="5" required
+                                <textarea name="message" rows="5" required
                                     class="w-full px-4 py-3 rounded-lg border-gray-200 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all bg-white"
                                     placeholder="Comment pouvons-nous vous aider ?"></textarea>
                             </div>
