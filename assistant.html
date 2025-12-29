@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +12,14 @@
             border: 2px dashed #059669;
             transition: all 0.3s ease;
         }
+
         .drop-zone:hover {
             background-color: #f0fdf4;
             border-color: #10b981;
         }
     </style>
 </head>
+
 <body class="bg-gray-50 min-h-screen font-sans text-gray-900 p-4 md:p-8">
 
     <div class="max-w-3xl mx-auto">
@@ -30,7 +33,7 @@
         </header>
 
         <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
-            
+
             <!-- ÉTAPE 1 : CHOIX DU FICHIER -->
             <div class="mb-8">
                 <label class="block text-sm font-bold text-gray-700 mb-2">1. Sélectionnez votre photo originale</label>
@@ -45,7 +48,8 @@
             <!-- ÉTAPE 2 : CHOIX DE LA DESTINATION -->
             <div class="mb-8">
                 <label class="block text-sm font-bold text-gray-700 mb-2">2. À quoi correspond cette photo ?</label>
-                <select id="imageTarget" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
+                <select id="imageTarget"
+                    class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
                     <optgroup label="Structure & Accueil">
                         <option value="logo_sainthilaire46.jpg">Logo de l'association (logo_sainthilaire46.jpg)</option>
                         <option value="P1010460.webp">Grand bandeau haut (P1010460.webp)</option>
@@ -66,7 +70,7 @@
                         <option value="fleur_reine_des_pres.webp">Reine des prés</option>
                         <option value="fleur_plantain.webp">Plantain</option>
                         <option value="fleur_millepertuis.webp">Millepertuis</option>
-                    </option>
+                        </option>
                     <optgroup label="Botanique - Rares">
                         <option value="fleur_erythrone.webp">Érythrone</option>
                         <option value="fleur_scille.webp">Scille</option>
@@ -88,7 +92,8 @@
                             <p class="text-sm text-gray-500">Nouveau nom de fichier :</p>
                             <p id="targetLabel" class="font-mono font-bold text-emerald-700"></p>
                         </div>
-                        <button id="downloadBtn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                        <button id="downloadBtn"
+                            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
                             <i class="fas fa-download"></i>
                             Télécharger l'image prête
                         </button>
@@ -148,7 +153,7 @@
 
         function handleFile(file) {
             if (!file.type.startsWith('image/')) return;
-            
+
             fileNameLabel.textContent = file.name;
             const reader = new FileReader();
             reader.onload = (e) => {
@@ -167,7 +172,7 @@
 
             const targetName = imageTarget.value;
             targetLabel.textContent = targetName;
-            
+
             // Calcul du redimensionnement (max 1200px de large)
             const maxWidth = 1200;
             let width = currentImage.width;
@@ -192,12 +197,14 @@
 
             const targetName = imageTarget.value;
             const format = targetName.endsWith('.jpg') ? 'image/jpeg' : 'image/webp';
-            
+
             const link = document.createElement('a');
             link.download = targetName;
             link.href = canvas.toDataURL(format, 0.85);
             link.click();
         });
     </script>
+    <script data-goatcounter="https://sainthilaire46.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
+
 </html>
