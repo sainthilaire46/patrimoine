@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulletin d'Adhésion - Saint-Hilaire, Mémoire et Patrimoine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: { 900: '#064e3b', 950: '#022c22' },
+                        bronze: { 500: '#a18e6e' },
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+
+            body {
+                background: white;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .print-border {
+                border: 1px solid #000;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans p-8 md:p-16 min-h-screen">
+
+    <!-- Print Button -->
+    <div class="fixed top-6 right-6 no-print">
+        <button onclick="window.print()"
+            class="bg-emerald-900 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-emerald-800 transition-all font-bold flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Imprimer le bulletin
+        </button>
+    </div>
+
+    <div class="max-w-3xl mx-auto bg-white p-12 shadow-2xl print:shadow-none print:p-0">
+
+        <!-- Header -->
+        <header class="text-center border-b-4 border-emerald-900 pb-8 mb-10">
+            <h1 class="font-serif text-3xl md:text-4xl text-emerald-950 font-bold mb-2">Saint-Hilaire, Mémoire et
+                Patrimoine</h1>
+            <p class="text-bronze-500 italic font-serif text-xl">Bulletin d'Adhésion</p>
+        </header>
+
+        <!-- Intro -->
+        <div class="mb-10 text-justify text-gray-600 leading-relaxed">
+            <p class="mb-4">
+                En adhérant à l'association, vous soutenez activement la préservation de notre patrimoine local bâti,
+                naturel et humain.
+                Votre cotisation nous permet de financer nos actions de restauration et d'organiser des événements
+                culturels.
+            </p>
+        </div>
+
+        <!-- Form -->
+        <div
+            class="space-y-6 border border-gray-300 p-8 rounded-sm bg-gray-50 print:bg-white print:border-2 print:border-black">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs uppercase tracking-widest font-bold text-emerald-900 mb-1">Nom</label>
+                    <div class="h-10 border-b-2 border-dashed border-gray-400"></div>
+                </div>
+                <div>
+                    <label
+                        class="block text-xs uppercase tracking-widest font-bold text-emerald-900 mb-1">Prénom</label>
+                    <div class="h-10 border-b-2 border-dashed border-gray-400"></div>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs uppercase tracking-widest font-bold text-emerald-900 mb-1">Adresse
+                    Postale</label>
+                <div class="h-10 border-b-2 border-dashed border-gray-400 mb-4"></div>
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="col-span-1">
+                        <label class="text-xs text-gray-500">Code Postal</label>
+                        <div class="h-8 border-b-2 border-dashed border-gray-400"></div>
+                    </div>
+                    <div class="col-span-2">
+                        <label class="text-xs text-gray-500">Ville</label>
+                        <div class="h-8 border-b-2 border-dashed border-gray-400"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label
+                        class="block text-xs uppercase tracking-widest font-bold text-emerald-900 mb-1">Téléphone</label>
+                    <div class="h-10 border-b-2 border-dashed border-gray-400"></div>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-widest font-bold text-emerald-900 mb-1">Email</label>
+                    <div class="h-10 border-b-2 border-dashed border-gray-400"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Membership Options -->
+        <div class="mt-10 mb-8">
+            <h3 class="font-serif text-xl text-emerald-950 font-bold mb-6 border-b border-gray-200 pb-2">Type d'adhésion
+                (Année _______)</h3>
+
+            <div class="space-y-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-6 h-6 border-2 border-emerald-900 rounded-full"></div>
+                    <span class="font-medium text-lg">Membre Actif</span>
+                    <span class="flex-grow border-b border-dotted border-gray-300 mx-2"></span>
+                    <span class="font-bold">15 €</span> <!-- Placeholder price, standard -->
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="w-6 h-6 border-2 border-emerald-900 rounded-full"></div>
+                    <span class="font-medium text-lg">Membre Bienfaiteur</span>
+                    <span class="flex-grow border-b border-dotted border-gray-300 mx-2"></span>
+                    <span class="font-bold text-gray-400 text-sm italic">Montant libre (> 15 €) : ________ €</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer / Payment -->
+        <div class="bg-emerald-900 text-white p-6 rounded-sm print:bg-gray-100 print:text-black">
+            <p class="font-bold mb-2 uppercase text-sm tracking-widest">Règlement</p>
+            <p class="text-sm opacity-90 mb-4">
+                Merci de retourner ce bulletin accompagné de votre règlement par chèque à l'ordre de :<br>
+                <strong>"Association Saint-Hilaire, Mémoire et Patrimoine"</strong>
+            </p>
+            <p class="text-xs opacity-70 print:text-black mt-4">
+                Adresse de retour : Mairie de Saint-Hilaire, Le Bourg, 46210 Saint-Hilaire (à confirmer)
+            </p>
+        </div>
+
+        <!-- Signature -->
+        <div class="mt-12 flex justify-end">
+            <div class="w-64">
+                <p class="mb-8 text-sm italic">Fait à ____________________, le _______________</p>
+                <p class="font-bold text-sm uppercase">Signature</p>
+                <div class="h-24 border border-gray-200 mt-2 bg-gray-50 print:border-black"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
