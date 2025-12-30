@@ -644,10 +644,13 @@
         <div id="section-bati-moulins-variante" class="page-section hidden">
             <div class="h-24 w-full bg-emerald-950/5"></div>
             <main class="max-w-6xl mx-auto px-4 py-12">
-                <button onclick="showSection('bati-moulins-general')"
-                    class="mb-8 text-sm text-bronze-600 hover:text-emerald-900 transition-colors uppercase tracking-widest flex items-center gap-2">
-                    <span>←</span> Retour aux Moulins
-                </button>
+                <!-- Navigation Back -->
+                <div class="fixed top-24 left-6 z-50">
+                    <button onclick="showSection('bati-moulins-general')"
+                        class="text-sm text-emerald-900/80 hover:text-emerald-950 transition-colors uppercase tracking-widest flex items-center gap-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm hover:shadow-md border border-white/20">
+                        <span>←</span> Retour aux Moulins
+                    </button>
+                </div>
                 <div class="flex flex-col md:flex-row gap-20 items-start reveal">
                     <div class="md:w-1/2 sticky top-32">
                         <div
