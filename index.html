@@ -193,6 +193,9 @@
                     <li><a href="#humain" onclick="showSection('humain')" id="nav-humain"
                             class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">HUMAIN</a>
                     </li>
+                    <li><a href="#memoire" onclick="showSection('memoire')" id="nav-memoire"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">MÉMOIRE</a>
+                    </li>
                     <li><a href="#association" onclick="showSection('association')" id="nav-association"
                             class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">L'ASSOCIATION</a>
                     </li>
@@ -221,7 +224,7 @@
                     class="block text-xl font-serif italic text-emerald-900 hover:text-bronze-600">Accueil</a>
                 <div>
                     <button id="mobile-bati-btn" type="button"
-                        class="flex items-center justify-between w-full text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600 cursor-pointer focus:outline-none">
+                        class="flex items-center justify-between w-full text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600 cursor:pointer focus:outline-none">
                         <span>Bâti</span>
                         <i id="bati-mobile-arrow"
                             class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
@@ -244,6 +247,8 @@
                     class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Botanique</a>
                 <a href="#humain" onclick="showSection('humain'); toggleMobileMenu()"
                     class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Humain</a>
+                <a href="#memoire" onclick="showSection('memoire'); toggleMobileMenu()"
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Mémoire</a>
                 <a href="#association" onclick="showSection('association'); toggleMobileMenu()"
                     class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Association</a>
                 <a href="#blog" onclick="showSection('blog'); toggleMobileMenu()"
@@ -480,7 +485,7 @@
 
         <!-- SECTION: PATRIMOINE BÂTI -->
         <!-- SECTION: BATI - MOULINS GENERAL -->
-        <div id="section-bati-moulins-general" class="page-section hidden">
+        <div id="section-bati-moulins-general" class="page-section min-h-screen hidden">
             <div class="h-24 w-full"></div>
             <main class="max-w-6xl mx-auto px-4 py-12">
                 <div class="space-y-20">
@@ -1739,48 +1744,29 @@
                                     forêt.</p>
                             </div>
                         </div>
-                        <div class="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
-                            <h4 class="font-serif text-3xl italic text-emerald-950 mb-6">Orchis Mâle</h4>
-                            <div class="w-12 h-0.5 bg-emerald-300/50 mb-6"></div>
-                            <p class="text-sm text-gray-600 mt-2">Visible dès la fin avril, cette orchidée aux
-                                tons
-                                pourprés forme des épis denses et élancés. Son nom latin <em>Orchis mascula</em>
-                                évoque
-                                sa silhouette robuste. Elle préfère les prairies semi-ombragées et les lisières
-                                de
-                                forêt.</p>
-                        </div>
-                    </div>
-
-                    <!-- Orchis Brûlé -->
-                    <div
-                        class="bg-white rounded-xl shadow-xl shadow-emerald-900/5 border border-white/60 hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-500 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
-                        <div class="w-full md:w-1/2 relative cursor-zoom-in h-64 md:h-auto overflow-hidden"
-                            onclick="openLightbox(this.querySelector('img').src, 'Orchis Brûlé')">
-                            <!-- Orchis Brûlé -->
-                            <div
-                                class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
-                                <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
-                                    onclick="openLightbox(this.querySelector('img').src, 'Orchis Brûlé')">
-                                    <img src="images/fleur_orchis_brule.jpg"
-                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
-                                        alt="Orchis Brûlé"
-                                        onerror="this.onerror=null; this.src='https://via.placeholder.com/400x500?text=Orchis+Brûlé'">
-                                </div>
-                                <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
-                                    <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">14
-                                        Mai</span>
-                                    <h4
-                                        class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
-                                        Orchis Brûlé</h4>
-                                    <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
-                                    <p class="text-sm text-emerald-900/60 leading-loose">Fleurissant mi-mai,
-                                        cette
-                                        orchidée tire son nom de
-                                        ses fleurs supérieures qui semblent avoir été noircies par le feu. Son
-                                        parfum
-                                        subtil de vanille attire les pollinisateurs.</p>
-                                </div>
+                        <!-- Orchis Brûlé -->
+                        <div
+                            class="glass-card hover:shadow-2xl hover:shadow-bronze-500/10 transition-all duration-700 overflow-hidden group reveal flex flex-col md:flex-row min-h-[400px]">
+                            <div class="w-full md:w-1/2 relative cursor-zoom-in h-80 md:h-auto overflow-hidden"
+                                onclick="openLightbox(this.querySelector('img').src, 'Orchis Brûlé')">
+                                <img src="images/fleur_orchis_brule.jpg"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
+                                    alt="Orchis Brûlé"
+                                    onerror="this.onerror=null; this.src='https://via.placeholder.com/400x500?text=Orchis+Brûlé'">
+                            </div>
+                            <div class="w-full md:w-1/2 p-12 flex flex-col justify-center">
+                                <span class="text-[0.6rem] uppercase tracking-[0.2em] text-bronze-500 mb-4">14
+                                    Mai</span>
+                                <h4
+                                    class="font-serif text-4xl italic text-emerald-950 mb-6 group-hover:text-bronze-600 transition-colors">
+                                    Orchis Brûlé</h4>
+                                <div class="w-8 h-[1px] bg-emerald-900/10 mb-6"></div>
+                                <p class="text-sm text-emerald-900/60 leading-loose">Fleurissant mi-mai,
+                                    cette
+                                    orchidée tire son nom de
+                                    ses fleurs supérieures qui semblent avoir été noircies par le feu. Son
+                                    parfum
+                                    subtil de vanille attire les pollinisateurs.</p>
                             </div>
                         </div>
 
@@ -2557,25 +2543,6 @@
                         </blockquote>
                     </div>
 
-                    <!-- Call to Action: Photos d'Autrefois -->
-                    <div class="mt-20 bg-amber-50 p-8 rounded-xl shadow-lg border border-amber-200 reveal cursor-pointer group hover:bg-amber-100 transition-colors"
-                        onclick="showSection('humain-photos')">
-                        <div class="flex items-center gap-6">
-                            <div
-                                class="bg-amber-200 p-4 rounded-full text-amber-800 group-hover:scale-110 transition-transform">
-                                <i class="fas fa-images text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3
-                                    class="font-bold text-lg mb-1 text-stone-900 group-hover:text-amber-900 transition-colors">
-                                    Mémoire en Images</h3>
-                                <p class="text-stone-600 text-sm">Découvrez notre collection de photos d'autrefois :
-                                    scènes de vies, cartes postales et visages du passé.</p>
-                            </div>
-                            <i
-                                class="fas fa-arrow-right ml-auto text-amber-400 group-hover:translate-x-2 transition-transform"></i>
-                        </div>
-                    </div>
 
                     <div
                         class="mt-8 bg-white p-8 rounded-xl shadow-lg border border-stone-200 reveal flex items-center gap-6">
@@ -2592,8 +2559,8 @@
             </div>
         </div>
 
-        <!-- SECTION: PHOTOS D'AUTREFOIS -->
-        <div id="section-humain-photos" class="page-section hidden bg-[#fdfbf7]">
+        <!-- SECTION MEMOIRE (Renamed from humain-photos) -->
+        <div id="section-memoire" class="page-section hidden bg-[#fdfbf7]">
             <header class="h-[60vh] relative flex items-center justify-center bg-stone-900 overflow-hidden">
                 <img src="images/photos_autrefois_hero.jpg"
                     class="absolute inset-0 w-full h-full object-cover opacity-60 animate-slow-zoom"
@@ -2601,9 +2568,7 @@
                 <div class="absolute inset-0 bg-gradient-to-b from-stone-900/50 to-[#fdfbf7]"></div>
 
                 <div class="relative z-10 text-center px-4 mt-10">
-                    <a href="#humain" onclick="showSection('humain')"
-                        class="inline-block mb-8 text-amber-200/80 hover:text-white uppercase tracking-widest text-xs border border-amber-200/30 px-4 py-2 rounded-full transition-colors">←
-                        Retour au Patrimoine Humain</a>
+                    <!-- Back link removed -->
                     <h2
                         class="font-serif text-6xl md:text-8xl text-stone-100 mb-6 italic font-medium leading-none drop-shadow-lg">
                         Mémoire en Images</h2>
