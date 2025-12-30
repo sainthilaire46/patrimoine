@@ -2555,30 +2555,30 @@
                                 </div>
                             </footer>
                         </blockquote>
+                    </div>
 
-                        <blockquote class="relative pl-8 border-l-4 border-amber-300 reveal delay-200">
-                            <p class="text-xl md:text-2xl font-serif text-stone-700 italic mb-6 leading-relaxed">
-                                "Les
-                                foires étaient les grands moments de l'année. On y vendait les bêtes, on y
-                                prenait des
-                                nouvelles... tout le canton s'y retrouvait."</p>
-                            <footer class="flex items-center gap-4">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-stone-300 overflow-hidden flex items-center justify-center text-stone-500 font-bold">
-                                    <img src="images/jean_agriculteur.png" class="w-full h-full object-cover"
-                                        alt="Jean">
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-stone-900 uppercase tracking-wide">Jean
-                                    </div>
-                                    <div class="text-xs text-stone-500">Agriculteur retraité</div>
-                                </div>
-                            </footer>
-                        </blockquote>
+                    <!-- Call to Action: Photos d'Autrefois -->
+                    <div class="mt-20 bg-amber-50 p-8 rounded-xl shadow-lg border border-amber-200 reveal cursor-pointer group hover:bg-amber-100 transition-colors"
+                        onclick="showSection('humain-photos')">
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="bg-amber-200 p-4 rounded-full text-amber-800 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-images text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-bold text-lg mb-1 text-stone-900 group-hover:text-amber-900 transition-colors">
+                                    Mémoire en Images</h3>
+                                <p class="text-stone-600 text-sm">Découvrez notre collection de photos d'autrefois :
+                                    scènes de vies, cartes postales et visages du passé.</p>
+                            </div>
+                            <i
+                                class="fas fa-arrow-right ml-auto text-amber-400 group-hover:translate-x-2 transition-transform"></i>
+                        </div>
                     </div>
 
                     <div
-                        class="mt-20 bg-white p-8 rounded-xl shadow-lg border border-stone-200 reveal flex items-center gap-6">
+                        class="mt-8 bg-white p-8 rounded-xl shadow-lg border border-stone-200 reveal flex items-center gap-6">
                         <div class="bg-amber-100 p-4 rounded-full text-amber-800"><i
                                 class="fas fa-microphone-alt text-2xl"></i></div>
                         <div>
@@ -2590,6 +2590,78 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- SECTION: PHOTOS D'AUTREFOIS -->
+        <div id="section-humain-photos" class="page-section hidden bg-[#fdfbf7]">
+            <header class="h-[60vh] relative flex items-center justify-center bg-stone-900 overflow-hidden">
+                <img src="images/photos_autrefois_hero.jpg"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 animate-slow-zoom"
+                    alt="Village d'autrefois">
+                <div class="absolute inset-0 bg-gradient-to-b from-stone-900/50 to-[#fdfbf7]"></div>
+
+                <div class="relative z-10 text-center px-4 mt-10">
+                    <a href="#humain" onclick="showSection('humain')"
+                        class="inline-block mb-8 text-amber-200/80 hover:text-white uppercase tracking-widest text-xs border border-amber-200/30 px-4 py-2 rounded-full transition-colors">←
+                        Retour au Patrimoine Humain</a>
+                    <h2
+                        class="font-serif text-6xl md:text-8xl text-stone-100 mb-6 italic font-medium leading-none drop-shadow-lg">
+                        Mémoire en Images</h2>
+                    <p class="text-xl text-amber-100/90 font-light max-w-2xl mx-auto font-serif italic">
+                        "Une photographie, c'est un fragment de temps qui ne reviendra pas."
+                    </p>
+                </div>
+            </header>
+
+            <main class="max-w-7xl mx-auto px-6 py-20">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Placeholder Card 1 -->
+                    <div
+                        class="group relative aspect-[4/3] bg-stone-200 rounded-sm overflow-hidden shadow-lg sepia-[.3] hover:sepia-0 transition-all duration-500 cursor-pointer">
+                        <div class="absolute inset-0 flex items-center justify-center bg-stone-300">
+                            <span class="text-stone-500 italic">Bientôt disponible</span>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-white font-serif italic text-xl">Le Bourg en 1900</h3>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Card 2 -->
+                    <div
+                        class="group relative aspect-[4/3] bg-stone-200 rounded-sm overflow-hidden shadow-lg sepia-[.3] hover:sepia-0 transition-all duration-500 cursor-pointer">
+                        <div class="absolute inset-0 flex items-center justify-center bg-stone-300">
+                            <span class="text-stone-500 italic">Bientôt disponible</span>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-white font-serif italic text-xl">Fête votive</h3>
+                        </div>
+                    </div>
+                    <!-- Placeholder Card 3 -->
+                    <div
+                        class="group relative aspect-[4/3] bg-stone-200 rounded-sm overflow-hidden shadow-lg sepia-[.3] hover:sepia-0 transition-all duration-500 cursor-pointer">
+                        <div class="absolute inset-0 flex items-center justify-center bg-stone-300">
+                            <span class="text-stone-500 italic">Bientôt disponible</span>
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-white font-serif italic text-xl">Travaux des champs</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-20 text-center max-w-2xl mx-auto bg-white p-10 rounded-xl shadow-sm border border-stone-200">
+                    <i class="fas fa-camera-retro text-4xl text-stone-300 mb-6"></i>
+                    <h3 class="font-serif text-2xl text-stone-800 mb-4 italic">Vous possédez des photos anciennes ?</h3>
+                    <p class="text-stone-600 mb-8">Aidez-nous à enrichir cette collection. Nous pouvons numériser vos
+                        documents et vous les rendre intacts.</p>
+                    <a href="#association" onclick="showSection('association')"
+                        class="inline-block bg-stone-800 text-white px-8 py-3 rounded-full hover:bg-stone-700 transition-colors uppercase tracking-widest text-xs font-bold">Nous
+                        contacter</a>
+                </div>
+            </main>
         </div>
 
         <!-- SECTION: ASSOCIATION & CONTACT -->
