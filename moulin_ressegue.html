@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Hilaire | Moulin de la Ressègue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            900: '#022c22',
+                            950: '#011c16',
+                        },
+                        alabaster: {
+                            50: '#fbf9f6',
+                            100: '#f3f1ed',
+                            200: '#e6e2db',
+                        },
+                        bronze: {
+                            400: '#e2be5a',
+                            500: '#cca43b',
+                            600: '#b08d33',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'slow-zoom': 'slowZoom 20s linear infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slowZoom: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .hover-zoom-img {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .group:hover .hover-zoom-img {
+            transform: scale(1.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-alabaster-50 text-emerald-900 font-sans font-light antialiased selection:bg-bronze-500/20 selection:text-emerald-950 tracking-wide leading-relaxed">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center group gap-4">
+                    <div class="flex flex-col">
+                        <span
+                            class="font-serif text-lg text-emerald-950 tracking-tight leading-none group-hover:text-bronze-600 transition-colors duration-300">Saint
+                            Hilaire</span>
+                        <span
+                            class="text-[0.6rem] uppercase tracking-[0.2em] text-emerald-800/60 leading-none mt-1 group-hover:text-emerald-800 transition-colors">Patrimoine
+                            Bâti</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul
+                    class="hidden lg:flex space-x-12 items-center font-light text-sm tracking-[0.1em] text-emerald-900/80">
+                    <li><a href="index.html#bati"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 mb-2">RETOUR
+                            AUX MOULINS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <div id="main-content" class="pt-20">
+
+        <!-- Header Hero -->
+        <header class="h-[60vh] relative flex items-center justify-center bg-emerald-950 overflow-hidden">
+            <!-- Background Image -->
+            <img src="images/ressegue1.jpg"
+                class="absolute inset-0 w-full h-full object-cover opacity-60 animate-slow-zoom"
+                alt="Moulin de la Ressègue"
+                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'absolute inset-0 bg-stone-100 flex items-center justify-center italic text-stone-400 text-xl border-2 border-dashed border-stone-200\'>[Image: ressegue1.jpg]</div>'">
+
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-alabaster-50"></div>
+
+            <div class="relative z-10 text-center text-white px-4 animate-fade-in-up mt-10">
+                <span
+                    class="text-bronze-400 font-bold tracking-[0.3em] text-xs uppercase mb-6 block border-b border-bronze-400/30 pb-4 inline-block">Patrimoine
+                    Hydraulique</span>
+                <h1 class="font-serif text-5xl md:text-7xl italic mb-6 font-medium text-alabaster-50">Le Moulin de la
+                    Ressègue
+                </h1>
+                <p class="text-xl font-light text-emerald-100 max-w-2xl mx-auto tracking-wide leading-loose">
+                    À la croisée des chemins et des histoires</p>
+            </div>
+        </header>
+
+        <main class="max-w-4xl mx-auto px-6 py-20">
+
+            <!-- Introduction -->
+            <div class="glass-card p-10 md:p-14 rounded-sm border-l-4 border-bronze-500 mb-20 reveal relative">
+                <i class="fas fa-history text-4xl text-bronze-500/20 absolute top-6 right-6"></i>
+                <p class="font-bold mb-4 uppercase text-xs tracking-[0.2em] text-bronze-600">Localisation & Évolution
+                </p>
+                <p class="mb-6 font-serif text-xl text-emerald-950 leading-relaxed">
+                    Le moulin se situe au niveau du pont de la RESSEGUE à l’intersection de 2 départements, 2 régions et
+                    3 communes.
+                </p>
+                <p class="text-emerald-900/70 font-light leading-loose text-justify">
+                    Après en 1921, le bâtiment initial a été agrandi (bâtiment qui forme la partie d’angle du moulin)
+                    avec un rouet supplémentaire. A ce temps, le moulin faisait l’huile et le grain (farine).
+                </p>
+            </div>
+
+            <!-- Main Content -->
+            <section class="mb-12 reveal">
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+
+                    <h3 class="font-serif text-2xl text-emerald-950 italic mt-12 mb-6">L'anecdote historique</h3>
+
+                    <div class="bg-white p-8 border border-stone-100 shadow-lg relative my-8">
+                        <i class="fas fa-quote-left text-3xl text-bronze-500/20 absolute top-4 left-4"></i>
+                        <p class="italic text-emerald-900 leading-relaxed pt-4">
+                            Petite anecdote racontée par Gilbert ROUDIER, dès notre arrivée : « A l’époque du temps de
+                            la royauté la population masculine était censée faire les corvées de la commune. Il n’y
+                            avait pas de services, et les hommes passaient devant un docteur qui représentait la royauté
+                            et qui indiquait si tel ou tel était valide ou invalide. Le docteur de la royauté passait en
+                            revue des listes de 150 à 200 hommes. A cette époque les gens avaient beaucoup de handicaps.
+                            Il y avait bien des gaillards mais pas tant que ça. »
+                        </p>
+                    </div>
+
+                    <p>Et dans cette liste, il y avait mentionné monsieur « X » de la RESSEGUE (Gilbert ne se souvient
+                        plus de son nom). Cette personne vivait dans le moulin de la RESSEGUE qui alors n’était pas
+                        comme aujourd’hui (moitié moins grand). Le bâtiment de cette époque avait déjà l’étang construit
+                        avec deux sorties d’eau.</p>
+                </div>
+            </section>
+
+            <!-- Image Section -->
+            <figure class="my-16 max-w-3xl mx-auto group reveal">
+                <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                    <img src="images/ressegue1.jpg" alt="Le Moulin de la Ressègue"
+                        class="w-full hover-zoom-img transition-all duration-1000"
+                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: ressegue1.jpg]</div>'">
+                </div>
+            </figure>
+
+            <section class="mb-12 reveal">
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Le père ou le grand pére de Gilbert Roudier disait qu’à l’époque, le moulin avait probablement
+                        une fonction de scierie ou de teinturerie. Gilbert suppose que la RESSEGUE qui signifie « la
+                        scie » en patois avec ses deux sorties d’eau devait faire tourner une scierie ou teinturerie.
+                        Son père a retrouvé des peignes (mais cela sans certitudes car ce ne sont que des informations
+                        racontées).</p>
+                </div>
+            </section>
+
+            <!-- Fabrication Huile Section -->
+            <section class="mb-24 reveal">
+                <div
+                    class="bg-emerald-900 text-alabaster-50 p-10 md:p-14 rounded-sm shadow-2xl relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay">
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-3xl font-serif italic mb-8 flex items-center gap-4">
+                            <span class="w-12 h-[1px] bg-bronze-400"></span>
+                            La fabrication de l’huile de noix
+                        </h3>
+                        <div class="text-emerald-100/80 font-light leading-loose">
+                            <p class="mb-6">Gilbert Roudier nous a parlé de la fabrication de l’huile de noix :</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>On écrasait le cerneau de noix par la force de l’eau.</li>
+                                <li>Une fois que le cerneau de noix était bien malaxé on le mettait à chauffer dans une
+                                    grande poêle à la cheminée du moulin.</li>
+                                <li>Après selon l’odeur c’était le moment de tirer l’huile.</li>
+                                <li>Après avoir été chauffé, il en sortait une pâte liquide que l’on amenait dans un
+                                    récipient et qui était emmailloté dans de la toile de jute.</li>
+                                <li>On mettait en place un taquet avec lequel on pressait grâce au poids d’une poutre et
+                                    d’une vis de serrage. Il en sortait de l’huile de noix.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 text-gray-400 pt-24 pb-12 border-t-[5px] border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-16 border-b border-gray-800 pb-16">
+            <div class="col-span-1 md:col-span-2 pr-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="images/logo_sainthilaire46.jpg"
+                        class="h-10 opacity-80 grayscale hover:grayscale-0 transition-all rounded"
+                        onerror="this.style.display='none'">
+                    <h4 class="text-white font-serif text-2xl italic">Saint Hilaire</h4>
+                </div>
+                <p class="text-sm leading-loose max-w-md mb-8 text-gray-500">
+                    Notre association "Mémoire et Patrimoine" œuvre au quotidien pour recenser, protéger et valoriser
+                    les richesses historiques et naturelles de notre commune.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="far fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-8 border-b border-gray-800 pb-2 inline-block">
+                    Navigation</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-[8px] opacity-50"></i> Accueil</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-8 border-b border-gray-800 pb-2 inline-block">
+                    Légal & Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 max-w-7xl mx-auto px-4">
+            <p>&copy; 2025 Saint-Hilaire Mémoire & Patrimoine. Tous droits réservés.</p>
+            <p class="mt-2 md:mt-0">Fait avec <i class="fas fa-heart text-red-900 mx-1"></i> pour le Lot</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Reveal Animation Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+    <script data-goatcounter="https://sainthilaire46.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>

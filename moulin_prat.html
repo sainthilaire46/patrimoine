@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Hilaire | Moulin du Prat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            900: '#022c22',
+                            950: '#011c16',
+                        },
+                        alabaster: {
+                            50: '#fbf9f6',
+                            100: '#f3f1ed',
+                            200: '#e6e2db',
+                        },
+                        bronze: {
+                            400: '#e2be5a',
+                            500: '#cca43b',
+                            600: '#b08d33',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'slow-zoom': 'slowZoom 20s linear infinite alternate',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slowZoom: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .hover-zoom-img {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .group:hover .hover-zoom-img {
+            transform: scale(1.05);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-alabaster-50 text-emerald-900 font-sans font-light antialiased selection:bg-bronze-500/20 selection:text-emerald-950 tracking-wide leading-relaxed">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center group gap-4">
+                    <div class="flex flex-col">
+                        <span
+                            class="font-serif text-lg text-emerald-950 tracking-tight leading-none group-hover:text-bronze-600 transition-colors duration-300">Saint
+                            Hilaire</span>
+                        <span
+                            class="text-[0.6rem] uppercase tracking-[0.2em] text-emerald-800/60 leading-none mt-1 group-hover:text-emerald-800 transition-colors">Patrimoine
+                            Bâti</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul
+                    class="hidden lg:flex space-x-12 items-center font-light text-sm tracking-[0.1em] text-emerald-900/80">
+                    <li><a href="index.html#bati"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 mb-2">RETOUR
+                            AUX MOULINS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <div id="main-content" class="pt-20">
+
+        <!-- Header Hero -->
+        <header class="h-[60vh] relative flex items-center justify-center bg-emerald-950 overflow-hidden">
+            <!-- Background Image -->
+            <img src="images/prat1.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60 animate-slow-zoom"
+                alt="Moulin du Prat"
+                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'absolute inset-0 bg-stone-100 flex items-center justify-center italic text-stone-400 text-xl border-2 border-dashed border-stone-200\'>[Image: prat1.jpg]</div>'">
+
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-alabaster-50"></div>
+
+            <div class="relative z-10 text-center text-white px-4 animate-fade-in-up mt-10">
+                <span
+                    class="text-bronze-400 font-bold tracking-[0.3em] text-xs uppercase mb-6 block border-b border-bronze-400/30 pb-4 inline-block">Patrimoine
+                    Hydraulique</span>
+                <h1 class="font-serif text-5xl md:text-7xl italic mb-6 font-medium text-alabaster-50">Le Moulin du Prat
+                </h1>
+                <p class="text-xl font-light text-emerald-100 max-w-2xl mx-auto tracking-wide leading-loose">
+                    Un témoin authentique de l'économie rurale du Ségala</p>
+            </div>
+        </header>
+
+        <main class="max-w-4xl mx-auto px-6 py-20">
+
+            <!-- Introduction -->
+            <div class="glass-card p-10 md:p-14 rounded-sm border-l-4 border-bronze-500 mb-20 reveal relative">
+                <i class="fas fa-water text-4xl text-bronze-500/20 absolute top-6 right-6"></i>
+                <p class="font-bold mb-4 uppercase text-xs tracking-[0.2em] text-bronze-600">Localisation & Histoire</p>
+                <p class="mb-6 font-serif text-xl text-emerald-950 leading-relaxed">
+                    Ce moulin a été construit vraisemblablement au milieu du 18ème siècle (1745 sur un linteau) est
+                    situé à BESSONIES sur l'OMBRE aux confins de Midi-Pyrénées, aux portes de l'Auvergne, dans un cadre
+                    rural très protégé. Il a cessé de fonctionner en 1990.
+                </p>
+            </div>
+
+            <!-- Main Content -->
+            <section class="mb-12 reveal">
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                    <p>Il est particulièrement représentatif de l'économie rurale du XIXème siècle et de la première
+                        partie du XXème siècle avec son équipement pour moudre les grains (seigle, sarrasin, maïs,
+                        avoine, orge) qui est encore en place. Dans le passé, il a été un moulin à huile. Il dégage une
+                        atmosphère exceptionnelle d'authenticité.</p>
+
+                    <h3 class="font-serif text-2xl text-emerald-950 italic mt-12 mb-6">Détails Techniques</h3>
+
+                    <p>Traditionnellement, le moulin du PRAT travaillait à façon en livrant avec une mule la farine chez
+                        les clients. La préoccupation permanente du meunier Persouyre était d'amener de l'eau à son
+                        moulin de sorte qu'à la prise de l'eau sur l'Ombre, il a fallu ajouter une prise d'eau sur le
+                        ruisseau de Broussil venant augmenter le débit du canal d'amenée dans le bief qui mesure 50
+                        mètres a une largeur allant en croissant d'un mètre cinquante jusqu'à neuf mètres.</p>
+
+                    <p>L'état général du bâtiment qui abrite le moulin est bon, il souffre cependant d'un état
+                        pathologique d'humidité. A proximité se trouvent une grange et un hangar.</p>
+                </div>
+
+                <figure class="my-16 max-w-3xl mx-auto group reveal">
+                    <div class="overflow-hidden rounded-sm shadow-2xl shadow-emerald-900/10">
+                        <img src="images/prat1.jpg" alt="Le Moulin du Prat"
+                            class="w-full hover-zoom-img transition-all duration-1000"
+                            onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'bg-stone-100 p-12 text-center italic text-stone-400 border-2 border-dashed border-stone-200\'>[Image: prat1.jpg]</div>'">
+                    </div>
+                </figure>
+
+                <div
+                    class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none reveal">
+                    <p>Le moulin est entraîné par un rouet volant en bois à cuillères (18) en excellent état qui tourne
+                        à la vitesse de 70 tours par minute. Il a été refait à l'identique en 2001. La partie motrice,
+                        bien conservée, est un témoin en état d’une technique traditionnelle simple et efficace. Sur
+                        deux paires de meules une seule fonctionne.</p>
+
+                    <p>L'ancienne huilerie a été transformée en pressoir à pomme avec un levier. L'équipement pour
+                        moudre les grains est encore en place, en bon état, notamment la trémie et son auget.</p>
+
+                    <p>Il y a encore, présente dans le moulin, une bluterie utilisée pour les céréales panifiables. La
+                        trompe en bois qui alimente en eau le rouet ainsi que les sommiers qui supportent les meules,
+                        ont été refaits. L'étang étant rempli en eau le moulin est susceptible de fonctionner.</p>
+
+                    <p>Le propriétaire, âgé, n'a pas de projet particulier si ce n'est de maintenir en état ce
+                        magnifique moulin. Sa famille porte un grand intérêt à ce lieu unique en Ségala. Il faudrait
+                        cependant faire le nécessaire pour conserver ce moulin en état de marche.</p>
+                </div>
+            </section>
+
+            <!-- La Trémie Section -->
+            <section class="mb-24 reveal">
+                <div class="bg-white p-10 shadow-xl shadow-emerald-900/5 border-t-4 border-emerald-500 mb-12">
+                    <h3 class="font-serif text-2xl text-emerald-950 italic mb-6">Le Saviez-vous ? La Trémie</h3>
+                    <div
+                        class="prose prose-lg prose-emerald text-emerald-900/70 font-light leading-loose text-justify max-w-none">
+                        <p>Cette sorte d’entonnoir positionné au dessus des meules à l’aide du berceau pouvait contenir
+                            environ 50 kg de blé (parfois plus encore). Le meunier déversait son blé dans la trémie et
+                            pouvait ainsi laisser travailler son moulin. Il pouvait vaquer à d’autres occupations, la
+                            sieste d’après les plus médisants.</p>
+
+                        <p>Pour rappeler aux étourdis le travail de mouture en cours, la trémie était équipée d’un
+                            système d’alarme simple mais efficace : une pelote de chiffons reliée à une ficelle
+                            maintenant une cloche. Lorsque la trémie était presque vide, la pelote était libérée faisant
+                            ainsi basculer la cloche.</p>
+
+                        <p>Celle-ci une fois actionnée appelait ou réveillait le meunier pour venir rajouter du grain ou
+                            arrêter sa roue. Des moulins auraient brûlé faute d’attention ! Tout le monde connaît la
+                            chanson : <span class="italic text-emerald-800">« Meunier tu dors, ton moulin va trop vite
+                                !...Meunier tu dors, ton moulin va trop fort ! »</span>. En effet faute de grain entre
+                            les meules, celles-ci s’emballaient. En se frottant l’une contre l’autre, elles créaient des
+                            gerbes d’étincelles pouvant communiquer le feu au moulin.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 text-gray-400 pt-24 pb-12 border-t-[5px] border-emerald-800">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-4 gap-12 mb-16 border-b border-gray-800 pb-16">
+            <div class="col-span-1 md:col-span-2 pr-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="images/logo_sainthilaire46.jpg"
+                        class="h-10 opacity-80 grayscale hover:grayscale-0 transition-all rounded"
+                        onerror="this.style.display='none'">
+                    <h4 class="text-white font-serif text-2xl italic">Saint Hilaire</h4>
+                </div>
+                <p class="text-sm leading-loose max-w-md mb-8 text-gray-500">
+                    Notre association "Mémoire et Patrimoine" œuvre au quotidien pour recenser, protéger et valoriser
+                    les richesses historiques et naturelles de notre commune.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-gray-900 border border-gray-800 flex items-center justify-center hover:bg-emerald-600 hover:border-emerald-600 hover:text-white transition-all transform hover:-translate-y-1"><i
+                            class="far fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-8 border-b border-gray-800 pb-2 inline-block">
+                    Navigation</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
+                                class="fas fa-chevron-right text-[8px] opacity-50"></i> Accueil</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4
+                    class="text-white font-bold uppercase tracking-wider text-xs mb-8 border-b border-gray-800 pb-2 inline-block">
+                    Légal & Contact</h4>
+                <ul class="space-y-4 text-sm">
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 max-w-7xl mx-auto px-4">
+            <p>&copy; 2025 Saint-Hilaire Mémoire & Patrimoine. Tous droits réservés.</p>
+            <p class="mt-2 md:mt-0">Fait avec <i class="fas fa-heart text-red-900 mx-1"></i> pour le Lot</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Reveal Animation Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+    <script data-goatcounter="https://sainthilaire46.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>
