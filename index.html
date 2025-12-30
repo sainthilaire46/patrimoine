@@ -169,7 +169,8 @@
                             class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">ACCUEIL</a>
                     </li>
                     <li class="relative group">
-                        <a href="javascript:void(0)" id="nav-bati"
+                        <a href="javascript:void(0)" id="nav-bati-moulins-general"
+                            onclick="showSection('bati-moulins-general')"
                             class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full cursor-default">BÂTI</a>
                         <!-- Submenu -->
                         <ul
@@ -314,7 +315,7 @@
                 <div class="grid md:grid-cols-3 gap-6">
                     <!-- Card 1 -->
                     <div class="group relative aspect-[3/4] overflow-hidden cursor-pointer reveal"
-                        onclick="showSection('bati')">
+                        onclick="showSection('bati-moulins-general')">
                         <div class="absolute inset-0 bg-emerald-950 transition-all duration-700">
                             <img src="images/home_card_bati_v3.png"
                                 class="w-full h-full object-cover opacity-80 group-hover:opacity-40 hover-zoom-img transition-all duration-1000 opacity-90 group-hover:opacity-100"
@@ -3144,7 +3145,7 @@
                     <li><a href="#home" onclick="showSection('home')"
                             class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
                                 class="fas fa-chevron-right text-[8px] opacity-50"></i> Accueil</a></li>
-                    <li><a href="#bati" onclick="showSection('bati')"
+                    <li><a href="#bati-moulins-general" onclick="showSection('bati-moulins-general')"
                             class="hover:text-emerald-400 transition-colors flex items-center gap-2"><i
                                 class="fas fa-chevron-right text-[8px] opacity-50"></i> Patrimoine Bâti</a></li>
                     <li><a href="#botanique" onclick="showSection('botanique')"
@@ -3353,16 +3354,20 @@
             setupMobileMenuInteractions();
 
             // Handle Initial Routing
+            // Handle Initial Routing
             const hash = window.location.hash.substring(1); // Remove '#'
             let targetSection = 'home';
             let jumpElementId = null;
 
             if (hash) {
-                if (hash.startsWith('bati-')) {
-                    // Sub-section of Bati
-                    targetSection = 'bati';
-                    jumpElementId = hash;
-                } else if (['home', 'bati', 'botanique', 'humain', 'association', 'blog'].includes(hash)) {
+                if (hash === 'bati') {
+                    // Default/Fallback for 'bati' generic link -> Go to Moulins General
+                    targetSection = 'bati-moulins-general';
+                } else if (document.getElementById('section-' + hash)) {
+                    // If a section exists with this ID (prefixed with section-), use it
+                    targetSection = hash;
+                } else if (['home', 'botanique', 'humain', 'association', 'blog'].includes(hash)) {
+                    // Fallback for known main sections just in case
                     targetSection = hash;
                 }
             }
