@@ -194,32 +194,27 @@
                             class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">HUMAIN</a>
                     </li>
                     <li><a href="#memoire" onclick="showSection('memoire')" id="nav-memoire"
-                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">MÉMOIRE</a>
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">D'ANTAN</a>
                     </li>
                     <li><a href="#association" onclick="showSection('association')" id="nav-association"
                             class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">L'ASSOCIATION</a>
                     </li>
                     <li><a href="#blog" onclick="showSection('blog')" id="nav-blog"
-                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">BLOG
-                            & ÉVÈNEMENTS</a>
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">BLOG</a>
                     </li>
                 </ul>
 
-                <!-- Mobile Button -->
-                <button class="lg:hidden text-emerald-900 p-2 hover:text-bronze-600 transition-colors"
-                    onclick="toggleMobileMenu()">
-                    <div class="space-y-1.5">
-                        <span class="block w-6 h-0.5 bg-current"></span>
-                        <span class="block w-4 h-0.5 bg-current ml-auto"></span>
-                        <span class="block w-6 h-0.5 bg-current"></span>
-                    </div>
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-emerald-900 focus:outline-none" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
+
         <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="lg:hidden hidden glass-nav border-t border-emerald-900/5 absolute w-full left-0 top-full shadow-2xl pb-6">
-            <div class="px-8 py-6 space-y-4">
+            class="fixed inset-0 bg-white/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 lg:hidden">
+            <div class="flex flex-col h-full pt-24 px-8 pb-8 space-y-6 overflow-y-auto">
                 <a href="#home" onclick="showSection('home'); toggleMobileMenu()"
                     class="block text-xl font-serif italic text-emerald-900 hover:text-bronze-600">Accueil</a>
                 <div>
@@ -229,75 +224,153 @@
                         <i id="bati-mobile-arrow"
                             class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
                     </button>
-                    <div id="bati-mobile-submenu" class="hidden pl-4 mt-2 space-y-2 border-l border-emerald-900/10">
+                    <!-- Mobile Submenu -->
+                    <div id="mobile-bati-submenu" class="hidden pl-4 mt-2 space-y-3 border-l border-emerald-900/10">
                         <a href="#bati-moulins-general"
                             onclick="showSection('bati-moulins-general'); toggleMobileMenu()"
-                            class="block text-lg font-serif italic text-emerald-900/60 hover:text-bronze-600">Moulins du
-                            Veyre</a>
+                            class="block text-emerald-900/60 hover:text-bronze-600">Les Moulins</a>
                         <a href="#bati-fours-general" onclick="showSection('bati-fours-general'); toggleMobileMenu()"
-                            class="block text-lg font-serif italic text-emerald-900/60 hover:text-bronze-600">Fours à
-                            Pains</a>
+                            class="block text-emerald-900/60 hover:text-bronze-600">Les Fours</a>
                         <a href="#bati-chateaux-general"
                             onclick="showSection('bati-chateaux-general'); toggleMobileMenu()"
-                            class="block text-lg font-serif italic text-emerald-900/60 hover:text-bronze-600">Châteaux
-                            des Alentours</a>
+                            class="block text-emerald-900/60 hover:text-bronze-600">Les Châteaux</a>
                     </div>
                 </div>
                 <a href="#botanique" onclick="showSection('botanique'); toggleMobileMenu()"
-                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Botanique</a>
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Naturel</a>
                 <a href="#humain" onclick="showSection('humain'); toggleMobileMenu()"
                     class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Humain</a>
                 <a href="#memoire" onclick="showSection('memoire'); toggleMobileMenu()"
-                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Mémoire</a>
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">D'Antan</a>
                 <a href="#association" onclick="showSection('association'); toggleMobileMenu()"
                     class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Association</a>
                 <a href="#blog" onclick="showSection('blog'); toggleMobileMenu()"
-                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Blog &
-                    Évènements</a>
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Blog</a>
             </div>
         </div>
     </nav>
+    <div class="h-[100px] lg:h-[120px]"></div>
 
-    <!-- CONTENT WRAPPER -->
-    <div id="main-content" class="pt-20">
+    <!-- MAIN CONTENT -->
+    <div id="content-area">
 
         <!-- SECTION: HOME -->
-        <div id="section-home" class="page-section min-h-screen">
-            <!-- Hero -->
-            <header class="relative h-[90vh] flex items-center justify-center overflow-hidden bg-emerald-950">
-                <div class="absolute inset-0 select-none">
-                    <img src="images/sainthilairedrone.jpg" alt="Saint-Hilaire Paysage"
-                        class="w-full h-full object-cover brightness-110 contrast-110 saturate-110 opacity-90"
-                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000'">
-                    <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40"></div>
+        <div id="section-home" class="page-section active">
+            <!-- Hero Section -->
+            <header class="h-[calc(100vh-100px)] lg:h-[calc(100vh-120px)] relative overflow-hidden group">
+                <div class="absolute inset-0 bg-stone-900/20 z-10"></div>
+                <!-- Image Hero générée -->
+                <img src="images/home_hero_gen_v2.png"
+                    class="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
+                    alt="Saint Hilaire - Vue Drone">
+
+                <div class="relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
+                    <span
+                        class="text-amber-100/90 uppercase tracking-[0.3em] text-sm md:text-base mb-6 animate-fade-in-up"
+                        style="animation-delay: 0.2s;">Bienvenue à Saint Hilaire</span>
+                    <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 italic text-shadow-lg animate-fade-in-up"
+                        style="animation-delay: 0.4s;">
+                        Terres et Mémoires
+                    </h1>
+                    <div class="h-[1px] w-24 bg-amber-200/50 mb-8 animate-fade-in-up" style="animation-delay: 0.6s;">
+                    </div>
+                    <p class="text-white/90 max-w-2xl font-light text-lg md:text-xl leading-relaxed animate-fade-in-up"
+                        style="animation-delay: 0.8s;">
+                        Découvrez l'âme d'un village du Lot entre Ségala et Châtaigneraie.
+                    </p>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+                    <i class="fas fa-chevron-down text-white/50 text-2xl"></i>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <section class="py-24 px-6 bg-white">
+                <div class="max-w-4xl mx-auto text-center">
+                    <i class="fas fa-leaf text-3xl text-bronze-500 mb-8"></i>
+                    <h2 class="font-serif text-4xl text-emerald-900 mb-8 italic">Notre Héritage</h2>
+                    <p class="text-gray-600 leading-loose text-lg font-light">
+                        L'association "Saint Hilaire : Mémoire et Patrimoine" œuvre pour la sauvegarde et la
+                        valorisation
+                        des richesses de notre commune. Des moulins du Veyre aux orchidées sauvages, en passant par
+                        les témoignages de nos aînés, chaque pierre et chaque histoire compte.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Grid Sections (Navigation Rapide) -->
+            <section class="grid grid-cols-1 md:grid-cols-3 h-auto md:h-[600px]">
+                <!-- BÂTI -->
+                <div class="relative group overflow-hidden cursor-pointer h-[400px] md:h-auto"
+                    onclick="showSection('bati-moulins-general')">
+                    <img src="images/moulin_prat_card.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        alt="Patrimoine Bâti">
                     <div
-                        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay">
+                        class="absolute inset-0 bg-emerald-900/40 group-hover:bg-emerald-900/30 transition-colors duration-500">
+                    </div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center">
+                        <i
+                            class="fas fa-archway text-4xl mb-4 opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-serif text-3xl italic mb-2">Patrimoine Bâti</h3>
+                        <div class="w-12 h-[1px] bg-white/50 group-hover:w-24 transition-all duration-500"></div>
                     </div>
                 </div>
 
-                <div
-                    class="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in-up flex flex-col items-center -mt-32">
-                    <div class="mb-8 w-[1px] h-24 bg-gradient-to-b from-transparent to-white/60"></div>
-                    <h1
-                        class="font-serif text-6xl md:text-8xl lg:text-9xl text-emerald-950 font-medium leading-none tracking-tight italic">
-                        Saint Hilaire
-                    </h1>
-
-                    <div class="mt-12 flex items-center justify-center gap-6">
-                        <div class="h-[1px] w-12 bg-bronze-300"></div>
-                        <span
-                            class="text-sm md:text-base uppercase tracking-[0.3em] text-emerald-950 font-normal drop-shadow-sm">Mémoire
-                            & Patrimoine</span>
-                        <div class="h-[1px] w-12 bg-bronze-300"></div>
+                <!-- NATUREL -->
+                <div class="relative group overflow-hidden cursor-pointer h-[400px] md:h-auto"
+                    onclick="showSection('botanique')">
+                    <img src="images/fleur_orchis_brule.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        alt="Patrimoine Naturel">
+                    <div
+                        class="absolute inset-0 bg-emerald-900/40 group-hover:bg-emerald-900/30 transition-colors duration-500">
                     </div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center">
+                        <i
+                            class="fas fa-seedling text-4xl mb-4 opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-serif text-3xl italic mb-2">Patrimoine Naturel</h3>
+                        <div class="w-12 h-[1px] bg-white/50 group-hover:w-24 transition-all duration-500"></div>
+                    </div>
+                </div>
 
-                    <p
-                        class="mt-96 text-2xl md:text-3xl text-white/95 max-w-4xl mx-auto font-light leading-relaxed tracking-wide font-serif italic drop-shadow-sm">
-                        Un voyage immobile au cœur du Ségala.
+                <!-- HUMAIN -->
+                <div class="relative group overflow-hidden cursor-pointer h-[400px] md:h-auto"
+                    onclick="showSection('humain')">
+                    <img src="images/section_humain_hero.jpg"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        alt="Patrimoine Humain">
+                    <div
+                        class="absolute inset-0 bg-emerald-900/40 group-hover:bg-emerald-900/30 transition-colors duration-500">
+                    </div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center">
+                        <i
+                            class="fas fa-hands-helping text-4xl mb-4 opacity-80 group-hover:scale-110 transition-transform"></i>
+                        <h3 class="font-serif text-3xl italic mb-2">Patrimoine Humain</h3>
+                        <div class="w-12 h-[1px] bg-white/50 group-hover:w-24 transition-all duration-500"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SECTION MEMOIRE (Renamed from humain-photos) -->
+        <div id="section-memoire" class="page-section hidden bg-[#fdfbf7]">
+            <header class="h-[60vh] relative flex items-center justify-center bg-stone-900 overflow-hidden">
+                <img src="images/photos_autrefois_hero.jpg"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 animate-slow-zoom"
+                    alt="Village d'autrefois">
+                <div class="absolute inset-0 bg-gradient-to-b from-stone-900/50 to-[#fdfbf7]"></div>
+
+                <div class="relative z-10 text-center px-4 mt-10">
+                    <!-- Back link removed -->
+                    <h2
+                        class="font-serif text-6xl md:text-8xl text-stone-100 mb-6 italic font-medium leading-none drop-shadow-lg">
+                        Souvenirs d'Antan</h2>
+                    <p class="text-xl text-amber-100/90 font-light max-w-2xl mx-auto font-serif italic">
+                        "Une photographie, c'est un fragment de temps qui ne reviendra pas."
                     </p>
-
-
-
                 </div>
             </header>
 
