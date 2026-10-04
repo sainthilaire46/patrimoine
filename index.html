@@ -3226,6 +3226,23 @@
             </header>
 
             <main class="max-w-7xl mx-auto px-6 py-16">
+                <!-- Avertissement : Rubrique en chantier & Données fictives de démonstration -->
+                <div class="mb-14 bg-amber-50/90 border-2 border-dashed border-amber-300 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-5 shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 border border-amber-300 text-amber-800 flex items-center justify-center text-2xl flex-shrink-0">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="text-stone-800 flex-1 text-center md:text-left">
+                        <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-2">
+                            <span class="bg-amber-200/90 text-amber-950 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">🚧 Rubrique en cours de chantier</span>
+                            <span class="bg-stone-200 text-stone-700 text-xs font-semibold px-3 py-1 rounded-full">Exemples indicatifs</span>
+                        </div>
+                        <h4 class="font-serif text-xl font-bold text-stone-900 mb-2">Informations fictives présentées à titre de démonstration</h4>
+                        <p class="text-sm text-stone-600 leading-relaxed">
+                            Les patronymes, arbres généalogiques, dates, actes et notices biographiques présentés sur cette page sont <strong>actuellement fictifs</strong> et affichés <strong>uniquement à titre de démonstration visuelle</strong> (maquette du site). Le travail de dépouillement, de recherche archivistique et de saisie des véritables familles historiques de Saint-Hilaire est actuellement en cours de préparation par l'association.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Stats Bar -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white p-8 rounded-2xl shadow-sm border border-stone-200/80 mb-16 text-center">
                     <div>
@@ -3274,8 +3291,11 @@
                 <div class="mb-20">
                     <div class="flex items-center justify-between border-b border-stone-200 pb-4 mb-8">
                         <div>
-                            <h3 class="font-serif text-3xl text-emerald-950 font-medium italic">Les Lignées du Village</h3>
-                            <p class="text-sm text-stone-500">Histoire, métiers et généalogie des familles remarquables</p>
+                            <div class="flex items-center gap-3">
+                                <h3 class="font-serif text-3xl text-emerald-950 font-medium italic">Les Lignées du Village</h3>
+                                <span class="bg-amber-100 text-amber-900 text-xs font-semibold px-2.5 py-0.5 rounded-full border border-amber-200">Exemples de démonstration</span>
+                            </div>
+                            <p class="text-sm text-stone-500">Histoire, métiers et généalogie des familles remarquables (fiches fictives d'illustration)</p>
                         </div>
                     </div>
 
@@ -4669,7 +4689,7 @@
             const data = GENEALOGY_FAMILIES_DATA[familyId];
             if (!data) return;
 
-            document.getElementById('g-modal-family-title').innerText = data.name;
+            document.getElementById('g-modal-family-title').innerText = `${data.name} (Exemple fictif)`;
             const body = document.getElementById('g-modal-family-body');
 
             let treeHtml = data.tree.map((t, i) => `
@@ -4688,6 +4708,10 @@
             `).join('<div class="text-center text-stone-300 font-bold mb-2">↓</div>');
 
             body.innerHTML = `
+                <div class="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-center gap-2">
+                    <span class="text-base">🚧</span>
+                    <span><strong>Fiche d'exemple :</strong> Les personnes, dates et actes ci-dessous sont fictifs et affichés à titre de maquette.</span>
+                </div>
                 <div class="flex flex-wrap gap-2 mb-4">
                     <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">${data.period}</span>
                     <span class="bg-stone-100 text-stone-700 text-xs font-bold px-3 py-1 rounded-full">📍 ${data.origin}</span>

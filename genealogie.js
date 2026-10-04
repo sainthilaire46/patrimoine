@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = familiesData[familyId];
     if (!data) return;
 
-    modalFamilyName.innerText = data.name;
+    modalFamilyName.innerText = `${data.name} (Exemple fictif)`;
 
     // Render HTML inside modal
     let treeHTML = '';
@@ -219,6 +219,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     modalFamilyContent.innerHTML = `
+      <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; font-size: 0.85rem; color: #92400e; display: flex; align-items: center; gap: 8px;">
+        <span>🚧</span> <span><strong>Fiche d'exemple :</strong> Les personnes, dates et actes ci-dessous sont fictifs et affichés à titre de maquette.</span>
+      </div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px;">
         <span class="era-badge">Période : ${data.period}</span>
         <span class="era-badge" style="background:#e0f2fe; color:#0369a1; border-color:#bae6fd;">Berceau : ${data.origin}</span>
