@@ -196,6 +196,9 @@
                     <li><a href="#memoire" onclick="showSection('memoire')" id="nav-memoire"
                             class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">D'ANTAN</a>
                     </li>
+                    <li><a href="#genealogie" onclick="showSection('genealogie')" id="nav-genealogie"
+                            class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">GÉNÉALOGIE</a>
+                    </li>
                     <li><a href="#association" onclick="showSection('association')" id="nav-association"
                             class="nav-link hover:text-bronze-600 transition-colors duration-300 relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-bronze-500 after:transition-all after:duration-300 hover:after:w-full">L'ASSOCIATION</a>
                     </li>
@@ -249,6 +252,8 @@
                     class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Humain</a>
                 <a href="#memoire" onclick="showSection('memoire'); toggleMobileMenu()"
                     class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">D'Antan</a>
+                <a href="#genealogie" onclick="showSection('genealogie'); toggleMobileMenu()"
+                    class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Généalogie</a>
                 <a href="#association" onclick="showSection('association'); toggleMobileMenu()"
                     class="block text-xl font-serif italic text-emerald-900/80 hover:text-bronze-600">Association</a>
                 <a href="#blog" onclick="showSection('blog'); toggleMobileMenu()"
@@ -3200,6 +3205,400 @@
             </main>
         </div>
 
+        <!-- SECTION: GÉNÉALOGIE -->
+        <div id="section-genealogie" class="page-section hidden bg-[#fdfbf7] min-h-screen">
+            <!-- Hero -->
+            <header class="h-[60vh] relative flex items-center justify-center bg-stone-900 overflow-hidden">
+                <img src="images/village-saint-hilaire-1900.jpg"
+                    class="absolute inset-0 w-full h-full object-cover opacity-50 animate-slow-zoom"
+                    alt="Village de Saint-Hilaire">
+                <div class="absolute inset-0 bg-gradient-to-b from-stone-900/60 to-[#fdfbf7]"></div>
+
+                <div class="relative z-10 text-center px-4 mt-10">
+                    <span class="inline-block text-bronze-400 uppercase tracking-[0.2em] text-xs font-semibold mb-3">Mémoire vivante & Archives familiales</span>
+                    <h2 class="font-serif text-5xl md:text-7xl text-stone-100 mb-6 italic font-medium leading-none drop-shadow-lg">
+                        Généalogie & Familles
+                    </h2>
+                    <p class="text-lg md:text-xl text-amber-100/90 font-light max-w-2xl mx-auto font-serif italic">
+                        « Retrouvez les racines et le destin des familles qui ont façonné Saint-Hilaire au fil des siècles. »
+                    </p>
+                </div>
+            </header>
+
+            <main class="max-w-7xl mx-auto px-6 py-16">
+                <!-- Stats Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white p-8 rounded-2xl shadow-sm border border-stone-200/80 mb-16 text-center">
+                    <div>
+                        <div class="text-3xl md:text-4xl font-serif font-bold text-bronze-600 mb-1">480+</div>
+                        <div class="text-xs uppercase tracking-wider text-stone-500 font-semibold">Individus répertoriés</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-serif font-bold text-bronze-600 mb-1">12</div>
+                        <div class="text-xs uppercase tracking-wider text-stone-500 font-semibold">Générations suivies</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-serif font-bold text-bronze-600 mb-1">1642</div>
+                        <div class="text-xs uppercase tracking-wider text-stone-500 font-semibold">Premier acte paroissial</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl md:text-4xl font-serif font-bold text-bronze-600 mb-1">18</div>
+                        <div class="text-xs uppercase tracking-wider text-stone-500 font-semibold">Patronymes historiques</div>
+                    </div>
+                </div>
+
+                <!-- Search & Century Filter Bar -->
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-stone-200/80 mb-12">
+                    <div class="relative mb-6">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-stone-400"></i>
+                        <input type="text" id="genealogy-search" oninput="filterGenealogyCards()"
+                            placeholder="Rechercher par patronyme, prénom, métier (ex: Guillemant, Dubois, Meunier...)"
+                            class="w-full pl-12 pr-4 py-3.5 bg-stone-50 rounded-xl border border-stone-200 text-stone-800 focus:outline-none focus:border-bronze-500 focus:bg-white transition-all text-sm md:text-base">
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-xs uppercase tracking-wider text-stone-400 font-semibold mr-2">Période :</span>
+                        <button type="button" onclick="setGenealogyCentury(this, 'all')"
+                            class="genealogy-chip active px-4 py-1.5 rounded-full text-xs font-medium border border-bronze-500 bg-bronze-500 text-white transition-all">Tous</button>
+                        <button type="button" onclick="setGenealogyCentury(this, 'XVII')"
+                            class="genealogy-chip px-4 py-1.5 rounded-full text-xs font-medium border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100 transition-all">XVIIe siècle</button>
+                        <button type="button" onclick="setGenealogyCentury(this, 'XVIII')"
+                            class="genealogy-chip px-4 py-1.5 rounded-full text-xs font-medium border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100 transition-all">XVIIIe siècle</button>
+                        <button type="button" onclick="setGenealogyCentury(this, 'XIX')"
+                            class="genealogy-chip px-4 py-1.5 rounded-full text-xs font-medium border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100 transition-all">XIXe siècle</button>
+                        <button type="button" onclick="setGenealogyCentury(this, 'XX')"
+                            class="genealogy-chip px-4 py-1.5 rounded-full text-xs font-medium border border-stone-200 bg-stone-50 text-stone-700 hover:bg-stone-100 transition-all">XXe siècle</button>
+                        <span id="genealogy-count-badge" class="ml-auto text-xs text-stone-500 font-medium">4 familles affichées</span>
+                    </div>
+                </div>
+
+                <!-- Families Grid -->
+                <div class="mb-20">
+                    <div class="flex items-center justify-between border-b border-stone-200 pb-4 mb-8">
+                        <div>
+                            <h3 class="font-serif text-3xl text-emerald-950 font-medium italic">Les Lignées du Village</h3>
+                            <p class="text-sm text-stone-500">Histoire, métiers et généalogie des familles remarquables</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8" id="genealogy-families-grid">
+                        
+                        <!-- Family 1: Guillemant -->
+                        <div class="genealogy-card bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+                            data-name="guillemant guilhem meunier notaire forge" data-century="XVII XVIII XIX XX">
+                            <div class="p-6 bg-gradient-to-r from-stone-50 to-amber-50/50 border-b border-stone-200 flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-serif text-2xl font-bold text-stone-900">GUILLEMANT</h4>
+                                    <p class="text-xs text-stone-500 italic mt-0.5">Var: Guilhem, Guilhament</p>
+                                </div>
+                                <span class="bg-amber-100 text-amber-900 border border-amber-200/60 text-xs font-bold px-3 py-1 rounded-full">1685 — 1920</span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col gap-4 text-sm text-stone-600">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">📍 Berceau :</span>
+                                    <span class="text-stone-800">Saint-Hilaire, Figeac (Lot)</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">⚙️ Métiers :</span>
+                                    <span class="text-stone-800">Meuniers du moulin, Notaires, Maîtres de forge</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">👑 1er Aïeul :</span>
+                                    <span class="text-stone-800">Jean GUILHEM (1662 — 1732)</span>
+                                </div>
+                                <div class="bg-stone-50 p-4 rounded-xl border-l-2 border-bronze-500 text-xs italic text-stone-600 mt-2">
+                                    « Exploitants du moulin à eau de la paroisse pendant plus d'un siècle, avant que certains rameaux ne rejoignent les offices de Figeac. »
+                                </div>
+                            </div>
+                            <div class="p-4 bg-stone-50/70 border-t border-stone-200 flex justify-between items-center">
+                                <span class="text-xs font-medium text-stone-500">7 générations documentées</span>
+                                <button type="button" onclick="openGenealogyModal('guillemant')"
+                                    class="text-xs font-bold uppercase tracking-wider text-bronze-600 hover:text-bronze-700 bg-white hover:bg-bronze-50 border border-stone-200 px-4 py-2 rounded-lg transition-colors">
+                                    Découvrir la lignée →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Family 2: Dubois -->
+                        <div class="genealogy-card bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+                            data-name="dubois delbos vigneron tonnelier garde" data-century="XVIII XIX XX">
+                            <div class="p-6 bg-gradient-to-r from-stone-50 to-amber-50/50 border-b border-stone-200 flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-serif text-2xl font-bold text-stone-900">DUBOIS</h4>
+                                    <p class="text-xs text-stone-500 italic mt-0.5">Var: Delbos, Dalbosc, Du Boys</p>
+                                </div>
+                                <span class="bg-amber-100 text-amber-900 border border-amber-200/60 text-xs font-bold px-3 py-1 rounded-full">1720 — 1945</span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col gap-4 text-sm text-stone-600">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">📍 Berceau :</span>
+                                    <span class="text-stone-800">Vers, Vallée du Lot, Saint-Hilaire</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">⚙️ Métiers :</span>
+                                    <span class="text-stone-800">Vignerons, Tonneliers, Gardes champêtres</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">👑 1er Aïeul :</span>
+                                    <span class="text-stone-800">Guillaume DELBOS (1698 — 1762)</span>
+                                </div>
+                                <div class="bg-stone-50 p-4 rounded-xl border-l-2 border-bronze-500 text-xs italic text-stone-600 mt-2">
+                                    « Vignerons attachés aux coteaux de Malbec dominant la rivière, alimentant le commerce fluvial du vin vers Bordeaux. »
+                                </div>
+                            </div>
+                            <div class="p-4 bg-stone-50/70 border-t border-stone-200 flex justify-between items-center">
+                                <span class="text-xs font-medium text-stone-500">6 générations documentées</span>
+                                <button type="button" onclick="openGenealogyModal('dubois')"
+                                    class="text-xs font-bold uppercase tracking-wider text-bronze-600 hover:text-bronze-700 bg-white hover:bg-bronze-50 border border-stone-200 px-4 py-2 rounded-lg transition-colors">
+                                    Découvrir la lignée →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Family 3: Maraval -->
+                        <div class="genealogy-card bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+                            data-name="maraval drapier consul marchand tanneur" data-century="XVII XVIII XIX">
+                            <div class="p-6 bg-gradient-to-r from-stone-50 to-amber-50/50 border-b border-stone-200 flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-serif text-2xl font-bold text-stone-900">MARAVAL</h4>
+                                    <p class="text-xs text-stone-500 italic mt-0.5">Var: De Maraval, Maravalh</p>
+                                </div>
+                                <span class="bg-amber-100 text-amber-900 border border-amber-200/60 text-xs font-bold px-3 py-1 rounded-full">1640 — 1880</span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col gap-4 text-sm text-stone-600">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">📍 Berceau :</span>
+                                    <span class="text-stone-800">Saint-Hilaire, Gramat, Rocamadour</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">⚙️ Métiers :</span>
+                                    <span class="text-stone-800">Marchands drapiers, Consuls du village, Tanneurs</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">👑 1er Aïeul :</span>
+                                    <span class="text-stone-800">Arnaud de MARAVAL (ca 1620 — 1684)</span>
+                                </div>
+                                <div class="bg-stone-50 p-4 rounded-xl border-l-2 border-bronze-500 text-xs italic text-stone-600 mt-2">
+                                    « Notables de la communauté paroissiale, consuls et négociants animant les foires marchandes du Quercy. »
+                                </div>
+                            </div>
+                            <div class="p-4 bg-stone-50/70 border-t border-stone-200 flex justify-between items-center">
+                                <span class="text-xs font-medium text-stone-500">8 générations documentées</span>
+                                <button type="button" onclick="openGenealogyModal('maraval')"
+                                    class="text-xs font-bold uppercase tracking-wider text-bronze-600 hover:text-bronze-700 bg-white hover:bg-bronze-50 border border-stone-200 px-4 py-2 rounded-lg transition-colors">
+                                    Découvrir la lignée →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Family 4: Lacam -->
+                        <div class="genealogy-card bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+                            data-name="lacam lacambra marechal forgeron charron" data-century="XVIII XIX XX">
+                            <div class="p-6 bg-gradient-to-r from-stone-50 to-amber-50/50 border-b border-stone-200 flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-serif text-2xl font-bold text-stone-900">LACAM</h4>
+                                    <p class="text-xs text-stone-500 italic mt-0.5">Var: Lacambra, Delacam</p>
+                                </div>
+                                <span class="bg-amber-100 text-amber-900 border border-amber-200/60 text-xs font-bold px-3 py-1 rounded-full">1750 — 1960</span>
+                            </div>
+                            <div class="p-6 flex-1 flex flex-col gap-4 text-sm text-stone-600">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">📍 Berceau :</span>
+                                    <span class="text-stone-800">Saint-Hilaire, Cajarc</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">⚙️ Métiers :</span>
+                                    <span class="text-stone-800">Maréchaux-ferrants, Forgerons communaux, Charrons</span>
+                                </div>
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-bronze-600 font-bold min-w-[90px]">👑 1er Aïeul :</span>
+                                    <span class="text-stone-800">Mathieu LACAM (1725 — 1792)</span>
+                                </div>
+                                <div class="bg-stone-50 p-4 rounded-xl border-l-2 border-bronze-500 text-xs italic text-stone-600 mt-2">
+                                    « La forge des Lacam animait le cœur du bourg, forgeant socs de charrues et ferrant bœufs et chevaux de trait. »
+                                </div>
+                            </div>
+                            <div class="p-4 bg-stone-50/70 border-t border-stone-200 flex justify-between items-center">
+                                <span class="text-xs font-medium text-stone-500">5 générations documentées</span>
+                                <button type="button" onclick="openGenealogyModal('lacam')"
+                                    class="text-xs font-bold uppercase tracking-wider text-bronze-600 hover:text-bronze-700 bg-white hover:bg-bronze-50 border border-stone-200 px-4 py-2 rounded-lg transition-colors">
+                                    Découvrir la lignée →
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Archives & Historic Documents Gallery -->
+                <div class="mb-20">
+                    <div class="flex items-center justify-between border-b border-stone-200 pb-4 mb-8">
+                        <div>
+                            <h3 class="font-serif text-3xl text-emerald-950 font-medium italic">Actes & Archives Remarquables</h3>
+                            <p class="text-sm text-stone-500">Cliquez sur un document pour consulter l'agrandissement et la transcription paléographique</p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        
+                        <!-- Archive 1 -->
+                        <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer flex flex-col"
+                            onclick="openGenealogyArchive(
+                                'Portrait de Famille — Fin XIXe siècle',
+                                'images/portrait-famille.jpg',
+                                'Fonds Guillemant — Photographie d\'atelier argentique',
+                                'Tirage original d\'atelier photographique d\'époque représentant la lignée réunie en costume d\'apparat. Redingote d\'homme avec montre à gousset dorée, robe à crinoline en soie moirée pour la maîtresse de maison, et vêtements d\'écoliers traditionnels.'
+                            )">
+                            <div class="relative h-60 overflow-hidden bg-stone-900">
+                                <img src="images/portrait-famille.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Portrait de famille ancienne">
+                                <span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur text-white text-[11px] uppercase tracking-wider font-semibold px-3 py-1 rounded-full">Photographie</span>
+                                <div class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/90 text-stone-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow">
+                                    <i class="fas fa-search-plus text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="p-5 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-serif text-lg font-bold text-stone-900 mb-1">Portrait de Famille — Fin XIXe</h4>
+                                    <p class="text-xs text-stone-600">Tirage d'atelier d'époque illustrant la vie de nos aïeux.</p>
+                                </div>
+                                <span class="text-[11px] font-mono text-stone-400 bg-stone-100 px-2 py-0.5 rounded self-start mt-3">Iconographie XIXe</span>
+                            </div>
+                        </div>
+
+                        <!-- Archive 2 -->
+                        <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer flex flex-col"
+                            onclick="openGenealogyArchive(
+                                'Acte de baptême avec sceau de cire — 1765',
+                                'images/acte-bapteme-1765.jpg',
+                                'AD46 — Paroisse de Saint-Hilaire, Registre BMS 1760-1780',
+                                '« L\'an mil sept cent soixante-cinq et le douzième jour du mois d\'avril a esté baptisé par moy soussigné curé de céans Jean-Pierre DUBOIS, fils légitime et naturel de Pierre Dubois, travailleur de terre, et de Marie Delpech, son épouse de la présente paroisse. Parrain a esté Jean Guilhem, meunier, et marraine Catherine Roques... » — Signé : P. Vernhiet, Curé.'
+                            )">
+                            <div class="relative h-60 overflow-hidden bg-stone-900">
+                                <img src="images/acte-bapteme-1765.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Acte ancien parchemin">
+                                <span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur text-white text-[11px] uppercase tracking-wider font-semibold px-3 py-1 rounded-full">Registre Paroissial</span>
+                                <div class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/90 text-stone-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow">
+                                    <i class="fas fa-search-plus text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="p-5 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-serif text-lg font-bold text-stone-900 mb-1">Acte Paroissial avec Sceau — 1765</h4>
+                                    <p class="text-xs text-stone-600">Parchemin orné d'un cachet de cire et d'écriture calligraphique.</p>
+                                </div>
+                                <span class="text-[11px] font-mono text-stone-400 bg-stone-100 px-2 py-0.5 rounded self-start mt-3">AD46 / BMS 1765</span>
+                            </div>
+                        </div>
+
+                        <!-- Archive 3 -->
+                        <div class="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-sm hover:shadow-xl transition-all cursor-pointer flex flex-col"
+                            onclick="openGenealogyArchive(
+                                'Carte postale ancienne du village et du clocher — vers 1900',
+                                'images/village-saint-hilaire-1900.jpg',
+                                'Fonds Cartophile du Lot — Édition d\'époque',
+                                'Vue prise depuis la venelle haute menant au clocher fortifié de Saint-Hilaire. On observe les façades de calcaire sec, les toitures patinées et les habitants arpentant la calade pavée.'
+                            )">
+                            <div class="relative h-60 overflow-hidden bg-stone-900">
+                                <img src="images/village-saint-hilaire-1900.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Carte postale ancienne Saint-Hilaire">
+                                <span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur text-white text-[11px] uppercase tracking-wider font-semibold px-3 py-1 rounded-full">Carte Postale</span>
+                                <div class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-white/90 text-stone-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow">
+                                    <i class="fas fa-search-plus text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="p-5 flex-1 flex flex-col justify-between">
+                                <div>
+                                    <h4 class="font-serif text-lg font-bold text-stone-900 mb-1">Vue du Village et du Clocher — 1900</h4>
+                                    <p class="text-xs text-stone-600">L'environnement quotidien de nos ancêtres au tournant du siècle.</p>
+                                </div>
+                                <span class="text-[11px] font-mono text-stone-400 bg-stone-100 px-2 py-0.5 rounded self-start mt-3">CP-46 / Fonds Cartophile</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Cousinage / Contact for genealogists -->
+                <div class="bg-gradient-to-br from-emerald-950 to-stone-900 text-white p-8 md:p-12 rounded-3xl shadow-xl relative overflow-hidden mb-12">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-bronze-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="grid md:grid-cols-2 gap-10 items-center relative z-10">
+                        <div>
+                            <span class="text-bronze-400 uppercase tracking-widest text-xs font-semibold">Entraide & Recherche</span>
+                            <h3 class="font-serif text-3xl md:text-4xl text-white font-medium italic mt-2 mb-4">
+                                Vous partagez des ancêtres à Saint-Hilaire ?
+                            </h3>
+                            <p class="text-stone-300 text-sm md:text-base leading-relaxed mb-6">
+                                La généalogie est un travail de partage et de mémoire commune. Si vous retrouvez votre famille dans ces listes ou si vous disposez d'actes, photos ou souvenirs, transmettez-nous votre message !
+                            </p>
+                            <ul class="space-y-3 text-xs md:text-sm text-stone-200">
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-bronze-400"></i>
+                                    <span>Échange gratuit de données généalogiques & exports GEDCOM</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-bronze-400"></i>
+                                    <span>Aide à la transcription d'écritures anciennes (paléographie)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i class="fas fa-check text-bronze-400"></i>
+                                    <span>Mise en relation entre branches et descendants du Lot</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-2xl border border-white/15">
+                            <form id="genealogy-cousin-form" onsubmit="handleGenealogyForm(event)">
+                                <div class="mb-4">
+                                    <label class="block text-xs uppercase tracking-wider font-semibold text-stone-300 mb-1">Votre Nom & Prénom *</label>
+                                    <input type="text" id="g-form-name" required
+                                        class="w-full px-4 py-2.5 rounded-lg bg-stone-900/60 border border-white/20 text-white placeholder-stone-400 focus:outline-none focus:border-bronze-400 text-sm">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-xs uppercase tracking-wider font-semibold text-stone-300 mb-1">Adresse Email *</label>
+                                    <input type="email" id="g-form-email" required
+                                        class="w-full px-4 py-2.5 rounded-lg bg-stone-900/60 border border-white/20 text-white placeholder-stone-400 focus:outline-none focus:border-bronze-400 text-sm">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-xs uppercase tracking-wider font-semibold text-stone-300 mb-1">Patronyme ou Branche recherchée *</label>
+                                    <input type="text" id="g-form-patronyme" required placeholder="Ex: Guillemant, Dubois, Lacam..."
+                                        class="w-full px-4 py-2.5 rounded-lg bg-stone-900/60 border border-white/20 text-white placeholder-stone-400 focus:outline-none focus:border-bronze-400 text-sm">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-xs uppercase tracking-wider font-semibold text-stone-300 mb-1">Votre message</label>
+                                    <textarea id="g-form-message" rows="2" placeholder="Précisez les dates ou les questions que vous avez..."
+                                        class="w-full px-4 py-2.5 rounded-lg bg-stone-900/60 border border-white/20 text-white placeholder-stone-400 focus:outline-none focus:border-bronze-400 text-sm"></textarea>
+                                </div>
+                                <button type="submit"
+                                    class="w-full py-3 bg-gradient-to-r from-bronze-500 to-bronze-600 hover:from-bronze-400 hover:to-bronze-500 text-stone-950 font-bold text-xs uppercase tracking-widest rounded-lg shadow-lg transition-all">
+                                    Envoyer ma demande de cousinage
+                                </button>
+                            </form>
+                            <div id="genealogy-form-success" class="hidden mt-4 p-3 bg-emerald-900/80 border border-emerald-500/50 rounded-lg text-emerald-200 text-xs text-center">
+                                ✅ Merci ! Votre message concernant la famille a bien été envoyé. Nous vous recontacterons très vite.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- External Archives Links -->
+                <div class="bg-white border border-stone-200/80 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+                    <div>
+                        <h4 class="font-serif text-xl font-bold text-stone-900 mb-1">Portails & Archives en Ligne</h4>
+                        <p class="text-xs md:text-sm text-stone-500">Pour poursuivre vos recherches sur les registres départementaux et nationaux :</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://archives.lot.fr" target="_blank" rel="noopener noreferrer"
+                            class="px-4 py-2 rounded-xl text-xs font-semibold bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-200 transition-colors">
+                            🏛️ Archives Départementales du Lot (AD46)
+                        </a>
+                        <a href="https://www.geneanet.org" target="_blank" rel="noopener noreferrer"
+                            class="px-4 py-2 rounded-xl text-xs font-semibold bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-200 transition-colors">
+                            🌳 Base Geneanet
+                        </a>
+                        <a href="https://francearchives.gouv.fr" target="_blank" rel="noopener noreferrer"
+                            class="px-4 py-2 rounded-xl text-xs font-semibold bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-200 transition-colors">
+                            🇫🇷 FranceArchives
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+
         <!-- SECTION: ASSOCIATION & CONTACT -->
         <div id="section-association" class="page-section hidden">
             <div class="bg-emerald-900 text-white py-32 text-center relative overflow-hidden">
@@ -4140,6 +4539,218 @@
             }
         }
     </script>
+    <!-- MODALE GÉNÉALOGIE : LIGNÉE FAMILIALE -->
+    <div id="genealogy-family-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-6 bg-stone-50 border-b border-stone-200 flex justify-between items-center">
+                <h3 id="g-modal-family-title" class="font-serif text-2xl font-bold text-stone-900">Famille</h3>
+                <button type="button" onclick="closeGenealogyModal()" class="w-8 h-8 rounded-full bg-stone-200 hover:bg-stone-300 text-stone-700 flex items-center justify-center font-bold text-lg">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-stone-700" id="g-modal-family-body">
+                <!-- Dynamically filled -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALE GÉNÉALOGIE : ARCHIVE & TRANSCRIPTION -->
+    <div id="genealogy-archive-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-6 bg-stone-50 border-b border-stone-200 flex justify-between items-center">
+                <h3 id="g-modal-archive-title" class="font-serif text-xl font-bold text-stone-900">Document d'Archive</h3>
+                <button type="button" onclick="closeGenealogyArchive()" class="w-8 h-8 rounded-full bg-stone-200 hover:bg-stone-300 text-stone-700 flex items-center justify-center font-bold text-lg">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto flex flex-col items-center">
+                <img id="g-modal-archive-img" src="" alt="Archive" class="max-h-[50vh] object-contain rounded-lg shadow-md mb-6">
+                <div class="w-full bg-[#fdfbf7] p-5 rounded-xl border-l-4 border-bronze-500 border border-stone-200 text-stone-800 text-sm leading-relaxed">
+                    <div class="text-xs uppercase tracking-wider font-bold text-bronze-600 mb-2">📜 Transcription paléographique intégrale</div>
+                    <p id="g-modal-archive-transcription"></p>
+                    <div id="g-modal-archive-cote" class="text-xs text-stone-400 font-mono mt-3 italic"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // === LOGIQUE GÉNÉALOGIE ===
+        const GENEALOGY_FAMILIES_DATA = {
+            guillemant: {
+                name: "Famille GUILLEMANT",
+                variants: "Guilhem, Guilhament, Guilleman",
+                period: "1685 — 1920",
+                origin: "Saint-Hilaire, Figeac (Lot)",
+                biography: "Implantée dès la fin du XVIIe siècle à Saint-Hilaire, la branche Guillemant a exploité le moulin à eau de la paroisse pendant près de quatre générations avant d'essaimer vers les études notariales de Figeac et les bourgs voisins.",
+                tree: [
+                    { level: "Génération I", members: [{ name: "Jean GUILHEM", dates: "1662 — 1732", role: "Meunier du moulin" }, { name: "Marguerite DELPECH", dates: "1668 — 1741", role: "Épouse" }] },
+                    { level: "Génération II", members: [{ name: "Pierre GUILHEMANT", dates: "1701 — 1774", role: "Maître meunier & Syndic" }, { name: "Toinette ROQUES", dates: "1708 — 1782", role: "Originaire de Figeac" }] },
+                    { level: "Génération III", members: [{ name: "Antoine GUILLEMANT", dates: "1742 — 1815", role: "Notaire public & Greffier" }, { name: "Marie-Anne DUBOIS", dates: "1749 — 1823", role: "Fille de vigneron" }] }
+                ],
+                archive: "Contrat de mariage passé le 8 janvier 1735 devant Me Pons, notaire royal."
+            },
+            dubois: {
+                name: "Famille DUBOIS",
+                variants: "Delbos, Dalbosc, Du Boys",
+                period: "1720 — 1945",
+                origin: "Vers, Vallée du Lot, Saint-Hilaire",
+                biography: "Les Dubois cultivaient les terrasses viticoles dominant la vallée. Leurs vignes de Malbec ont alimenté le commerce fluvial sur le Lot jusqu'à la fin du XIXe siècle.",
+                tree: [
+                    { level: "Génération I", members: [{ name: "Guillaume DELBOS", dates: "1698 — 1762", role: "Vigneron à Vers" }, { name: "Jeanne VIALA", dates: "1705 — 1779", role: "Ménagère" }] },
+                    { level: "Génération II", members: [{ name: "Jean-Pierre DUBOIS", dates: "1738 — 1804", role: "Vigneron & Tonnelier" }, { name: "Catherine COUDERC", dates: "1744 — 1812", role: "Saint-Hilaire" }] },
+                    { level: "Génération III", members: [{ name: "François DUBOIS", dates: "1778 — 1851", role: "Garde-champêtre communal" }, { name: "Anne POUJOL", dates: "1782 — 1860", role: "Fileuse de laine" }] }
+                ],
+                archive: "Déclaration des récoltes de vin de l'an VII (Archives communales)."
+            },
+            maraval: {
+                name: "Famille MARAVAL",
+                variants: "Maravals, Maravalh, De Maraval",
+                period: "1640 — 1880",
+                origin: "Saint-Hilaire, Gramat, Rocamadour",
+                biography: "Famille influente du Quercy commerçant des toiles de chanvre et draps entre Saint-Hilaire et les foires de Gramat. Plusieurs de ses membres ont exercé la charge de consuls de la communauté villageoise.",
+                tree: [
+                    { level: "Génération I", members: [{ name: "Arnaud de MARAVAL", dates: "ca 1620 — 1684", role: "Marchand drapier" }, { name: "Françoise de LABICHE", dates: "1625 — 1690", role: "Gramat" }] },
+                    { level: "Génération II", members: [{ name: "Géraud MARAVAL", dates: "1655 — 1729", role: "Consul de Saint-Hilaire" }, { name: "Peyronne BONHOMME", dates: "1661 — 1735", role: "Saint-Hilaire" }] },
+                    { level: "Génération III", members: [{ name: "Bernard MARAVAL", dates: "1694 — 1768", role: "Maître tanneur" }, { name: "Marie CALMETTES", dates: "1702 — 1777", role: "Figeac" }] }
+                ],
+                archive: "Livre d'estime et terriers de 1688 conservés aux Archives du Lot."
+            },
+            lacam: {
+                name: "Famille LACAM",
+                variants: "Lacambra, Delacam, Lacamp",
+                period: "1750 — 1960",
+                origin: "Saint-Hilaire, Cajarc",
+                biography: "L'atelier de forge des Lacam résonnait sur la place du village, ferrant bêtes de trait et fabriquant charrues et outils aratoires pour les cultivateurs du causse.",
+                tree: [
+                    { level: "Génération I", members: [{ name: "Mathieu LACAM", dates: "1725 — 1792", role: "Maréchal à la forge" }, { name: "Rose MOLINIER", dates: "1731 — 1803", role: "Saint-Hilaire" }] },
+                    { level: "Génération II", members: [{ name: "Jacques LACAM", dates: "1765 — 1838", role: "Forgeron & Serrurier" }, { name: "Élisabeth FABRE", dates: "1772 — 1845", role: "Cajarc" }] },
+                    { level: "Génération III", members: [{ name: "Henri LACAM", dates: "1805 — 1883", role: "Charron & Forgeron" }, { name: "Victoire COSTES", dates: "1812 — 1891", role: "Saint-Hilaire" }] }
+                ],
+                archive: "Enregistrement des patentes et registre des forges de 1820."
+            }
+        };
+
+        let currentGenealogyCentury = 'all';
+
+        function filterGenealogyCards() {
+            const query = (document.getElementById('genealogy-search')?.value || '').toLowerCase().trim();
+            const cards = document.querySelectorAll('.genealogy-card');
+            let count = 0;
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name') || '';
+                const centuries = (card.getAttribute('data-century') || '').split(' ');
+                const text = card.innerText.toLowerCase();
+
+                const matchText = !query || name.includes(query) || text.includes(query);
+                const matchCentury = currentGenealogyCentury === 'all' || centuries.includes(currentGenealogyCentury);
+
+                if (matchText && matchCentury) {
+                    card.classList.remove('hidden');
+                    count++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            const badge = document.getElementById('genealogy-count-badge');
+            if (badge) badge.innerText = `${count} famille${count > 1 ? 's' : ''} affichée${count > 1 ? 's' : ''}`;
+        }
+
+        function setGenealogyCentury(btn, century) {
+            document.querySelectorAll('.genealogy-chip').forEach(c => {
+                c.classList.remove('active', 'bg-bronze-500', 'text-white', 'border-bronze-500');
+                c.classList.add('bg-stone-50', 'text-stone-700', 'border-stone-200');
+            });
+            btn.classList.add('active', 'bg-bronze-500', 'text-white', 'border-bronze-500');
+            btn.classList.remove('bg-stone-50', 'text-stone-700', 'border-stone-200');
+            currentGenealogyCentury = century;
+            filterGenealogyCards();
+        }
+
+        function openGenealogyModal(familyId) {
+            const data = GENEALOGY_FAMILIES_DATA[familyId];
+            if (!data) return;
+
+            document.getElementById('g-modal-family-title').innerText = data.name;
+            const body = document.getElementById('g-modal-family-body');
+
+            let treeHtml = data.tree.map((t, i) => `
+                <div class="mb-4">
+                    <div class="text-xs uppercase tracking-wider font-bold text-bronze-600 mb-2">${t.level}</div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        ${t.members.map(m => `
+                            <div class="bg-stone-50 p-3 rounded-lg border border-stone-200">
+                                <div class="font-serif font-bold text-stone-900">${m.name}</div>
+                                <div class="text-xs text-stone-500">${m.dates}</div>
+                                <div class="text-xs text-stone-600 font-medium mt-1">${m.role}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('<div class="text-center text-stone-300 font-bold mb-2">↓</div>');
+
+            body.innerHTML = `
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">${data.period}</span>
+                    <span class="bg-stone-100 text-stone-700 text-xs font-bold px-3 py-1 rounded-full">📍 ${data.origin}</span>
+                </div>
+                <div class="text-xs text-stone-500 italic mb-4">Variantes : ${data.variants}</div>
+                <div class="bg-[#fdfbf7] p-4 rounded-xl border-l-4 border-bronze-500 border border-stone-200 mb-6 text-stone-700 leading-relaxed">
+                    ${data.biography}
+                </div>
+                <h4 class="font-serif text-lg font-bold text-stone-900 mb-3">Arbre d'ascendance</h4>
+                ${treeHtml}
+                <div class="mt-6 p-4 bg-stone-100 rounded-xl text-xs text-stone-600">
+                    <strong>Archive clé :</strong> ${data.archive}
+                </div>
+            `;
+
+            const modal = document.getElementById('genealogy-family-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGenealogyModal() {
+            const modal = document.getElementById('genealogy-family-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        function openGenealogyArchive(title, img, cote, transcription) {
+            document.getElementById('g-modal-archive-title').innerText = title;
+            document.getElementById('g-modal-archive-img').src = img;
+            document.getElementById('g-modal-archive-cote').innerText = cote;
+            document.getElementById('g-modal-archive-transcription').innerText = transcription;
+
+            const modal = document.getElementById('genealogy-archive-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGenealogyArchive() {
+            const modal = document.getElementById('genealogy-archive-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        function handleGenealogyForm(e) {
+            e.preventDefault();
+            const form = document.getElementById('genealogy-cousin-form');
+            const success = document.getElementById('genealogy-form-success');
+            form.reset();
+            success.classList.remove('hidden');
+            setTimeout(() => {
+                success.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+
     <script data-goatcounter="https://sainthilaire46.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 

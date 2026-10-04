@@ -1,1 +1,4 @@
 ancien_site_backup/
+
+.DS_Store
+*.bak
