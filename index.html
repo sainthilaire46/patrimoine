@@ -3731,6 +3731,225 @@
                 </p>
             </header>
             <main class="max-w-6xl mx-auto px-4 py-16">
+                <!-- Article Récent: Atelier/Réunion Généalogie du 1er Octobre 2026 -->
+                <article
+                    class="bg-white rounded-2xl overflow-hidden shadow-xl mb-16 reveal border border-emerald-900/5">
+                    <div class="grid md:grid-cols-2">
+                        <!-- Content Section -->
+                        <div class="p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                            <div class="flex items-center gap-4 mb-6">
+                                <span
+                                    class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Association & Généalogie</span>
+                                <span class="text-gray-400 text-sm font-medium">1er Octobre 2026</span>
+                            </div>
+                            <h3 class="font-serif text-3xl md:text-4xl text-emerald-950 italic mb-4 leading-tight">
+                                Atelier/Réunion Généalogie du jeudi 1er Octobre 2026
+                            </h3>
+                            <h4 class="text-xs uppercase tracking-widest text-bronze-600 font-bold mb-4">
+                                Compte-rendu et perspectives d'évolution
+                            </h4>
+                            <div class="text-gray-600 leading-relaxed mb-6 space-y-4">
+                                <p>
+                                    Tout d’abord, il a été constaté que l'ensemble des participants est aujourd'hui en mesure de poursuivre ses recherches généalogiques de façon quasi-autonome. Les récentes rencontres ont confirmé que chacun progresse sur la bonne voie, tout en soulignant l'importance de ces temps d'échange pour partager nos découvertes et surmonter nos difficultés collectives.
+                                </p>
+                                <p>
+                                    Une réflexion est engagée afin de faire évoluer non seulement l'atelier de généalogie, mais également l'ensemble de l'association Mémoire & Patrimoine.
+                                </p>
+                            </div>
+                            <button onclick="toggleGenealogieOct2026()"
+                                class="text-emerald-700 font-bold uppercase tracking-wider text-sm hover:text-emerald-900 transition-colors inline-flex items-center gap-2 focus:outline-none self-start">
+                                Lire le compte-rendu complet et les projets <i id="genealogie-oct2026-arrow"
+                                    class="fas fa-chevron-down transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <!-- Image Section -->
+                        <div class="relative h-64 md:h-auto order-1 md:order-2 bg-stone-900 overflow-hidden cursor-pointer group"
+                            onclick="openLightbox('images/cadastre_sainthilaire_assemblage.png', 'Plan cadastral d\'assemblage de Saint-Hilaire et Bessonies — Archives Départementales du Lot')">
+                            <img src="images/cadastre_sainthilaire_assemblage.png"
+                                alt="Tableau d'assemblage du cadastre napoléonien de Saint-Hilaire"
+                                class="w-full h-full object-cover absolute inset-0 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 text-white">
+                                <span class="bg-black/60 backdrop-blur-sm text-[11px] font-medium px-2.5 py-1 rounded text-amber-200 border border-amber-400/30 inline-block mb-1">
+                                    🔍 Cliquez pour agrandir le cadastre
+                                </span>
+                                <div class="text-xs text-stone-200 italic font-serif">Cadastre napoléonien — Tableau d'assemblage de Saint-Hilaire</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expandable Details Section -->
+                    <div id="genealogie-oct2026-details"
+                        class="hidden px-8 md:px-12 pb-8 md:pb-12 border-t border-gray-100 pt-8 bg-[#faf8f5] transition-all duration-500">
+                        <div class="space-y-8 text-gray-700 leading-relaxed max-w-5xl mx-auto">
+                            
+                            <!-- Bloc 1: L'atelier de généalogie & cadastre -->
+                            <div class="bg-white p-6 md:p-8 rounded-2xl border border-stone-200/80 shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-xl bg-bronze-50 border border-bronze-200 text-bronze-600 flex items-center justify-center font-bold text-lg">
+                                        📜
+                                    </div>
+                                    <h4 class="font-serif text-2xl font-bold text-emerald-950">L'atelier de généalogie & le Cadastre Napoléonien</h4>
+                                </div>
+                                <div class="space-y-4 text-stone-600 leading-relaxed">
+                                    <p>
+                                        La première partie de la réunion a été consacrée au <strong>cadastre napoléonien</strong> disponible sur le site des Archives Départementales du Lot. Dans l'objectif d'étudier l'histoire des hameaux, une présentation claire et illustrée a mis en lumière le fonctionnement des archives cadastrales récemment mises en ligne.
+                                    </p>
+                                    <p>
+                                        Et comme l'exposé présenté l'a clairement souligné, la récolte d’information sur le cadastre, qu’il soit napoléonien ou rénové, s’avère bien plus complexe qu’on ne l’imagine !
+                                    </p>
+                                    <p>
+                                        Pour la fin de l'année 2026, le fonctionnement actuel est maintenu afin de permettre à tous de se remettre en dynamique.
+                                    </p>
+                                </div>
+
+                                <!-- Galerie des documents présentés -->
+                                <div class="mt-6 pt-6 border-t border-stone-100">
+                                    <h5 class="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 flex items-center gap-2">
+                                        <span>📂</span> Documents et extraits étudiés lors de l'atelier :
+                                    </h5>
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        <div class="aspect-square rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer group relative"
+                                            onclick="openLightbox('images/cadastre_sainthilaire_section_b.png', 'Section B de Saint-Hilaire (Balayssac, Liffernet, Moulin de Liffernet)')">
+                                            <img src="images/cadastre_sainthilaire_section_b.png" alt="Section B Saint-Hilaire"
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                            <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold p-2 text-center">
+                                                Section B (Balayssac)
+                                            </div>
+                                        </div>
+                                        <div class="aspect-square rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer group relative"
+                                            onclick="openLightbox('images/cadastre_balayssac_plan.png', 'Plan cadastral parcellaire du hameau de Balayssac')">
+                                            <img src="images/cadastre_balayssac_plan.png" alt="Plan Balayssac"
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                            <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold p-2 text-center">
+                                                Parcelles Balayssac
+                                            </div>
+                                        </div>
+                                        <div class="aspect-square rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer group relative"
+                                            onclick="openLightbox('images/cadastre_balayssac_etats_section.png', 'Registre des états de section — Propriétaires de Balayssac (Vermande, Sudres, Lacroix...)')">
+                                            <img src="images/cadastre_balayssac_etats_section.png" alt="États de section"
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                            <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold p-2 text-center">
+                                                États de section
+                                            </div>
+                                        </div>
+                                        <div class="aspect-square rounded-xl overflow-hidden bg-stone-100 border border-stone-200 cursor-pointer group relative"
+                                            onclick="openLightbox('images/recensement_balayssac_population.png', 'Registre de recensement de population à Balayssac (Cambon, Laverne, Audigié, Laplaine...)')">
+                                            <img src="images/recensement_balayssac_population.png" alt="Recensement de population"
+                                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                            <div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold p-2 text-center">
+                                                Recensement
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-stone-400 mt-2 italic text-center">Cliquez sur une image pour l'afficher en grand dans la visionneuse.</p>
+                                </div>
+                            </div>
+
+                            <!-- Bloc 2: Rencontre publique du 14 janvier 2027 -->
+                            <div class="bg-white p-6 md:p-8 rounded-2xl border border-stone-200/80 shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center font-bold text-lg">
+                                        📅
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-2xl font-bold text-emerald-950">Rencontre publique autour de la généalogie</h4>
+                                        <p class="text-xs uppercase tracking-wider text-amber-800 font-bold">Jeudi 14 janvier 2027 après-midi — Salle des fêtes de Saint-Hilaire</p>
+                                    </div>
+                                </div>
+                                <p class="text-stone-600 mb-6">
+                                    En prévision de l’après-midi du <strong>jeudi 14 janvier 2027</strong>, une affiche sera réalisée au nom de l'association pour proposer une rencontre publique autour de la généalogie, afin d'accueillir de nouveaux passionnés. Prévue à la salle des fêtes de Saint-Hilaire, cette après-midi proposera plusieurs animations :
+                                </p>
+                                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                                    <div class="p-4 bg-stone-50 rounded-xl border border-stone-200/80 flex items-start gap-3">
+                                        <span class="text-xl">📽️</span>
+                                        <div>
+                                            <strong class="text-stone-900 text-sm block mb-1">Présentation & Diaporama</strong>
+                                            <span class="text-xs text-stone-600">Exposer brièvement l'association, l'atelier, nos objectifs et notre fonctionnement.</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-stone-50 rounded-xl border border-stone-200/80 flex items-start gap-3">
+                                        <span class="text-xl">📚</span>
+                                        <div>
+                                            <strong class="text-stone-900 text-sm block mb-1">Espace consultation libre</strong>
+                                            <span class="text-xs text-stone-600">Exposition de documents (ouvrages, archives, travaux personnels, arbres édités) animée par l'équipe.</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-stone-50 rounded-xl border border-stone-200/80 flex items-start gap-3">
+                                        <span class="text-xl">🌐</span>
+                                        <div>
+                                            <strong class="text-stone-900 text-sm block mb-1">Panorama des ressources</strong>
+                                            <span class="text-xs text-stone-600">Découverte des ressources disponibles sur les sites d'archives départementales en ligne.</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-stone-50 rounded-xl border border-stone-200/80 flex items-start gap-3">
+                                        <span class="text-xl">🔍</span>
+                                        <div>
+                                            <strong class="text-stone-900 text-sm block mb-1">Mini-atelier pratique</strong>
+                                            <span class="text-xs text-stone-600">Recherche nominative pour guider les visiteurs (ex. recherche d'actes de naissance d'ancêtres).</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-stone-50 rounded-xl border border-stone-200/80 flex items-start gap-3">
+                                        <span class="text-xl">🖼️</span>
+                                        <div>
+                                            <strong class="text-stone-900 text-sm block mb-1">Diaporama en continu</strong>
+                                            <span class="text-xs text-stone-600">Illustration de photos d'ancêtres et de lieux-dits régionaux.</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bg-stone-50 rounded-xl border border-stone-200/80 flex items-start gap-3">
+                                        <span class="text-xl">☕</span>
+                                        <div>
+                                            <strong class="text-stone-900 text-sm block mb-1">Moment convivial & Goûter</strong>
+                                            <span class="text-xs text-stone-600">Échanges conviviaux entre l'ensemble des participants. N'hésitez pas à faire part de vos propositions !</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-amber-50/60 p-4 rounded-xl border border-amber-200 text-xs text-stone-700 space-y-2">
+                                    <p>
+                                        📢 <strong>Diffusion :</strong> L'affiche d'information sera transmise aux mairies environnantes pour diffusion (PanneauPocket) et affichée dans des points stratégiques du secteur.
+                                    </p>
+                                    <p>
+                                        🤝 <strong>Parrainage dès février 2027 :</strong> Les premières sessions consisteront en une révision collective des bases pour faciliter l'intégration des nouveaux membres, suivie d'un système de parrainage lors des ateliers mensuels.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Bloc 3: La valorisation du patrimoine -->
+                            <div class="bg-white p-6 md:p-8 rounded-2xl border border-stone-200/80 shadow-sm">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center font-bold text-lg">
+                                        🏛️
+                                    </div>
+                                    <h4 class="font-serif text-2xl font-bold text-emerald-950">La valorisation du patrimoine</h4>
+                                </div>
+                                <p class="text-stone-600 mb-4">
+                                    Un important travail de recensement du patrimoine vernaculaire de Saint-Hilaire a été accompli et mis en ligne sur le site internet de l'association. Nous vous invitons chaleureusement à le consulter sur notre site <a href="https://sainthilaire46.fr" class="text-emerald-700 font-bold underline">sainthilaire46.fr</a>.
+                                </p>
+                                <p class="text-stone-700 font-semibold mb-3 text-sm">Pour faire vivre et enrichir cette démarche collective, plusieurs actions sont envisagées :</p>
+                                <ul class="space-y-3 text-sm text-stone-600">
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0"></i>
+                                        <span><strong>Inventaire communal :</strong> Récupération de l'inventaire communal de 2016 auprès du service patrimoine du Grand Figeac pour consolider nos recherches avec l'appui des membres expérimentés.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0"></i>
+                                        <span><strong>Journée du patrimoine propre :</strong> Organisation d'une journée dédiée à l'association, incluant la visite guidée d'un édifice régional (ex. le <em>Château de Naucase</em>).</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0"></i>
+                                        <span><strong>Promenade des moulins :</strong> Programmation d'une promenade-découverte thématique autour des moulins de la commune à partir des données recueillies.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check-circle text-emerald-600 mt-1 flex-shrink-0"></i>
+                                        <span><strong>Présence locale :</strong> Tenue d'un stand d'information lors des manifestations locales pour faire connaître l'action de l'association.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Featured Article: Nouveau Pont -->
                 <article
                     class="bg-white rounded-2xl overflow-hidden shadow-xl mb-16 reveal border border-emerald-900/5">
@@ -4521,6 +4740,20 @@
         function toggleArticleDetails() {
             const details = document.getElementById('article-details');
             const arrow = document.getElementById('details-arrow');
+
+            if (details.classList.contains('hidden')) {
+                details.classList.remove('hidden');
+                arrow.classList.add('rotate-180');
+            } else {
+                details.classList.add('hidden');
+                arrow.classList.remove('rotate-180');
+            }
+        }
+
+        // Atelier Généalogie Octobre 2026 Toggle
+        function toggleGenealogieOct2026() {
+            const details = document.getElementById('genealogie-oct2026-details');
+            const arrow = document.getElementById('genealogie-oct2026-arrow');
 
             if (details.classList.contains('hidden')) {
                 details.classList.remove('hidden');
